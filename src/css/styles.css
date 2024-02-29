@@ -1,25 +1,80 @@
-/**
-  |============================
-  | include css partials with
-  | default @import url()
-  |============================
-*/
-@import url('./reset.css');
-@import url('./vite-promo.css');
 @import url('./header.css');
+@import url('./sign-up.css');
+@import url('./burger-menu.css');
+@import url('./home.css');
+@import url('./support-ukraine.css');
+@import url('./modal.css');
+@import url('./shopping-list.css');
+@import url('./features.css');
 
-:root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
+@font-face {
+  font-family: 'DM Sans', sans-serif;
+  font-style: normal;
+  src: url(https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100..1000&family=Kode+Mono:wght@400..700&display=swap.woff2),
+    url(https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@1,9..40,100..1000&family=Kode+Mono:wght@400..700&display=swap.woff2)
+      format('woff2');
+}
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+body {
+  background-color: #ffffff;
+  font-family: 'DM Sans', sans-serif;
   line-height: 24px;
-  font-weight: 400;
-
-  color: #242424;
-  background-color: rgba(255, 255, 255, 0.87);
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+}
+@media screen and (min-width: 375px) {
+  .container {
+    max-width: 320px;
+    padding: 0 20px;
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 768px) {
+  .container {
+    padding: 0 32px;
+    max-width: 768px;
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .container {
+    padding: 0 32px;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
 }
