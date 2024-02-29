@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/Forest-Code/",
+    "build": "vite build --base=/Creative-Code/",
     "preview": "vite preview"
   },
   "devDependencies": {
