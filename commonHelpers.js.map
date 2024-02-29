@@ -1,1 +1,1 @@
-{"version":3,"file":"commonHelpers.js","sources":[],"sourcesContent":[],"names":[],"mappings":""}
+{"version":3,"file":"commonHelpers.js","sources":["../src/js/home.js"],"sourcesContent":["const Name = marina;\n\nconsole.log(Name);\n"],"names":["Name"],"mappings":"ssBAAA,MAAMA,EAAO,OAEb,QAAQ,IAAIA,CAAI"}
