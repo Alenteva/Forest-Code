@@ -12,5 +12,5 @@ import './js/burger-menu.js';
 import './js/support-ukraine.js';
 import './js/home.js';
 import './js/modal.js';
-import './js/shopping-list.js';
 import './js/features.js';
+import './shopping-list.js';
