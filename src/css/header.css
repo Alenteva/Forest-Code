@@ -36,12 +36,6 @@ body {
   margin: 0 auto;
 }
 
-/* .container {
-  max-width: 320px;
-  padding: 0 20px;
-  margin: 0 auto;
-} */
-
 /* === start switch styles === */
 .form-switch {
   display: inline-block;
@@ -112,12 +106,6 @@ body {
 
 /*================ tablet ================ */
 @media screen and (min-width: 768px) {
-  /* .container {
-    padding: 0 32px;
-    max-width: 768px;
-    margin: 0 auto;
-  } */
-
   .header-menu {
     display: none;
   }
@@ -138,14 +126,17 @@ body {
 
   .header-nav {
     display: flex;
+    align-items: center;
     gap: 16px;
   }
 
   .header-nav-a {
+    display: flex;
+    align-items: center;
     background-color: #eac645;
     border-radius: 36px;
-    padding: 4px;
-    width: 72px;
+    padding-right: 15px;
+    padding-left: 15px;
     height: 34px;
   }
 }
