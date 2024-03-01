@@ -19,23 +19,36 @@ h2 {
   color: black;
 }
 
+.container {
+  outline: 2px dashed #f44336;
+}
+
+.shopping-list {
+  margin-bottom: 20px;
+}
+
 .shoplist {
   border: 2px solid rgba(79, 46, 232, 0.4);
   border-radius: 16px;
-  width: 335px;
+  max-width: 335px;
   height: 170px;
 }
+
+/* .shopping-list {
+  margin: 0 auto;
+} */
 .shoplist-container {
   display: flex;
   justify-content: space-between;
   padding: 14px;
 }
 
-.shoplist-Bookcover {
+.shoplist-bookcover {
   border-radius: 8px;
   width: 100px;
   height: 142px;
   background-color: aqua;
+  overflow: hidden;
 }
 .shoplist-tophalf {
 }
@@ -139,7 +152,7 @@ h2 {
 }
 
 .shoplist-error-text {
-  width: 244px;
+  /* width: 244px; */
   font-weight: 400;
   font-size: 14px;
   margin: 0 auto;
