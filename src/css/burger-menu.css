@@ -1,7 +1,21 @@
-.burger-menu {
-        
+
+.burger-menu.container {
+  display: none;
+}
+.burger-menu.container.burger-menu-show {
+  display: block;
+}
+
+.burger-menu.container {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.burger-menu.container.burger-menu-show {
+  opacity: 1;
+}
+.burger-menu {   
     position: relative;
-    top: 64px;
+    top: 0;
     right: 0%;
     min-width: 100%;
     min-height: 812px;
@@ -14,7 +28,6 @@
                               rgb(255, 255, 255) 100%);
     padding-top: 183px;
     overflow: hidden;
-
 }
 .burger-menu-list {
    display: flex;
@@ -22,11 +35,29 @@
    justify-content: center;
    align-items: flex-start;
    gap: 12px;
+   margin-top: 183px;
 }
 .burger-menu-item a {
     display: flex;
     align-items: center;
     gap: 4px;
+}
+.burger-menu-item {
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+.burger-mark {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 8px 16px 8px 16px;
+    border-radius: 36px;
+    background: rgb(234, 198, 69);
+    color: rgb(17, 17, 17);
+    font-weight: 700;
 }
 .burger-image {
     background-image: url(../images/Group.png);
