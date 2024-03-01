@@ -2,7 +2,8 @@ body {
   background-color: #b6b6b6;
 }
 
-.header-nav {
+.header-nav,
+.header-user {
   display: none;
 }
 
@@ -17,17 +18,15 @@ body {
   justify-content: space-between;
 }
 
-.header-logo1 {
+.header-logo {
   padding: 18px 0 18px 0;
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 
-.header-logo2 {
+.header-seting {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 14px;
 }
 
@@ -38,7 +37,7 @@ body {
 
 /* === start switch styles === */
 .form-switch {
-  display: inline-block;
+  display: flex;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
 }
@@ -94,7 +93,7 @@ body {
   display: none;
 }
 .form-switch input:checked + i {
-  background-color: #4bd763;
+  background-color: #fff;
 }
 .form-switch input:checked + i::before {
   transform: translate3d(18px, 2px, 0) scale3d(0, 0, 0);
@@ -111,13 +110,7 @@ body {
   }
 
   .header {
-    background-color: #ffffff;
-    width: 768px;
     height: 72px;
-    border: solid 1.5px #111111;
-    border-radius: 0 0 8px 8px;
-    display: flex;
-    align-items: center;
   }
 
   .header-logo {
@@ -128,6 +121,7 @@ body {
     display: flex;
     align-items: center;
     gap: 16px;
+    margin-left: 40px;
   }
 
   .header-nav-a {
@@ -139,23 +133,56 @@ body {
     padding-left: 15px;
     height: 34px;
   }
+
+  .header-seting {
+    display: flex;
+    align-items: center;
+    margin-left: 101px;
+    gap: 24px;
+  }
+
+  .header-user {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    padding-left: 18px;
+    border: 1.5px solid #111111;
+    background-color: #4f2ee8;
+    border-radius: 18px;
+    width: 184px;
+    height: 48px;
+    gap: 90px;
+  }
 }
 
 /*================ descktop ================ */
 @media screen and (min-width: 1280px) {
-  /* .container {
-    padding: 0 32px;
-    max-width: 1280px;
-    margin: 0 auto;
-  } */
-
   .header {
-    background-color: #ffffff;
-    width: 1440px;
     height: 72px;
-    border: solid 1.5px #111111;
-    border-radius: 0 0 8px 8px;
     display: flex;
     align-items: center;
+  }
+
+  .header-nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-left: 76px;
+  }
+
+  .header-seting {
+    display: flex;
+    align-items: center;
+    margin-left: 746px;
+    gap: 24px;
+  }
+
+  .header-user {
+    display: flex;
+    border: 1.5px solid #111111;
+    background-color: #4f2ee8;
+    border-radius: 18px;
+    width: 184px;
+    height: 48px;
   }
 }
