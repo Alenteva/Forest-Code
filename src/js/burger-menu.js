@@ -7,7 +7,7 @@ export function initBurgerMenu() {
 
     if (burgerMenu.classList.contains('burger-menu-show')) {
       burgerToggle.innerHTML = `
-        <svg width="28" height="28">
+        <svg width="18" height="18" stroke="#000">
           <use href="./images/icons/symbol-defs.svg#icon-close"></use>
         </svg>`;
     } else {

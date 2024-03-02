@@ -2,7 +2,7 @@
   /* display: none; */
 }
 .burger-menu.container.burger-menu-show {
-  display: block;
+  display: flex;
 }
 
 .burger-menu.container {
@@ -60,12 +60,21 @@
   color: rgb(17, 17, 17);
   font-weight: 700;
 }
-.burger-image {
+/*.burger-image {
   background-image: url(../images/Group.png);
   width: 519px;
   min-height: 540px;
   background-repeat: no-repeat;
   transform: rotate(-15deg);
+}*/
+.burger-image {
+  position: absolute;
+  top: 410px;
+  bottom: 0;
+  background-image: url(../images/Group.png);
+  width: 519px;
+  min-height: 540px;
+  background-repeat: no-repeat;
 }
 @media (min-resolution: 192dpi) {
   .navigation-block-two {
