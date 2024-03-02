@@ -219,7 +219,18 @@ body {
   margin-bottom: 18px;
   }
 
+  /*/////////////tablet//////////////*/ 
+ @media (min-width: 768px) {
+  .list_categories {
+    width: 337px;
+    height: 472px;
+  }
+  .container-home {
+    max-width: 768px;
+  }
 
+ }
+/*//////////////tablet//////////////*/
   /*/////////////desktop/////////////*/
 
   @media (min-width: 1280px) {
