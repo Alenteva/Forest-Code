@@ -48,7 +48,8 @@
   font-weight: 500;
   text-transform: uppercase;
 }
-.burger-mark {
+#shopping-list.active,
+#home.active {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -59,13 +60,6 @@
   color: rgb(17, 17, 17);
   font-weight: 700;
 }
-/*.burger-image {
-  background-image: url(../images/Group.png);
-  width: 519px;
-  min-height: 540px;
-  background-repeat: no-repeat;
-  transform: rotate(-15deg);
-}*/
 .burger-image {
   position: absolute;
   top: 410px;
