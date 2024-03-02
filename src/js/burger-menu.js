@@ -8,12 +8,12 @@ export function initBurgerMenu() {
     if (burgerMenu.classList.contains('burger-menu-show')) {
       burgerToggle.innerHTML = `
         <svg width="28" height="28">
-          <use href="../images/symbol-defs.svg#icon-close"></use>
+          <use href="./images/icons/symbol-defs.svg#icon-close"></use>
         </svg>`;
     } else {
       burgerToggle.innerHTML = `
         <svg width="28" height="28">
-          <use href="../images/symbol-defs.svg#icon-menu"></use>
+          <use href="./images/icons/symbol-defs.svg#icon-menu"></use>
         </svg>`;
     }
   });
