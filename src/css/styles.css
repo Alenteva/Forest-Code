@@ -18,6 +18,9 @@
 *::after {
   box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+}
 h1,
 h2,
 h3,
@@ -72,7 +75,7 @@ body {
 }
 @media screen and (min-width: 1280px) {
   .container {
-    padding: 0 32px;
+    padding: 0 24px;
     min-width: 1280px;
     margin: 0 auto;
   }
