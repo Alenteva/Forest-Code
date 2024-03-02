@@ -172,7 +172,7 @@ async function renderCategories(list) {
 
 ///////////////list categories////////////////
 
-await axios.get(`https://books-backend.p.goit.global/books/category-list`)
+axios.get(`https://books-backend.p.goit.global/books/category-list`)
     .then(response => {
         renderCategories(response.data);    
     })
