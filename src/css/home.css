@@ -227,6 +227,7 @@ body {
   }
   .container-home {
     max-width: 768px;
+    padding: 0 32px;
   }
   .image_book img  {
     border-radius: 8px;
@@ -261,10 +262,10 @@ body {
 /*//////////////tablet//////////////*/
   /*/////////////desktop/////////////*/
 
-  @media (min-width: 1280px) {
+  @media (min-width: 1440px) {
     .container-home { 
         padding: 0 24px;
-        min-width: 1280px;
+        max-width: 1440px;
       }
     .images_books {
         flex-direction: row;
