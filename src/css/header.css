@@ -9,7 +9,6 @@ body {
 
 .header {
   background-color: #ffffff;
-  /* min-width: 375px; */
   height: 64px;
   border: solid 1.5px #111111;
   border-radius: 0 0 8px 8px;
@@ -111,7 +110,6 @@ body {
 
   .header {
     background-color: #ffffff;
-    /* width: 768px; */
     height: 72px;
   }
 
