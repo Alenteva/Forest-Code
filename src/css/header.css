@@ -1,5 +1,5 @@
 body {
-  background-color: #b6b6b6;
+  background-color: #f6f6f6;
 }
 
 /* for darck team */
@@ -152,6 +152,10 @@ body {
     height: 34px;
   }
 
+  .header-shop-nav {
+    width: 150px;
+  }
+
   .header-seting {
     display: flex;
     align-items: center;
@@ -188,6 +192,10 @@ body {
     align-items: center;
     gap: 24px;
     margin-left: 76px;
+  }
+
+  .header-shop-nav {
+    width: 150px;
   }
 
   .header-seting {
