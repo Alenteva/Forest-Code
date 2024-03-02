@@ -17,6 +17,13 @@ function isWidthDevice() {
     else return number = 4;      
 }
 
+function changeColorTitle() {
+    const arrayTitle = titleSelectedCategory.textContent.split(' ');
+                const lastWord = arrayTitle[arrayTitle.length-1];
+                titleSelectedCategory.innerHTML = titleSelectedCategory.innerHTML.replace(lastWord,`<span class="blue">${lastWord}</span>`);
+}
+
+
 ////////list books on main page/////////
 
 async function renderBooksMainPage(boo) {
@@ -45,10 +52,38 @@ async function renderBooksMainPage(boo) {
                 if(countBook == j)
                     break;
         }
-        stringOne += `</ul><button class="button-see-more">See more</button></li>`;
+        stringOne += `</ul><button class="button-see-more" data-category="${boo[i].list_name}">See more</button></li>`;
     }
     listOne.insertAdjacentHTML("beforeend", stringOne);
 }
+
+///if click on button "See more"////
+
+listOne.addEventListener("click", async (e) =>{
+
+    if (e.target.classList.contains('button-see-more')) {
+        const dataset = e.target.dataset.category;
+
+        titleSelectedCategory.textContent = dataset;
+        const arrayWords = titleSelectedCategory.textContent.split(' ');
+        const word = arrayWords[arrayWords.length-1];
+        titleSelectedCategory.innerHTML = titleSelectedCategory.innerHTML.replace(word, `<span class="blue">${word}</span>`);
+
+        await axios.get(`https://books-backend.p.goit.global/books/category?category=${dataset}`)
+        .then(response => {
+            if(response.data.length === 0) {
+                throw new Error(`Sorry, books in the selected category were not found`);
+            }
+            renderBooks(response.data);
+        })
+        .catch(error => 
+             iziToast.error({
+                title: "Error",
+                message: error.message,
+            }));
+    }
+});
+
 
 
 async function updateBooksDisplay() {
@@ -71,6 +106,8 @@ async function updateBooksDisplay() {
 updateBooksDisplay();
 
 //////list books on main page/////////
+
+
 
 
 //////////changes in menu and searching books//////////////
@@ -97,9 +134,7 @@ async function renderCategories(list) {
             if(e.target.textContent !== "All categories") {
 
                 titleSelectedCategory.textContent = e.target.textContent;
-                const arrayTitle = titleSelectedCategory.textContent.split(' ');
-                const lastWord = arrayTitle[arrayTitle.length-1];
-                titleSelectedCategory.innerHTML = titleSelectedCategory.innerHTML.replace(lastWord,`<span class="blue">${lastWord}</span>`);
+                changeColorTitle();
 
                 await axios.get(`https://books-backend.p.goit.global/books/category?category=${selectedCategory}`)
                     .then(response => {
@@ -116,9 +151,7 @@ async function renderCategories(list) {
             }
             else {
                 titleSelectedCategory.textContent = "Best Sellers Books";
-                const arrayTitle = titleSelectedCategory.textContent.split(' ');
-                const lastWord = arrayTitle[arrayTitle.length-1];
-                titleSelectedCategory.innerHTML = titleSelectedCategory.innerHTML.replace(lastWord,`<span class="blue">${lastWord}</span>`);
+                changeColorTitle();
 
                 await axios.get(`https://books-backend.p.goit.global/books/top-books`)
                     .then(response => {
@@ -136,15 +169,19 @@ async function renderCategories(list) {
 ///////////changes in menu and searching books////////////////
 
 
+
 ///////////////list categories////////////////
 
 await axios.get(`https://books-backend.p.goit.global/books/category-list`)
     .then(response => {
-        renderCategories(response.data);
+        renderCategories(response.data);    
     })
     .catch(error => console.log(error.message));
     
 //////////////list categories//////////////
+
+
+
 
 async function renderBooks(books) {
     let booksCard = ""; 
