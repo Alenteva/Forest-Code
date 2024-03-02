@@ -2,6 +2,16 @@ body {
   background-color: #b6b6b6;
 }
 
+/* for darck team */
+
+.darck {
+  color: #fff;
+  background-color: #202024;
+  border-color: #fff;
+}
+
+/* ================= */
+
 .header-nav,
 .header-user {
   display: none;
@@ -9,13 +19,18 @@ body {
 
 .header {
   background-color: #ffffff;
-  /* min-width: 375px; */
   height: 64px;
   border: solid 1.5px #111111;
   border-radius: 0 0 8px 8px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.header-black {
+  background-color: #111111;
+  border: solid 1.5px #ffffff;
+  color: #ffffff;
 }
 
 .header-logo {
@@ -130,6 +145,7 @@ body {
     display: flex;
     align-items: center;
     background-color: #eac645;
+    color: #111111;
     border-radius: 36px;
     padding-right: 15px;
     padding-left: 15px;
@@ -153,7 +169,7 @@ body {
     border-radius: 18px;
     width: 184px;
     height: 48px;
-    gap: 90px;
+    gap: 76px;
   }
 }
 
@@ -179,14 +195,5 @@ body {
     align-items: center;
     margin-left: 746px;
     gap: 24px;
-  }
-
-  .header-user {
-    display: flex;
-    border: 1.5px solid #111111;
-    background-color: #4f2ee8;
-    border-radius: 18px;
-    width: 184px;
-    height: 48px;
   }
 }
