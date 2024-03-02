@@ -1,8 +1,17 @@
 <section class="shopping-list">
+  <!-- <div class="#support-ukraine">
+    <img
+      src="https://storage.googleapis.com/du-prd/books/images/9781250144058.jpg"
+      alt="Book cover"
+      class="shoplist-bookcover"
+    />
+  </div> -->
+
   <div class="shopping-list container">
     <h1 class="shoplist-title">
       Shopping <span class="shoplist-title-span">List</span>
     </h1>
+
     <div class="shoplist">
       <div class="shoplist-container">
         <img
@@ -10,7 +19,6 @@
           alt="Book cover"
           class="shoplist-bookcover"
         />
-
         <div class="shoplist-rightbar">
           <div class="shoplist-title-btn">
             <div class="shoplist-title-text">
@@ -36,31 +44,20 @@
             <p class="shoplist-author">Ann Napolitano</p>
 
             <div class="shoplist-logo-box">
-              <ul class="shoplist-logo-list">
-                <li class="">
-                  <a href="" class="">
-                    <picture class="shoplist-logo-amazon">
-                      <source
-                        srcset="
-                          ../images/shopping-list/amazon-1x.png 1x,
-                          ../images/shopping-list/amazon-2x.png 2x
-                        "
-                      />
-                      <img
-                        src="../images/shopping-list/amazon-1x.png"
-                        alt="amazon logo"
-                        width="32"
-                        height="11"
-                      />
-                    </picture>
-                  </a>
-                </li>
-                <li class="">
-                  <svg class="shoplist-logo-book" width="16" height="16">
-                    <use href="../images/symbol-defs.svg#icon-Icon-book"></use>
-                  </svg>
-                </li>
-              </ul>
+              <a href="https://www.amazon.com/" target="_blank">
+                <picture class="shoplist-logo-amazon">
+                  <source
+                    srcset="
+                      ../images/shopping-list/amazon-1x.png 1x,
+                      ../images/shopping-list/amazon-2x.png 2x
+                    "
+                  />
+                  <img
+                    src="../images/shopping-list/amazon-1x.png"
+                    alt="amazon logo"
+                  />
+                </picture>
+              </a>
             </div>
           </div>
         </div>
@@ -69,7 +66,7 @@
   </div>
 </section>
 
-<section class="shoplist-error container">
+<section class="shoplist-error container is-active">
   <div class="shoplist-error">
     <h1 class="shoplist-title error">
       Shopping <span class="shoplist-title-span">List</span>

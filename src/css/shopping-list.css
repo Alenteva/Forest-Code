@@ -13,7 +13,7 @@ h2 {
   font-size: 16px;
 
   line-height: 18px;
-  line-height: 1.125;
+  line-height: 1.13;
   letter-spacing: -0.04em;
   text-transform: uppercase;
   color: black;
@@ -24,31 +24,21 @@ h2 {
 }
 
 .shopping-list {
+  margin-top: 40px;
   margin-bottom: 20px;
 }
 
-.shoplist {
-  border: 2px solid rgba(79, 46, 232, 0.4);
-  border-radius: 16px;
-  max-width: 335px;
-  height: 170px;
-}
-
-/* .shopping-list {
-  margin: 0 auto;
-} */
 .shoplist-container {
   display: flex;
-  justify-content: space-between;
   padding: 14px;
+  border: 2px solid rgba(79, 46, 232, 0.4);
+  border-radius: 16px;
 }
 
 .shoplist-bookcover {
   border-radius: 8px;
   width: 100px;
-  height: 142px;
-  background-color: aqua;
-  overflow: hidden;
+  margin-right: 14px;
 }
 .shoplist-tophalf {
 }
@@ -71,8 +61,10 @@ h2 {
 .shoplist-title-book {
 }
 .shoplist-category-book {
+  font-weight: 400;
+  font-size: 12px;
   line-height: 14px;
-  line-height: 1.16667;
+  line-height: 1.17;
   letter-spacing: 0.03em;
   color: #b4afaf;
 }
@@ -96,22 +88,26 @@ h2 {
   height: 100%;
 }
 .shoplist-shotcontens {
-  width: 193px;
   height: 68px;
-  margin-bottom: 16px;
+  margin-bottom: 22px;
   overflow: hidden; /* Ця властивість приховує текст, що виходить за рамки */
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  line-height: 1.29;
+  letter-spacing: -0.04em;
+  color: black;
 }
-.shoplist-text {
-}
+
 .shoplist-buttonhalf {
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
 }
 .shoplist-author {
   font-style: italic;
   font-weight: 400;
   font-size: 12px;
-
   line-height: 14px;
   line-height: 1.17;
   letter-spacing: -0.04em;
@@ -119,27 +115,17 @@ h2 {
 }
 
 .shoplist-logo-box {
-}
-.shoplist-logo-list {
   display: flex;
   justify-content: space-between;
-  align-items: center; /* Розміщує елементи по вертикалі по центру */
-  /* margin-left: auto; Вирівнюємо блок "shoplist-logo-box" до правого краю */
-  gap: 8px;
   width: 56px;
-  height: 16px;
-}
-.shoplist-logo-amazon {
-  /* list-style: none; */
-  margin-top: auto;
-}
-.shoplist-logo-amazon:hover:focus {
-  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.15);
-  mix-blend-mode: luminosity;
 }
 
-.shoplist-logo-book {
-  fill: #4f2ee8;
+.shoplist-logo-amazon img {
+  filter: grayscale(100%);
+}
+
+.shoplist-logo-amazon img:hover:focus {
+  filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
 }
 
 .error {
@@ -152,21 +138,93 @@ h2 {
 }
 
 .shoplist-error-text {
-  /* width: 244px; */
   font-weight: 400;
   font-size: 14px;
   margin: 0 auto;
-
   line-height: 18px;
-  line-height: 1.28571;
+  line-height: 1.29;
   letter-spacing: -0.02em;
   text-align: center;
   color: rgba(0, 0, 0, 0.6);
   margin-bottom: 14px;
 }
-.shoplist-error-books {
-}
 
 .shoplist-error-img {
   margin: 0 auto; /* Збільшує відступи по обох боках для розміщення по центру */
+}
+
+@media screen and (min-width: 375px) and (max-width: 767px) {
+  .container {
+    max-width: 320px;
+    padding: 0 20px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  .container {
+    padding: 0 32px;
+    max-width: 768px;
+    margin: 0 auto;
+  }
+  h1 {
+    font-size: 48px;
+    line-height: 52px;
+    line-height: 1.08;
+  }
+  .shoplist-bookcover {
+    width: 116px;
+    margin-right: 24px;
+  }
+  .shoplist-btn-delete {
+    width: 34px;
+    height: 34px;
+  }
+
+  .shoplist-shotcontens {
+    margin-bottom: 38px;
+  }
+
+  .shoplist-logo-amazon {
+    width: 92px;
+    height: 27px;
+  }
+
+  .error {
+    margin-bottom: 140px;
+  }
+  .shoplist-error-content {
+    width: 349px;
+    height: 309px;
+    margin: 0 auto;
+  }
+
+  .shoplist-error-text {
+    font-size: 18px;
+    line-height: 24px;
+    line-height: 1.33;
+    margin-bottom: 20px;
+  }
+
+  .shoplist-logo-box {
+    width: 92px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .container {
+    padding: 0 32px;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .shoplist-error-content {
+    width: 349px;
+    height: 309px;
+    margin: 0 auto;
+  }
+
+  .shoplist-logo-box {
+    width: 92px;
+  }
 }
