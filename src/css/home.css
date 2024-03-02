@@ -228,6 +228,34 @@ body {
   .container-home {
     max-width: 768px;
   }
+  .image_book img  {
+    border-radius: 8px;
+    height: 316px;
+  }
+  .image_book {
+    width: 218px;
+    height: 366px;
+  }
+  .images_books {
+    flex-direction: row;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  .list-one {
+    max-width: 704px;
+    column-gap: 24px;
+  }
+  .button-see-more {
+    left: 580px;
+  }
+  .img-example {
+    height: 316px;
+  }
+  .book {
+    width: 218px;
+    height: 366px;
+  }
 
  }
 /*//////////////tablet//////////////*/

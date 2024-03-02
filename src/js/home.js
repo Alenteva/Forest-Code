@@ -188,11 +188,14 @@ async function renderBooks(books) {
     listOne.innerHTML = "";
     books.forEach(book => {
         booksCard += `<li class="book">
-                        <img class="img-example" alt="Book title" src="${book.book_image}"></img>
-                            <div class="box-cards">
-                                <p class="title-book">${book.title}</p>
-                                <p class="author-book">${book.author}</p>
-                            </div>
+                        <div class="div-animation">
+                            <img class="img-example" alt="Book title" src="${book.book_image}"></img>
+                            <div class="box-quick-view"><p class="animation-paragraf">Quick view</p></div>
+                        </div>
+                                <div class="box-cards">
+                                    <p class="title-book">${book.title}</p>
+                                    <p class="author-book">${book.author}</p>
+                                </div>
                       </li>`;
     });
     listOne.insertAdjacentHTML("beforeend", booksCard);
