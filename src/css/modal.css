@@ -13,13 +13,13 @@
  .is-open {
      opacity: 1;
      visibility: visible;
-     pointer-events: auto;
+     pointer-events:all;
  }
 
 .modal {
     position:absolute;
     width:335px;
-    min-height:762px;
+    height:762px;
     background-color: rgb(255, 255, 255);
     border-radius: 18px;
     top:50%;
@@ -32,9 +32,14 @@
 
 .modal-btn {
    background-color: transparent;
-   display: block;
+   border:none; 
+   display: flex;
+   align-items: center;
+   justify-content: center;
    margin-left: auto;
-   margin-top: 10px;
+   margin-top: 12px;
+   margin-right: 12px;
+   margin-bottom: 5px;
 }
 
 .modal-icon-close {
@@ -55,7 +60,7 @@
     font-size: 16px;
     font-weight: 700;
     line-height: 1.12;
-    letter-spacing: 0.04em;
+    letter-spacing:-0.04em;
     margin-bottom: 4px;
     margin-left: 24px;
 }
@@ -65,7 +70,7 @@
     font-style: italic;
     font-size:12px;
     line-height: 14px;
-    letter-spacing: -4%;
+    letter-spacing:-0.04em;
     margin-left: 24px;
     color:#b4afaf;
 }
@@ -73,14 +78,29 @@
 .modal-descr {
     font-size: 14px;
     line-height: 1.29;
-    letter-spacing: -0.04em;
+    letter-spacing:-0.04em;
     margin-bottom: 14px;
     margin-left:24px;
     margin-right: 24px;
+    font-weight: normal;
+    color:#111;
 }
 
 .links {
+    display: flex;
+    flex-direction: row;
     margin-bottom: 44px;
+    margin-left:24px;
+    gap:6.5px;
+    align-items: center;
+}
+
+.link-app{
+    filter: grayscale(100%);
+}
+
+.link-app:hover{
+    filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, .35));
 }
 
 .add-remove-btn {
@@ -122,7 +142,6 @@
     padding: 0;
     white-space: nowrap;
     clip-path: inset(100%);
-    clip: rect(0 0 0 0);
     overflow: hidden;
 }
 

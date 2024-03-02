@@ -1,6 +1,6 @@
 const modalOpen = document.querySelector(".add-remove-btn");
 const modalClose = document.querySelector(".modal-btn");
-const modal = document.querySelector(".modal");
+const modal = document.querySelector(".backdrop");
 
 
 
@@ -14,12 +14,13 @@ modalOpen.addEventListener("click", () => {
 });
 
    modalClose.addEventListener("click", () => {
-    document.body.style.overflowY = "auto";
+       document.body.style.overflowY = "auto";
+       modal.classList.remove("is-open");
    })
     
     const modalHeight = modal.clientHeight;
-    if (modalHeight < 450) {
-        modal.style.height = "450px";
+    if (modalHeight < 762) {
+        modal.style.height = "762px";
         modal.style.overflowY = "scroll";
     }
 })
