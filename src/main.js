@@ -14,3 +14,4 @@ import './js/home.js';
 import './js/modal.js';
 import './js/features.js';
 import './shopping-list.js';
+import './js/change-button.js';
