@@ -209,7 +209,7 @@ async function renderBooks(books) {
     let booksCard = ""; 
     listOne.innerHTML = "";
     books.forEach(book => {
-        booksCard += `<li class="book">
+        booksCard += `<li class="book" data-category="${book._id}">
                         <div class="div-animation">
                             <img class="img-example" alt="Book title" src="${book.book_image}"></img>
                             <div class="box-quick-view"><p class="animation-paragraf">Quick view</p></div>
