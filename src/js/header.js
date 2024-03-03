@@ -3,7 +3,8 @@ const bodyWallpaper = document.querySelector('body');
 const header = document.querySelector('.header');
 const svgElement1 = document.querySelector('.header-logo-svg');
 const svgElement2 = document.querySelector('.shop-list-svg-basket');
-const links = document.querySelectorAll('.link');
+const links = document.querySelector('.header-nav');
+const home = document.querySelector('.home');
 const menu = document.querySelector('.header-menu');
 
 const isDarkTheme = localStorage.getItem('darkTheme');
@@ -53,17 +54,14 @@ function whiteWallpaper() {
     '<svg class="shop-list-svg-basket" width="14" height="18"><use href="./images/icons/symbol-defs.svg#icon-icon-basket"></use></svg>';
 }
 
-let activeLink = null;
+home.classList.add('header-selector');
 
-links.forEach(link => {
-  link.addEventListener('click', event => {
-    // event.preventDefault();
-
-    if (activeLink) {
-      activeLink.classList.remove('active');
-    }
-
-    link.classList.add('active');
-    activeLink = link;
+document.addEventListener('DOMContentLoaded', function () {
+  const links = document.querySelectorAll('.header-nav a');
+  links.forEach(link => {
+    link.addEventListener('click', function (event) {
+      links.forEach(l => l.classList.remove('header-selector'));
+      link.classList.add('header-selector');
+    });
   });
 });
