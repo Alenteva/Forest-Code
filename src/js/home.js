@@ -10,10 +10,10 @@ let number;
 
 
 function isWidthDevice() {
-    let widthWindow = window.innerWidth;
+    let widthWindow = window.innerWidth;    
 
     if(widthWindow <= 767) return number = 0;
-    else if(widthWindow <= 1279) return number = 2;
+    else if(widthWindow <= 1439) return number = 2;
     else return number = 4;      
 }
 
@@ -38,7 +38,7 @@ async function renderBooksMainPage(boo) {
                 <ul class="images_books">`;
 
         for (let j in boo[i].books) {
-            stringOne +=  `<li class="image_book">
+            stringOne +=  `<li class="image_book" data-category="${boo[i].books[j]._id}">
                                     <div class="div-animation">
                                         <img class="img-example" alt="Book title" src="${boo[i].books[j].book_image}"></img>
                                         <div class="box-quick-view"><p class="animation-paragraf">Quick view</p></div>
