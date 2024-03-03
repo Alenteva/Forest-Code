@@ -13,7 +13,7 @@ function isWidthDevice() {
     let widthWindow = window.innerWidth;
 
     if(widthWindow <= 767) return number = 0;
-    else if(widthWindow <= 1279) return number = 2;
+    else if(widthWindow <= 1439) return number = 2;
     else return number = 4;      
 }
 
