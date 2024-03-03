@@ -47,6 +47,12 @@
       <path d="M24.5 16.3333H3.5" stroke="#111111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
       <path d="M19.8333 21H3.5" stroke="#111111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
     </symbol>
+    <symbol id="icon-menu2" viewBox="0 0 28 28">
+      <path d="M19.8333 11.6667H3.5" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M24.5 7H3.5" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M24.5 16.3333H3.5" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M19.8333 21H3.5" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
     <symbol id="icon-close" viewBox="0 0 32 32">
       <path stroke-linejoin="round" stroke-linecap="round" stroke-width="5.333" d="M28.444 3.556 3.555 28.445m.001-24.889 24.889 24.889"/>
     </symbol>
