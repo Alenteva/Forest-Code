@@ -2,16 +2,6 @@ body {
   background-color: #f6f6f6;
 }
 
-/* for darck team */
-
-.darck {
-  color: #fff;
-  background-color: #202024;
-  border-color: #fff;
-}
-
-/* ================= */
-
 .header-nav,
 .header-user {
   display: none;
@@ -25,6 +15,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin: 0 auto;
 }
 
 .header-black {
@@ -43,11 +34,11 @@ body {
   display: flex;
   align-items: center;
   gap: 14px;
+  margin-left: 87px;
 }
 
 .header-menu {
   padding: 18px 0 18px 0;
-  margin: 0 auto;
 }
 
 /* === start switch styles === */
@@ -127,6 +118,7 @@ body {
   .header {
     background-color: #ffffff;
     height: 72px;
+    margin: 0 auto;
   }
 
   .header-logo {
@@ -146,19 +138,31 @@ body {
     background-color: #eac645;
     color: #111111;
     border-radius: 36px;
-    padding-right: 15px;
-    padding-left: 15px;
-    height: 34px;
+    padding: 8px 16px 8px 16px;
+    font-weight: 700;
+  }
+
+  /* #shopping-list:active,
+  #home:active  */
+  .link:active {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 8px 16px 8px 16px;
+    border-radius: 36px;
+    background: rgb(234, 198, 69);
+    color: rgb(17, 17, 17);
+    font-weight: 700;
   }
 
   .header-shop-nav {
-    width: 150px;
+    width: 145px;
   }
 
   .header-seting {
     display: flex;
     align-items: center;
-    margin-left: 101px;
     gap: 24px;
   }
 
@@ -180,10 +184,10 @@ body {
 @media screen and (min-width: 1280px) {
   .header {
     background-color: #ffffff;
-    /* width: 1440px; */
     height: 72px;
     display: flex;
     align-items: center;
+    margin: 0 auto;
   }
 
   .header-nav {
@@ -194,13 +198,13 @@ body {
   }
 
   .header-shop-nav {
-    width: 150px;
+    width: 145px;
   }
 
   .header-seting {
     display: flex;
     align-items: center;
-    margin-left: 746px;
     gap: 24px;
+    margin-left: 670px;
   }
 }
