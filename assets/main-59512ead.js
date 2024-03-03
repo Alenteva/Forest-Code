@@ -27,4 +27,4 @@ import{a as c,i as h}from"./vendor-43aad0d4.js";(function(){const o=document.cre
                                     <p class="author-book">${i.author}</p>
                                 </div>
                       </li>`}),l.insertAdjacentHTML("beforeend",o)}const _=document.querySelector(".add-remove-btn"),A=document.querySelector(".modal-btn"),g=document.querySelector(".backdrop");document.addEventListener("DOMContentLoaded",()=>{_.addEventListener("click",()=>{document.body.style.overflowY="hidden"}),A.addEventListener("click",()=>{document.body.style.overflowY="auto",g.classList.remove("is-open")}),g.clientHeight<762&&(g.style.height="762px",g.style.overflowY="scroll")});const f=document.querySelector(".scrollToTop");window.onscroll=()=>{window.scrollY>300?f.classList.remove("isHide"):window.scrollY<300&&f.classList.add("isHide"),f.onclick=()=>{window.scrollTo(0,0)}};
-//# sourceMappingURL=main-429140eb.js.map
+//# sourceMappingURL=main-59512ead.js.map
