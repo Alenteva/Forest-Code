@@ -1,0 +1,119 @@
+.supporters-container {
+  border-radius: 16px;
+  max-width: 335px;
+  max-height: 460px;
+  box-shadow: 0 10px 10px 0 rgba(245, 245, 247, 0.1);
+  background: radial-gradient(
+    189.32% 190.93% at 59.76% -23.42%,
+    rgb(79, 46, 232) 18.02733987569809%,
+    rgb(255, 255, 255) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  padding-top: 24px;
+  padding-bottom: 20px;
+  padding-left: 40px;
+  margin: auto;
+}
+
+.support-title-container {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.support-title {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.09091;
+  letter-spacing: -0.04em;
+  color: #fff;
+}
+
+.support-icon {
+  fill: #ffff;
+}
+
+.swiper-wraper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.support-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.support-number {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.04em;
+  color: #fff;
+}
+
+.support-btn {
+  cursor: pointer;
+  width: 32px;
+  min-height: 32px;
+  background-color: #fff;
+  border: none;
+  border-radius: 50px;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0;
+  transition: transform 0.5s ease-in-out;
+  display: flex;
+  transform: rotateX(0);
+  margin-right: 151.5px;
+}
+
+.support-btn--up {
+  transform: rotateX(180deg);
+}
+
+.support-btn.hiden {
+  display: none;
+}
+
+.swiper-initialized {
+  margin-bottom: 16px;
+}
+
+@media screen and (min-width: 768px) {
+  .supporters-container {
+    max-height: 474px;
+    padding-bottom: 14px;
+  }
+
+  .swiper-initialized {
+    margin-bottom: 32px;
+  }
+
+  .support-btn {
+    width: 38px;
+    min-height: 38px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .supporters-container {
+    max-height: 474px;
+    padding-bottom: 24px;
+  }
+
+  .swiper-initialized {
+    margin-bottom: 40px;
+  }
+
+  .support-btn {
+    width: 38px;
+    min-height: 38px;
+  }
+}
