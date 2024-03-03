@@ -128,11 +128,11 @@ body {
   .header-nav {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 40px;
     margin-left: 40px;
   }
 
-  .header-nav-a {
+  .header-selector {
     display: flex;
     align-items: center;
     background-color: #eac645;
@@ -157,7 +157,11 @@ body {
   }
 
   .header-shop-nav {
-    width: 145px;
+    width: 150px;
+  }
+
+  .shop-list-svg-basket {
+    margin-left: 8px;
   }
 
   .header-seting {
@@ -177,11 +181,19 @@ body {
     width: 184px;
     height: 48px;
     gap: 76px;
+    transition: background-color 0.9s ease-in-out;
+  }
+  .header-user:hover {
+    background: radial-gradient(
+      189.32% 190.93% at 59.76% -23.42%,
+      rgb(79, 46, 232) 20%,
+      rgb(255, 255, 255) 100%
+    );
   }
 }
 
 /*================ descktop ================ */
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1440px) {
   .header {
     background-color: #ffffff;
     height: 72px;
@@ -198,7 +210,11 @@ body {
   }
 
   .header-shop-nav {
-    width: 145px;
+    width: 150px;
+  }
+
+  .shop-list-svg-basket {
+    margin-left: 8px;
   }
 
   .header-seting {
