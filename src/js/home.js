@@ -90,17 +90,31 @@ async function updateBooksDisplay() {
     listOne.innerHTML = "";
     if(titleSelectedCategory.textContent === "Best Sellers Books") {
         await axios.get(`https://books-backend.p.goit.global/books/top-books`)
-            .then(response => renderBooksMainPage(response.data))
-            .catch(error => console.log(error.message));
+        .then(response => {
+            if(response.data.length === 0) {
+                throw new Error(`Sorry, books in the selected category were not found`);
+            }
+            renderBooksMainPage(response.data);
+        })
+        .catch(error => 
+            iziToast.error({
+                title: "Error",
+                message: error.message,
+            }));
     } 
     else {
         await axios.get(`https://books-backend.p.goit.global/books/category?category=${selectedCategory}`)
-                .then(response => renderBooks(response.data))
-                    .catch(error => 
-                        iziToast.error({
-                            title: "Error",
-                            message: error.message,
-                        }));
+        .then(response => {
+            if(response.data.length === 0) {
+                throw new Error(`Sorry, books in the selected category were not found`);
+            }
+            renderBooks(response.data);
+        })
+        .catch(error => 
+                iziToast.error({
+                    title: "Error",
+                    message: error.message,
+                }));
     }
 }
 updateBooksDisplay();
@@ -158,9 +172,13 @@ async function renderCategories(list) {
                         if(response.data.length === 0) {
                             throw new Error(`Sorry, books in the selected category were not found`);
                         }
-                        renderBooksMainPage(response.data)(response.data);
+                        renderBooksMainPage(response.data);
                     })
-                    .catch(error => console.log(error.message));
+                    .catch(error => 
+                        iziToast.error({
+                            title: "Error",
+                            message: error.message,
+                        }));
             }
         });
     });
@@ -176,7 +194,11 @@ axios.get(`https://books-backend.p.goit.global/books/category-list`)
     .then(response => {
         renderCategories(response.data);    
     })
-    .catch(error => console.log(error.message));
+    .catch(error => 
+        iziToast.error({
+            title: "Error",
+            message: error.message,
+        }));
     
 //////////////list categories//////////////
 
