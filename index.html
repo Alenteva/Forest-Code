@@ -11,8 +11,8 @@
     />
     
     <script type="module" crossorigin src="/Forest-Code/assets/vendor-43aad0d4.js"></script>
-    <script type="module" crossorigin src="/Forest-Code/assets/main-a99bca62.js"></script>
-    <link rel="stylesheet" href="/Forest-Code/assets/main-e27042e3.css">
+    <script type="module" crossorigin src="/Forest-Code/assets/main-24fa51c0.js"></script>
+    <link rel="stylesheet" href="/Forest-Code/assets/main-12a6cd28.css">
     <link rel="stylesheet" href="/Forest-Code/assets/vendor-a51daae5.css">
   </head>
   <body>
@@ -97,13 +97,15 @@
           <use href="/Forest-Code/assets/symbol-defs-8d194f31.svg#icon-close"></use>
         </svg>
       </button>
-      <div class="content">
+      <div class="modal-container">
+        <div class="container-img">
         <img
-          src="/Forest-Code/assets/Rectangle 13-293cf280.png"
+          src="/Forest-Code/assets/Rectangle-13-293cf280.png"
           alt="content-image"
           class="content-image"
         />
       </div>
+      <div class="content">
       <h1 class="content-title">HELLO BEAUTIFUL</h1>
       <p class="content-descr">Ann Napolitano</p>
       <p class="modal-descr">
@@ -111,7 +113,8 @@
         past resurfaces as he gets to the know the family of his college
         sweetheart.
       </p>
-      <div class="links">
+      
+    <div class="links">
         <a href="" target="_blank" class="link-app"
           ><img src="data:image/png;base64,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" alt="amazon"
         /></a>
@@ -119,6 +122,9 @@
           ><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAgCAMAAACrZuH4AAACbVBMVEVHcEz5cBj9nQT1iwr/nQT7cBj/dBZHcExHcEz/owD1fhT7chj/nQT9hw7/lQr9kQr7chjrdhT5cBj1fgr3dBb9jQz5cBr7cBjnZhr/nwT9kwj/bCT/VCr9ehL9lQj9iQ79lwj7fBL7chj/nwT7gRD/kwD/mwj/ehb7hQ77bhj7dBj9mwT/gSD/nQT9nQT/mwb7dhb7fhL7ehT/mwT/kQr/mQb7gxD/iwr/qwD/nwDzlQz/jwD9lwb/lwb/mQbrnQD/lQD/lQz7dBj7chj7dhbjjwD9mwb5dBj7dhb7dBj/eAz5chj/cBzzeAz7chj5dBj5cBj/dhb7eBT5dhb9dhbVfgD/fgD5dhb9mQb9eBTjcBz9kQj9iwz/mQb/nQL9nQL9lwj/nQb/mwb9mQj/mQb9iw7/mwb///////37dBb9mQb9lwj7eBb7dhb/mwb7ehT7chj/nQT7fBT9kQr7gRL9lQj9iQ79jwz9kwj//fn9hRD9jQz9y5n9hxD/+/f9yZn7gx79iwz//f37gxD7fBL9lQr7eBT9zZf9lw77fhL7gxz/+fX/59X7ehj9zZn//fv/1Z3/9+37fBb9iw7/8+v/0Zf/+fP7fhr7fBr9hw77gxL9nSD9lwz/+fH7gyD/5cP/w3b/mwT7l0T9kQz7gRT9y6P/793/z5P9mxj7gRz9y6X/7+H7hSD9mQ7/v3D7iyD9t1j7hyD7iSD9kR77fB79jx79nyL7gyL9mSD7eBr7dBT7gSL9jQ7/v3L9jSD9nyT9tVj9lxj9yZv9x5v/z5f9y5f/8eP/z5n/6dH9z5n/69H/8eX9x5n9w5P9wZErB8q2AAAAZ3RSTlMAcHAY/f0KAAAKGPv7lRiVRgxuGCCVVmgK7ZMGBpONlf2V7UaVBiAWlTT5aAivbvn9lY00FiyVGAgIEghaWlAMDBLNzekIULXrtRKvCBKvUFAseFpaBgYs63gIlZXpVFR4zc14tZWzvN9hfQAAAiNJREFUeAGN1NlPE0EcwHEVYiLKTbhvCIRytNxBvEWN933XI3jsWmtqtku73dqFrq5UgSywIGcLQsshRqPxFhUfJDw0/E0uszOztOxDvy/99Tefhz7MdFPkXdwW2qXQ4+aS2lvlVVvUqspv1pY0q2BfUWXGjvAyKov2ItC0p1Uf/Tq8aH3r4SYo6u/rTVrp79ZDseuG6aFWpiu7FXDodn6bpmjLv6P82J25AsOMe75M9g4uzQmMMLc02Dv5xzPOMELufiDqMhmG8czOeDmub2JMGJvo4zjvzKxH3mbWARF3fdpqfceJJEnyjpW/Kw5enkTul9U6HR+niHi73d7Jk8Ra5Df4yXfKWygajYtOJxLEZwIJp3PR2AhElFFyu7H4jYXklu5FKSJPskn/kHivCpuUB0Wsa8SGxUcknthGXLFYsK52JD5gwbJIJDewT1ks3iLRzrJsQzIQMcWj9CgWPizkbXEMFH6aDvIgkvgqH4KCNO1Hotr/wh8UHQMLy16R+EmIr5YXBhxiUN5WQ1FAPaNWu6c6Xnb4Al2fugI+eZrqXpW3BYoozbFQ1Hw/tdZQ4PubITD1z1OUJacUiJM1ZguqZ/jHcA/+Zq45BsS1cwaz2vN1s+HqCeWSnW8xPNLK0HIB3tPLR3QPtNIdPQtFxZmDuscb0x04XYEeTGLC8cLt4RWeSkhUH11WSllqWtJmtaS01LKUrNCnm52+dX3p2ZH/KfwHTIYyFv6WmJcAAAAASUVORK5CYII=" alt="book"
         /></a>
       </div>
+    </div> 
+    </div>
+   
       <button type="button" class="add-remove-btn">add to shopping list</button>
       <p class="information visually-hidden">
         Сongratulations! You have added the book to the shopping list. To
