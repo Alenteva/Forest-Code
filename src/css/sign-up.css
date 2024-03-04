@@ -17,11 +17,11 @@
   visibility: hidden;
 }
 
-/* .is-open {
+.is-open {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
-} *
+} 
 
 html.dark .auth__modal {
   background-color: var(--main-bg-cl-dark-theme);
@@ -345,4 +345,4 @@ html.dark .form__icon {
     height: 28px;
     right: 30px;
   }
-} 
+}  */
