@@ -1,4 +1,18 @@
-/* .auth__modal {
+.Form-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #4f2ee8;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 9999;
+}
+
+.auth__modal {
   margin: auto;
   max-width: 335px;
   background-color: #202024;
@@ -13,39 +27,39 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
-  opacity: 0;
-  visibility: hidden;
+  /* opacity: 0;
+  visibility: hidden; */
 }
 
 .is-open {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
-} 
+}
 
 html.dark .auth__modal {
   background-color: var(--main-bg-cl-dark-theme);
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1440px) {
   .auth__modal {
     max-width: 579px;
     padding: 80px 40px 40px;
   }
 }
-
+/* 
 .auth__backdrop {
   position: fixed;
   width: 100%;
   height: 100%;
-   background-color: #4f2ee8; 
+  background-color: #4f2ee8;
   top: 0;
   left: 0;
   opacity: 0;
   visibility: hidden;
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
     visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
+} */
 
 .auth__backdrop.is-hiddenModal {
   visibility: hidden;
@@ -75,7 +89,7 @@ html.dark .auth__modal {
   right: 14px;
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1440px) {
   .auth__modal-close {
     width: 28px;
     height: 28px;
@@ -223,7 +237,7 @@ html.dark .form__btn {
   background-color: #f6f6f6;
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1440px) {
   .form__btn {
     width: 499px;
     height: 64px;
@@ -290,7 +304,7 @@ html.dark .form__btn-out:hover {
   color: #eac645;
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1440px) {
   .form__btn-up,
   .form__btn-in,
   .form__btn-out {
@@ -339,10 +353,10 @@ html.dark .form__icon {
   fill: #fff;
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1440px) {
   .form__icon {
     width: 28px;
     height: 28px;
     right: 30px;
   }
-}  */
+}
