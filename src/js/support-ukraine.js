@@ -76,7 +76,6 @@
 //   },
 // };
 
-// const swiper = new Swiper('.swiper-initialized', swiperOptions);
 // const swiper = new Swiper('.swiper', {
 //   direction: 'vertical',
 //   navigation: {
