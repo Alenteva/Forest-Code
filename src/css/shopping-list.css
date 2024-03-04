@@ -19,6 +19,19 @@ h2 {
   color: black;
 }
 
+#shopping-list.active,
+#home.active {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 8px 16px 8px 16px;
+  border-radius: 36px;
+  background: rgb(234, 198, 69);
+  color: rgb(17, 17, 17);
+  font-weight: 700;
+}
+
 .container {
   outline: 2px dashed #f44336;
 }
@@ -87,7 +100,7 @@ h2 {
   width: 100%;
   height: 100%;
 }
-.shoplist-shotcontens {
+.shoplist-description {
   height: 68px;
   margin-bottom: 22px;
   overflow: hidden; /* Ця властивість приховує текст, що виходить за рамки */
@@ -153,18 +166,18 @@ h2 {
   margin: 0 auto; /* Збільшує відступи по обох боках для розміщення по центру */
 }
 
-@media screen and (min-width: 375px) and (max-width: 767px) {
+@media screen and (min-width: 375px) {
   .container {
-    max-width: 320px;
+    min-width: 375px;
     padding: 0 20px;
     margin: 0 auto;
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1279px) {
+@media screen and (max-width: 768px) {
   .container {
     padding: 0 32px;
-    max-width: 768px;
+    min-width: 768px;
     margin: 0 auto;
   }
   h1 {
@@ -211,10 +224,10 @@ h2 {
   }
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1440px) {
   .container {
-    padding: 0 32px;
-    max-width: 1280px;
+    padding: 0 24px;
+    min-width: 1440px;
     margin: 0 auto;
   }
 

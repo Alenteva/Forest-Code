@@ -59,7 +59,6 @@ function whiteWallpaper() {
   svgElement2.innerHTML =
     '<svg class="shop-list-svg-basket" width="14" height="18"><use href="./images/icons/symbol-defs.svg#icon-icon-basket"></use></svg>';
 }
-
 document.addEventListener('DOMContentLoaded', function () {
   const homeLink = document.querySelector('.home');
   const shopLink = document.querySelector('.shop-list');
