@@ -10,10 +10,10 @@ let number;
 
 
 function isWidthDevice() {
-    let widthWindow = window.innerWidth;
+    let widthWindow = window.innerWidth;    
 
     if(widthWindow <= 767) return number = 0;
-    else if(widthWindow <= 1279) return number = 2;
+    else if(widthWindow <= 1439) return number = 2;
     else return number = 4;      
 }
 
@@ -38,7 +38,7 @@ async function renderBooksMainPage(boo) {
                 <ul class="images_books">`;
 
         for (let j in boo[i].books) {
-            stringOne +=  `<li class="image_book">
+            stringOne +=  `<li class="image_book" data-category="${boo[i].books[j]._id}">
                                     <div class="div-animation">
                                         <img class="img-example" alt="Book title" src="${boo[i].books[j].book_image}"></img>
                                         <div class="box-quick-view"><p class="animation-paragraf">Quick view</p></div>
@@ -90,17 +90,31 @@ async function updateBooksDisplay() {
     listOne.innerHTML = "";
     if(titleSelectedCategory.textContent === "Best Sellers Books") {
         await axios.get(`https://books-backend.p.goit.global/books/top-books`)
-            .then(response => renderBooksMainPage(response.data))
-            .catch(error => console.log(error.message));
+        .then(response => {
+            if(response.data.length === 0) {
+                throw new Error(`Sorry, books in the selected category were not found`);
+            }
+            renderBooksMainPage(response.data);
+        })
+        .catch(error => 
+            iziToast.error({
+                title: "Error",
+                message: error.message,
+            }));
     } 
     else {
         await axios.get(`https://books-backend.p.goit.global/books/category?category=${selectedCategory}`)
-                .then(response => renderBooks(response.data))
-                    .catch(error => 
-                        iziToast.error({
-                            title: "Error",
-                            message: error.message,
-                        }));
+        .then(response => {
+            if(response.data.length === 0) {
+                throw new Error(`Sorry, books in the selected category were not found`);
+            }
+            renderBooks(response.data);
+        })
+        .catch(error => 
+                iziToast.error({
+                    title: "Error",
+                    message: error.message,
+                }));
     }
 }
 updateBooksDisplay();
@@ -158,9 +172,13 @@ async function renderCategories(list) {
                         if(response.data.length === 0) {
                             throw new Error(`Sorry, books in the selected category were not found`);
                         }
-                        renderBooksMainPage(response.data)(response.data);
+                        renderBooksMainPage(response.data);
                     })
-                    .catch(error => console.log(error.message));
+                    .catch(error => 
+                        iziToast.error({
+                            title: "Error",
+                            message: error.message,
+                        }));
             }
         });
     });
@@ -176,7 +194,11 @@ axios.get(`https://books-backend.p.goit.global/books/category-list`)
     .then(response => {
         renderCategories(response.data);    
     })
-    .catch(error => console.log(error.message));
+    .catch(error => 
+        iziToast.error({
+            title: "Error",
+            message: error.message,
+        }));
     
 //////////////list categories//////////////
 
@@ -187,7 +209,7 @@ async function renderBooks(books) {
     let booksCard = ""; 
     listOne.innerHTML = "";
     books.forEach(book => {
-        booksCard += `<li class="book">
+        booksCard += `<li class="book" data-category="${book._id}">
                         <div class="div-animation">
                             <img class="img-example" alt="Book title" src="${book.book_image}"></img>
                             <div class="box-quick-view"><p class="animation-paragraf">Quick view</p></div>

@@ -1,8 +1,7 @@
-@media screen and (min-width: 375px) {
   .scrollToTop {
-    position: sticky;
-    bottom: 10%;
-    left: 95%;
+    position: fixed;
+    bottom: 5%;
+    left: 50%;
   }
   #scrollToTopButton {
     display: flex;
@@ -13,19 +12,57 @@
     background: #4f2ee8;
     border-radius: 50%;
     border: 4px solid;
-    border-color: rgb(232, 230, 228);
-  }
+    border-color: rgb(213, 212, 210);
+    }
   .icon {
     width: 10.85px;
     height: 18.95px;
     align-items: center;
     fill: #ffffff;
   }
-}
+
 .isShow {
   opacity: 1;
   transition: 0.5s;
 }
 .isHide {
   opacity: 0;
+}
+
+ /* #scrollToTopButton:hover {
+   background: rgb(213, 212, 210);
+   border-color: #4f2ee8;
+ }
+
+ .icon:hover {
+   fill: #111;
+ } */
+
+.scrollToTop-Name {
+  position: fixed;
+  bottom: 1%;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: #9a9a9a;
+}
+
+.scrollToTop-Name:hover {
+  color: #111;
+  transform: scale(1.2);
+}
+
+ @media screen and (min-width: 768px) {
+
+ }
+
+
+ @media screen and (min-width: 1280px) {
+.scrollToTop {
+    position: fixed;
+    bottom: 5%;
+    left: 10%;
+ }
 }
