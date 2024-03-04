@@ -1,5 +1,5 @@
-import Swiper from 'swiper';
-import 'swiper/css';
+// import Swiper from 'swiper';
+// import 'swiper/css';
 
 const supporters = [
   {
@@ -77,28 +77,28 @@ const supporters = [
 // };
 
 // const swiper = new Swiper('.swiper-initialized', swiperOptions);
-const swiper = new Swiper('.swiper', {
-  direction: 'vertical',
-  navigation: {
-    nextEl: '.support-btn',
-  },
-  rewind: true,
-  allowTouchMove: false,
-  spaceBetween: 20,
-  slidesPerView: 'auto',
-  slidesPerGroup: 4,
-  breakpoints: {
-    768: {
-      slidesPerGroup: 6,
-    },
-  },
-});
+// const swiper = new Swiper('.swiper', {
+//   direction: 'vertical',
+//   navigation: {
+//     nextEl: '.support-btn',
+//   },
+//   rewind: true,
+//   allowTouchMove: false,
+//   spaceBetween: 20,
+//   slidesPerView: 'auto',
+//   slidesPerGroup: 4,
+//   breakpoints: {
+//     768: {
+//       slidesPerGroup: 6,
+//     },
+//   },
+// });
 
-const refs = {
-  nextBtn: document.querySelector('.support-btn'),
-  list: document.querySelector('.swiper-wrapper'),
-  btn: document.querySelector('support-btn-svg'),
-};
+// const refs = {
+//   nextBtn: document.querySelector('.support-btn'),
+//   list: document.querySelector('.swiper-wrapper'),
+//   btn: document.querySelector('support-btn-svg'),
+// };
 
 const markup = supporters
   .map(
