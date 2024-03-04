@@ -34,11 +34,25 @@ body {
   display: flex;
   align-items: center;
   gap: 14px;
-  margin-left: 87px;
 }
 
 .header-menu {
   padding: 18px 0 18px 0;
+}
+
+.active {
+  border-radius: 36px;
+  padding: 8px 10px;
+  background-color: #eac645;
+  color: #111111;
+  font-weight: 700;
+  transition: all 1s ease;
+}
+
+.shop-list {
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 8px 0;
 }
 
 /* === start switch styles === */
@@ -119,6 +133,7 @@ body {
     background-color: #ffffff;
     height: 72px;
     margin: 0 auto;
+    justify-content: left;
   }
 
   .header-logo {
@@ -132,29 +147,6 @@ body {
     margin-left: 40px;
   }
 
-  /* .header-selector {
-    display: flex;
-    align-items: center;
-    background-color: #eac645;
-    color: #111111;
-    border-radius: 36px;
-    padding: 8px 16px 8px 16px;
-    font-weight: 700;
-  } */
-
-  /* #shopping-list:active,
-  #home:active .link:active {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding: 8px 16px 8px 16px;
-    border-radius: 36px;
-    background: rgb(234, 198, 69);
-    color: rgb(17, 17, 17);
-    font-weight: 700;
-  } */
-
   .header-shop-nav {
     width: 150px;
   }
@@ -167,6 +159,7 @@ body {
     display: flex;
     align-items: center;
     gap: 24px;
+    margin-left: 60px;
   }
 
   .header-user {
@@ -199,13 +192,13 @@ body {
     display: flex;
     align-items: center;
     margin: 0 auto;
+    justify-content: left;
   }
 
   .header-nav {
     display: flex;
     align-items: center;
     gap: 24px;
-    margin-left: 76px;
   }
 
   .header-shop-nav {
@@ -220,6 +213,6 @@ body {
     display: flex;
     align-items: center;
     gap: 24px;
-    margin-left: 670px;
+    margin-left: 765px;
   }
 }
