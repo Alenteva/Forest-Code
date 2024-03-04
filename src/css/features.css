@@ -13,8 +13,7 @@
     border-radius: 50%;
     border: 4px solid;
     border-color: rgb(213, 212, 210);
-    /* fill: rgba(79, 46, 232, 0.29); */
-  }
+    }
   .icon {
     width: 10.85px;
     height: 18.95px;
@@ -29,7 +28,6 @@
 .isHide {
   opacity: 0;
 }
-
 
  /* #scrollToTopButton:hover {
    background: rgb(213, 212, 210);
