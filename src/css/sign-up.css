@@ -15,11 +15,11 @@
   transform: translate(-50%, -50%) scale(1);
 }
 
-.is-open {
+/* .is-open {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
-}
+} */
 
 html.dark .auth__modal {
   background-color: var(--main-bg-cl-dark-theme);
