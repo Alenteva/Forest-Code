@@ -19,10 +19,29 @@ body {
     flex-direction: column;
     gap: 15px;
     overflow-y: scroll; 
-    overflow-x: hidden; 
-    margin: 40px 0;
+    overflow-x: hidden;
     height: 228px; 
 }
+/*support*/ 
+.container-for-support {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.supporters-container {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 24px 0;
+}
+.swiper-wraper {
+  height: 292px;
+  overflow: hidden;
+}
+/*support*/
+
 /*styles for scroll */
 
 .list_categories::-webkit-scrollbar {
@@ -223,7 +242,19 @@ body {
  @media (min-width: 768px) {
   .list_categories {
     width: 337px;
+    height: 100%;
+  }
+  .container-for-support {
+    flex-direction: row;
+    gap: 32px;
     height: 472px;
+  }
+  .supporters-container {
+    height: 100%;
+    width: 335px;
+  }
+  .swiper-initialized {
+    margin-bottom: 24px;
   }
   .container-home {
     max-width: 768px;
@@ -268,6 +299,20 @@ body {
         padding: 0 24px;
         max-width: 1440px;
       }
+      .container-for-support {
+        flex-direction: column;
+        gap: 86px;
+        width: 356px;
+        height: auto;
+      }
+      .supporters-container {
+        min-width: 100%;
+        padding: 24px 0;
+        height: 474px;
+      }
+      .swiper-wraper {
+        height: 292px;
+      }
     .images_books {
         flex-direction: row;
     }
@@ -281,9 +326,11 @@ body {
         margin-left: 40px;
     }
     .list_categories {
-      width: 356px;
+      width: 100%;
       height: 472px;
       margin: 0;
+      gap: 32px;
+      min-width: 356px;
     }
     .main-box {
         display: flex;
@@ -298,10 +345,6 @@ body {
         border-radius: 8px;
         width: 180px;
         height: 256px;
-    }
-    .list_categories {
-        gap: 32px;
-        min-width: 356px;
     }
     .main-title {
         font-weight: 700;
