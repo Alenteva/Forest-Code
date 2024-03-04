@@ -73,10 +73,10 @@ body {
     margin: 0 auto;
   }
 }
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1440px) {
   .container {
     padding: 0 24px;
-    min-width: 1280px;
+    min-width: 1440px;
     margin: 0 auto;
   }
 }

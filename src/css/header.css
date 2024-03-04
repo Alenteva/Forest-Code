@@ -2,16 +2,6 @@ body {
   background-color: #f6f6f6;
 }
 
-/* for darck team */
-
-.darck {
-  color: #fff;
-  background-color: #202024;
-  border-color: #fff;
-}
-
-/* ================= */
-
 .header-nav,
 .header-user {
   display: none;
@@ -25,6 +15,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin: 0 auto;
 }
 
 .header-black {
@@ -43,11 +34,11 @@ body {
   display: flex;
   align-items: center;
   gap: 14px;
+  margin-left: 87px;
 }
 
 .header-menu {
   padding: 18px 0 18px 0;
-  margin: 0 auto;
 }
 
 /* === start switch styles === */
@@ -127,6 +118,7 @@ body {
   .header {
     background-color: #ffffff;
     height: 72px;
+    margin: 0 auto;
   }
 
   .header-logo {
@@ -136,29 +128,21 @@ body {
   .header-nav {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 40px;
     margin-left: 40px;
-  }
-
-  .header-nav-a {
-    display: flex;
-    align-items: center;
-    background-color: #eac645;
-    color: #111111;
-    border-radius: 36px;
-    padding-right: 15px;
-    padding-left: 15px;
-    height: 34px;
   }
 
   .header-shop-nav {
     width: 150px;
   }
 
+  .shop-list-svg-basket {
+    margin-left: 8px;
+  }
+
   .header-seting {
     display: flex;
     align-items: center;
-    margin-left: 101px;
     gap: 24px;
   }
 
@@ -173,17 +157,25 @@ body {
     width: 184px;
     height: 48px;
     gap: 76px;
+    transition: background-color 0.9s ease-in-out;
+  }
+  .header-user:hover {
+    background: radial-gradient(
+      189.32% 190.93% at 59.76% -23.42%,
+      rgb(79, 46, 232) 20%,
+      rgb(255, 255, 255) 100%
+    );
   }
 }
 
 /*================ descktop ================ */
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1440px) {
   .header {
     background-color: #ffffff;
-    /* width: 1440px; */
     height: 72px;
     display: flex;
     align-items: center;
+    margin: 0 auto;
   }
 
   .header-nav {
@@ -197,10 +189,14 @@ body {
     width: 150px;
   }
 
+  .shop-list-svg-basket {
+    margin-left: 8px;
+  }
+
   .header-seting {
     display: flex;
     align-items: center;
-    margin-left: 746px;
     gap: 24px;
+    margin-left: 670px;
   }
 }

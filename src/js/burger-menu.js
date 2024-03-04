@@ -8,12 +8,12 @@ export function initBurgerMenu() {
     if (burgerMenu.classList.contains('burger-menu-show')) {
       burgerToggle.innerHTML = `
         <svg width="18" height="18" stroke="#000">
-          <use href="/images/icons/symbol-defs.svg#icon-close"></use>
+          <use href="../images/icons/symbol-defs.svg#icon-close"></use>
         </svg>`;
     } else {
       burgerToggle.innerHTML = `
         <svg width="28" height="28">
-          <use href="/images/icons/symbol-defs.svg#icon-menu"></use>
+          <use href="../images/icons/symbol-defs.svg#icon-menu"></use>
         </svg>`;
     }
   });
@@ -28,9 +28,14 @@ const shoppingList = document.getElementById('shopping-list');
 
 home.classList.add('active');
 
-shoppingList.addEventListener('click', () => {
-  home.classList.remove('active');
-  shoppingList.classList.add('active');
-});
+const handleClick = event => {
+  if (event.target === home) {
+    home.classList.add('active');
+    shoppingList.classList.remove('active');
+  } else if (event.target === shoppingList) {
+    home.classList.remove('active');
+    shoppingList.classList.add('active');
+  }
+};
 
 
