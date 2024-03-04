@@ -1,5 +1,5 @@
 import Swiper from 'swiper';
-import 'swiper/swiper.css';
+import 'swiper/css';
 
 const supporters = [
   {
@@ -25,20 +25,20 @@ const supporters = [
     url: 'https://www.razomforukraine.org/',
     img: '../images/blocks-img/razom.png',
     imgRetinaTwo: '../images/blocks-img/razom-2x.png',
-    },
-    {
+  },
+  {
     title: 'Action against hunger',
     url: 'https://www.actionagainsthunger.org/location/europe/ukraine/',
     img: '../images/blocks-img/action-against-hunger.png',
     imgRetinaTwo: '../images/blocks-img/action-against-hunger-2x.png',
-    },
-    {
+  },
+  {
     title: 'Serhiy Prytula Charity Foundation',
     url: 'https://prytulafoundation.org/en',
     img: '../images/blocks-img/sergiy-prytula.png',
     imgRetinaTwo: '../images/blocks-img/sergiy-prytula-2x.png',
-    },
-    {
+  },
+  {
     title: 'Medicins Sans Frontieres',
     url: 'https://www.msf.org/ukraine',
     img: '../images/blocks-img/sans-frontieres.png',
@@ -50,7 +50,7 @@ const supporters = [
     img: '../images/blocks-img/world-vision.png',
     imgRetinaTwo: '../images/blocks-img/world-vision-2x.png',
   },
-  
+
   {
     title: 'UNITED24',
     url: 'https://u24.gov.ua/uk',
@@ -59,7 +59,25 @@ const supporters = [
   },
 ];
 
-const swiperOptions = {
+// const swiperOptions = {
+//   direction: 'vertical',
+//   navigation: {
+//     nextEl: '.support-btn',
+//   },
+//   rewind: true,
+//   allowTouchMove: false,
+//   spaceBetween: 20,
+//   slidesPerView: 'auto',
+//   slidesPerGroup: 4,
+//   breakpoints: {
+//     768: {
+//       slidesPerGroup: 6,
+//     },
+//   },
+// };
+
+// const swiper = new Swiper('.swiper-initialized', swiperOptions);
+const swiper = new Swiper('.swiper', {
   direction: 'vertical',
   navigation: {
     nextEl: '.support-btn',
@@ -74,9 +92,7 @@ const swiperOptions = {
       slidesPerGroup: 6,
     },
   },
-};
-
-const swiper = new Swiper('.swiper-initialized', swiperOptions);
+});
 
 const refs = {
   nextBtn: document.querySelector('.support-btn'),
@@ -99,9 +115,9 @@ const markup = supporters
       </a>
       </li>`
   )
-    .join('');
-  
-    refs.list.innerHTML = markup;
+  .join('');
+
+refs.list.innerHTML = markup;
 
 toggleBtn();
 
@@ -130,5 +146,3 @@ function toggleBtn() {
 function rotateBtn() {
   refs.btn.classList.toggle('support-btn--up');
 }
-
-
