@@ -16,18 +16,18 @@ const congratMessage = document.querySelector(".hidden-information");
 btn.addEventListener("click", addOrRemoveBook);
 
 
-// axios.defaults.timeout = 4000;
-// export class BooksAPI {
+axios.defaults.timeout = 4000;
+export class BooksAPI {
 
-//     #BASE_URL = 'https://books-backend.p.goit.global/books/';
+    #BASE_URL = 'https://books-backend.p.goit.global/books/';
 
-//     getTopBooks = () => axios.get(`${this.#BASE_URL}top-books`);
-//     getCategoryList = () => axios.get(`${this.#BASE_URL}category-list`);
-//     getOneCategory = (category) => axios.get(`${this.#BASE_URL}category?category=${category}`);
-//     getBookByID = (id) => axios.get(`${this.#BASE_URL}${id}`);
-// };
+    getTopBooks = () => axios.get(`${this.#BASE_URL}top-books`);
+    getCategoryList = () => axios.get(`${this.#BASE_URL}category-list`);
+    getOneCategory = (category) => axios.get(`${this.#BASE_URL}category?category=${category}`);
+    getBookByID = (id) => axios.get(`${this.#BASE_URL}${id}`);
+};
 
-// const bookApi = new BooksAPI();
+const bookApi = new BooksAPI();
 
 
 
