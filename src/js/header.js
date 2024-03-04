@@ -6,6 +6,7 @@ const svgElement2 = document.querySelector('.shop-list-svg-basket');
 const links = document.querySelector('.header-nav');
 const home = document.querySelector('.home');
 const menu = document.querySelector('.header-menu');
+const shopList = document.querySelector('.shop-list');
 
 const isDarkTheme = localStorage.getItem('darkTheme');
 
@@ -37,8 +38,13 @@ function darckWallpaper() {
     '<svg width="28" height="28"><use href="./images/icons/symbol-defs.svg#icon-menu2"></use></svg>';
   svgElement1.innerHTML =
     '<svg class="header-logo-svg" width="109" height="28"><use href="./images/icons/symbol-defs.svg#icon-logo2"></use></svg>';
-  svgElement2.innerHTML =
-    '<svg class="shop-list-svg-basket" width="14" height="18"><use href="./images/icons/symbol-defs.svg#icon-icon-basket2"></use></svg>';
+  if (shopList.classList.contains('active')) {
+    svgElement2.innerHTML =
+      '<svg class="shop-list-svg-basket" width="14" height="18"><use href="./images/icons/symbol-defs.svg#icon-icon-basket"></use></svg>';
+  } else {
+    svgElement2.innerHTML =
+      '<svg class="shop-list-svg-basket" width="14" height="18"><use href="./images/icons/symbol-defs.svg#icon-icon-basket2"></use></svg>';
+  }
 }
 
 function whiteWallpaper() {
@@ -54,14 +60,23 @@ function whiteWallpaper() {
     '<svg class="shop-list-svg-basket" width="14" height="18"><use href="./images/icons/symbol-defs.svg#icon-icon-basket"></use></svg>';
 }
 
-home.classList.add('header-selector');
-
 document.addEventListener('DOMContentLoaded', function () {
-  const links = document.querySelectorAll('.header-nav a');
-  links.forEach(link => {
-    link.addEventListener('click', function (event) {
-      links.forEach(l => l.classList.remove('header-selector'));
-      link.classList.add('header-selector');
-    });
+  const homeLink = document.querySelector('.home');
+  const shopLink = document.querySelector('.shop-list');
+  homeLink.addEventListener('click', function () {
+    homeLink.classList.add('active');
+    shopLink.classList.remove('active');
+    localStorage.setItem('activeButton', 'home');
   });
+  shopLink.addEventListener('click', function () {
+    shopLink.classList.add('active');
+    homeLink.classList.remove('active');
+    localStorage.setItem('activeButton', 'shop');
+  });
+  const activeButton = localStorage.getItem('activeButton'); // Перевірка localStorage при завантаженні сторінки
+  if (activeButton === 'home') {
+    homeLink.classList.add('active');
+  } else if (activeButton === 'shop') {
+    shopLink.classList.add('active');
+  }
 });
