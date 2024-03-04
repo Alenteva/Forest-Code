@@ -54,14 +54,31 @@ function whiteWallpaper() {
     '<svg class="shop-list-svg-basket" width="14" height="18"><use href="./images/icons/symbol-defs.svg#icon-icon-basket"></use></svg>';
 }
 
-home.classList.add('header-selector');
+// home.classList.add('header-selector');
 
-document.addEventListener('DOMContentLoaded', function () {
-  const links = document.querySelectorAll('.header-nav a');
-  links.forEach(link => {
-    link.addEventListener('click', function (event) {
-      links.forEach(l => l.classList.remove('header-selector'));
-      link.classList.add('header-selector');
-    });
-  });
-});
+// document.addEventListener('DOMContentLoaded', function () {
+//   const links = document.querySelectorAll('.header-nav a');
+//   links.forEach(link => {
+//     link.addEventListener('click', function (event) {
+//       links.forEach(l => l.classList.remove('header-selector'));
+//       link.classList.add('header-selector');
+//     });
+//   });
+// });
+
+// document.addEventListener('DOMContentLoaded', function () {
+//   const homeLink = document.querySelector('.home');
+//   const shopLink = document.querySelector('.shopping-list');
+
+//   homeLink.addEventListener('click', function (event) {
+//     // event.preventDefault();
+//     homeLink.classList.add('active');
+//     shopLink.classList.remove('active');
+//   });
+
+//   shopLink.addEventListener('click', function (event) {
+//     // event.preventDefault();
+//     shopLink.classList.add('active');
+//     homeLink.classList.remove('active');
+//   });
+// });
