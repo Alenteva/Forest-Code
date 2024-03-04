@@ -67,4 +67,4 @@ import{a as l,i as d,S as J}from"./vendor-08afd76d.js";(function(){const t=docum
     <img src="${"images/shopping-list/"+"books-tab-2x.png"}" alt="books" class="shoplist-error-books">
 </div>
 </div>`,o=document.querySelector(".shoplist");o.innerHTML=n;const i=H();function r(c){return c.map(e).join("")}const x=document.getElementById("bookListContainer");i.length===0?x.innerHTML=n:O(i);function H(){const c=localStorage.getItem("books");return c?JSON.parse(c):[]}const I=document.querySelector(".shoplist-title");function O(c){const m=r(c);I.insertAdjacentHTML("beforeend",m),lightbox.refresh()}});shoppingListContainer.addEventListener("click",function(e){const t=e.target;if(e.target.parentNode.nodeName==="BUTTON"||e.target.nodeName==="BUTTON"){const s=t.closest(".container-block"),n=s.getAttribute("#id");let o=[];const i=infoItemLocalStorage(TASKS_KEY);for(const r of i)r.constID!==n&&o.push(r);addItemLocalStorage(TASKS_KEY,o),s.remove(),shoppingListContainer.querySelector(".container-block")||(shoppingListContainer.innerHTML=emptyMessage)}});addToShoppingList();
-//# sourceMappingURL=main-331e6c89.js.map
+//# sourceMappingURL=main-f65e3913.js.map
