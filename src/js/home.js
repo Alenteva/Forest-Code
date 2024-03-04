@@ -1,10 +1,11 @@
 import iziToast from "izitoast";
-import axios from 'axios';
+import axios from "axios";
+import SimpleLightbox from "simplelightbox";
 
 const listOne = document.querySelector(".list-one");
 const listCategories = document.querySelector(".list_categories");
 const titleSelectedCategory = document.querySelector(".main-title");
-const buttonHome = document.querySelector(".home");
+let bigImage;
 let selectedCategory;
 let number;
 
@@ -17,12 +18,17 @@ function isWidthDevice() {
     else return number = 4;      
 }
 
+
 function changeColorTitle() {
     const arrayTitle = titleSelectedCategory.textContent.split(' ');
                 const lastWord = arrayTitle[arrayTitle.length-1];
                 titleSelectedCategory.innerHTML = titleSelectedCategory.innerHTML.replace(lastWord,`<span class="blue">${lastWord}</span>`);
 }
 
+
+async function preview() {
+    bigImage = new SimpleLightbox(".link-img");
+}
 
 ////////list books on main page/////////
 
@@ -40,7 +46,7 @@ async function renderBooksMainPage(boo) {
         for (let j in boo[i].books) {
             stringOne +=  `<li class="image_book" data-category="${boo[i].books[j]._id}">
                                     <div class="div-animation">
-                                        <img class="img-example" alt="Book title" src="${boo[i].books[j].book_image}"></img>
+                                            <a class="link-img" href="${boo[i].books[j].book_image}"><img class="img-example" alt="Book title" src="${boo[i].books[j].book_image}"></img></a>
                                         <div class="box-quick-view"><p class="animation-paragraf">Quick view</p></div>
                                     </div>
                                 
@@ -55,6 +61,7 @@ async function renderBooksMainPage(boo) {
         stringOne += `</ul><button class="button-see-more" data-category="${boo[i].list_name}">See more</button></li>`;
     }
     listOne.insertAdjacentHTML("beforeend", stringOne);
+    preview();
 }
 
 ///if click on button "See more"////
@@ -211,7 +218,7 @@ async function renderBooks(books) {
     books.forEach(book => {
         booksCard += `<li class="book" data-category="${book._id}">
                         <div class="div-animation">
-                            <img class="img-example" alt="Book title" src="${book.book_image}"></img>
+                        <a class="link-img" href="${book.book_image}"><img class="img-example" alt="Book title" src="${book.book_image}"></img></a>
                             <div class="box-quick-view"><p class="animation-paragraf">Quick view</p></div>
                         </div>
                                 <div class="box-cards">
@@ -221,4 +228,5 @@ async function renderBooks(books) {
                       </li>`;
     });
     listOne.insertAdjacentHTML("beforeend", booksCard);
+    preview();
 }
