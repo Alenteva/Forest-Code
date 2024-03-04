@@ -1,4 +1,4 @@
-import"./assets/shopping-list-help-71aa70be.js";import{a as r,i as l,S as w}from"./assets/vendor-08afd76d.js";function v(){const e=document.getElementById("burgerToggle"),t=document.getElementById("burgerMenu");e.addEventListener("click",function(){t.classList.toggle("burger-menu-show"),t.classList.contains("burger-menu-show")?e.innerHTML=`
+import"./assets/shopping-list-help-1d3999c7.js";import{a as r,i as l,S as w}from"./assets/vendor-08afd76d.js";function v(){const e=document.getElementById("burgerToggle"),t=document.getElementById("burgerMenu");e.addEventListener("click",function(){t.classList.toggle("burger-menu-show"),t.classList.contains("burger-menu-show")?e.innerHTML=`
         <svg width="18" height="18" stroke="#000">
           <use href="./images/icons/symbol-defs.svg#icon-close"></use>
         </svg>`:e.innerHTML=`
