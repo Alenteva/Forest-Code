@@ -12,129 +12,26 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <!-- <link rel="import" href="partials/header.html" /> -->
-    <!-- <link rel="import" href="partials/modal.html" /> -->
+    <div id="shopping-list"></div>
+    <header>
+      <load src="./partials/header.html" />
+    </header>
 
-    <div id="header"></div>
-    <script>
-      fetch('partials/header.html')
-        .then(response => response.text())
-        .then(html => {
-          document.getElementById('header').innerHTML = html;
-        });
-    </script>
-
-    <div id="modal"></div>
-    <script>
-      fetch('partials/modal.html')
-        .then(response => response.text())
-        .then(html => {
-          document.getElementById('modal').innerHTML = html;
-        });
-    </script>
-
-    <section class="shopping-list">
+    <main>
       <div class="shopping-list container">
-        <div class="support-ukraine"></div>
-
+        <load src="./partials/support-ukraine.html" />
+      </div>
+      <div class="shoppinglist-container">
         <div class="shoplist">
           <h1 class="shoplist-title">
-            Shopping <span class="shoplist-title-span">List</span>
+            Shopping
+            <span class="shoplist-title-span"> List</span>
           </h1>
-          <div class="shoplist-container">
-            <img
-              src="https://storage.googleapis.com/du-prd/books/images/9781250144058.jpg"
-              alt="Book cover"
-              class="shoplist-bookcover"
-            />
-            <div class="shoplist-rightbar">
-              <div class="shoplist-title-btn">
-                <div class="shoplist-title-text">
-                  <h2 class="shoplist-title-book">HELLO BEAUTIUL</h2>
-                  <p class="shoplist-category-book">Hardcover fiction</p>
-                </div>
-
-                <button type="button" class="shoplist-btn-delete">
-                  <svg class="shoplist-btn-icon" width="16" height="16">
-                    <use href="../images/icons/symbol-defs.svg#icon-cart"></use>
-                  </svg>
-                </button>
-              </div>
-              <p class="shoplist-shotcontens">
-                David Burroughs was once a devoted father to his three-year-old
-                son Matthew, living a dream life just a short drive away from
-                the working-class suburb where he and his wife, Cheryl, first
-                fell in love--until one fateful night when David woke suddenly
-                to discover Matthew had been murdered while David was asleep
-                just down the hall.
-              </p>
-
-              <div class="shoplist-buttonhalf">
-                <p class="shoplist-author">Ann Napolitano</p>
-
-                <div class="shoplist-logo-box">
-                  <a href="https://www.amazon.com/" target="_blank">
-                    <picture class="shoplist-logo-amazon">
-                      <source
-                        srcset="
-                          ../images/shopping-list/amazon-1x.png 1x,
-                          ../images/shopping-list/amazon-2x.png 2x
-                        "
-                      />
-                      <img
-                        src="../images/shopping-list/amazon-1x.png"
-                        alt="amazon logo"
-                      />
-                    </picture>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
-    </section>
+    </main>
 
-    <section class="shoplist-error container is-active">
-      <div class="support-ukraine"></div>
-
-      <div class="shoplist-error">
-        <h1 class="shoplist-title error">
-          Shopping <span class="shoplist-title-span">List</span>
-        </h1>
-        <div class="shoplist-error-content">
-          <p class="shoplist-error-text">
-            This page is empty, add some books and proceed to order.
-          </p>
-
-          <picture class="shoplist-error-books">
-            <source
-              srcset="
-                ../images/shopping-list/books-dt-1x.png 1x,
-                ../images/shopping-list/books-dt-2x.png 2x
-              "
-              media="(min-width: 1280px)"
-            />
-            <source
-              srcset="
-                ../images/shopping-list/books-tab-1x.png 1x,
-                ../images/shopping-list/books-tab-2x.png 2x
-              "
-              media="(min-width: 768px)"
-            />
-            <source
-              srcset="
-                ../images/shopping-list/books-mob-1x.png 1x,
-                ../images/shopping-list/books-mob-2x.png 2x
-              "
-              media="(min-width: 375px)"
-            />
-            <img src="../images/shopping-list/books-dt-1x.png" alt="books" />
-          </picture>
-        </div>
-      </div>
-    </section>
-
+    <script src="shopping-list.js"></script>
     <script type="module" src="./main.js"></script>
   </body>
 </html>
