@@ -14,7 +14,7 @@ body {
   border-radius: 0 0 8px 8px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  position: relative;
   margin: 0 auto;
 }
 
@@ -34,17 +34,48 @@ body {
   display: flex;
   align-items: center;
   gap: 14px;
+  position: absolute;
+  right: 20px;
 }
 
 .header-menu {
   padding: 18px 0 18px 0;
 }
 
-.active {
+.home {
+  transition: all 2s ease;
+}
+.home:hover {
   border-radius: 36px;
-  padding: 8px 10px;
+  padding: 8px 15px;
+  background-color: #eac645;
+}
+
+.shop-list {
+  transition: all 2s ease;
+}
+.shop-list:hover {
+  border-radius: 36px;
+  padding: 8px 15px;
+  width: 185px;
+  background-color: #eac645;
+}
+
+.active-home {
+  border-radius: 36px;
+  padding: 8px 15px;
   background-color: #eac645;
   color: #111111;
+  font-weight: 700;
+  transition: all 1s ease;
+}
+
+.active-shop {
+  border-radius: 36px;
+  padding: 8px 15px;
+  background-color: #eac645;
+  color: #111111;
+  width: 185px;
   font-weight: 700;
   transition: all 1s ease;
 }
@@ -52,7 +83,6 @@ body {
 .shop-list {
   white-space: nowrap;
   overflow: hidden;
-  padding: 8px 0;
 }
 
 /* === start switch styles === */
@@ -133,7 +163,6 @@ body {
     background-color: #ffffff;
     height: 72px;
     margin: 0 auto;
-    justify-content: left;
   }
 
   .header-logo {
@@ -144,11 +173,7 @@ body {
     display: flex;
     align-items: center;
     gap: 40px;
-    margin-left: 40px;
-  }
-
-  .header-shop-nav {
-    width: 150px;
+    padding-left: 40px;
   }
 
   .shop-list-svg-basket {
@@ -159,7 +184,8 @@ body {
     display: flex;
     align-items: center;
     gap: 24px;
-    margin-left: 60px;
+    position: absolute;
+    right: 32px;
   }
 
   .header-user {
@@ -185,6 +211,7 @@ body {
 }
 
 /*================ descktop ================ */
+
 @media screen and (min-width: 1440px) {
   .header {
     background-color: #ffffff;
@@ -192,17 +219,12 @@ body {
     display: flex;
     align-items: center;
     margin: 0 auto;
-    justify-content: left;
   }
 
   .header-nav {
     display: flex;
     align-items: center;
     gap: 24px;
-  }
-
-  .header-shop-nav {
-    width: 150px;
   }
 
   .shop-list-svg-basket {
@@ -213,6 +235,7 @@ body {
     display: flex;
     align-items: center;
     gap: 24px;
-    margin-left: 765px;
+    position: absolute;
+    right: 24px;
   }
 }

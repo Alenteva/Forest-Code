@@ -14,13 +14,17 @@
   <body>
     <div id="shopping-list"></div>
     <header>
-      <load src="./partials/header.html" />
+      <script src="./js/header.js" type="module" defer></script>
     </header>
 
     <main>
       <div class="shopping-list container">
-        <load src="./partials/support-ukraine.html" />
+
+        <script src="./js/support-ukraine.js" type="module" defer></script>
+
+       
       </div>
+
       <div class="shoppinglist-container">
         <div class="shoplist">
           <h1 class="shoplist-title">
@@ -28,10 +32,9 @@
             <span class="shoplist-title-span"> List</span>
           </h1>
         </div>
-      </div>
+              </div>
     </main>
 
-    <script src="shopping-list.js"></script>
-    <script type="module" src="./main.js"></script>
+    <script src="./js/shopping-list-help.js" type="module" defer></script>
   </body>
 </html>
