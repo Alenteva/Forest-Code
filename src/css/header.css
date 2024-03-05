@@ -1,16 +1,6 @@
 body {
-  background-color: #b6b6b6;
+  background-color: #f6f6f6;
 }
-
-/* for darck team */
-
-.darck {
-  color: #fff;
-  background-color: #202024;
-  border-color: #fff;
-}
-
-/* ================= */
 
 .header-nav,
 .header-user {
@@ -24,7 +14,8 @@ body {
   border-radius: 0 0 8px 8px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  position: relative;
+  margin: 0 auto;
 }
 
 .header-black {
@@ -43,11 +34,55 @@ body {
   display: flex;
   align-items: center;
   gap: 14px;
+  position: absolute;
+  right: 20px;
 }
 
 .header-menu {
   padding: 18px 0 18px 0;
-  margin: 0 auto;
+}
+
+.home {
+  transition: all 2s ease;
+}
+.home:hover {
+  border-radius: 36px;
+  padding: 8px 15px;
+  background-color: #eac645;
+}
+
+.shop-list {
+  transition: all 2s ease;
+}
+.shop-list:hover {
+  border-radius: 36px;
+  padding: 8px 15px;
+  width: 185px;
+  background-color: #eac645;
+}
+
+.active-home {
+  border-radius: 36px;
+  padding: 8px 15px;
+  background-color: #eac645;
+  color: #111111;
+  font-weight: 700;
+  transition: all 1s ease;
+}
+
+.active-shop {
+  border-radius: 36px;
+  padding: 8px 15px;
+  background-color: #eac645;
+  color: #111111;
+  width: 185px;
+  font-weight: 700;
+  transition: all 1s ease;
+}
+
+.shop-list {
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 /* === start switch styles === */
@@ -127,6 +162,7 @@ body {
   .header {
     background-color: #ffffff;
     height: 72px;
+    margin: 0 auto;
   }
 
   .header-logo {
@@ -136,26 +172,20 @@ body {
   .header-nav {
     display: flex;
     align-items: center;
-    gap: 16px;
-    margin-left: 40px;
+    gap: 40px;
+    padding-left: 40px;
   }
 
-  .header-nav-a {
-    display: flex;
-    align-items: center;
-    background-color: #eac645;
-    color: #111111;
-    border-radius: 36px;
-    padding-right: 15px;
-    padding-left: 15px;
-    height: 34px;
+  .shop-list-svg-basket {
+    margin-left: 8px;
   }
 
   .header-seting {
     display: flex;
     align-items: center;
-    margin-left: 101px;
     gap: 24px;
+    position: absolute;
+    right: 32px;
   }
 
   .header-user {
@@ -169,30 +199,43 @@ body {
     width: 184px;
     height: 48px;
     gap: 76px;
+    transition: background-color 0.9s ease-in-out;
+  }
+  .header-user:hover {
+    background: radial-gradient(
+      189.32% 190.93% at 59.76% -23.42%,
+      rgb(79, 46, 232) 20%,
+      rgb(255, 255, 255) 100%
+    );
   }
 }
 
 /*================ descktop ================ */
-@media screen and (min-width: 1280px) {
+
+@media screen and (min-width: 1440px) {
   .header {
     background-color: #ffffff;
-    /* width: 1440px; */
     height: 72px;
     display: flex;
     align-items: center;
+    margin: 0 auto;
   }
 
   .header-nav {
     display: flex;
     align-items: center;
     gap: 24px;
-    margin-left: 76px;
+  }
+
+  .shop-list-svg-basket {
+    margin-left: 8px;
   }
 
   .header-seting {
     display: flex;
     align-items: center;
-    margin-left: 746px;
     gap: 24px;
+    position: absolute;
+    right: 24px;
   }
 }
