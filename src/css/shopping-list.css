@@ -150,34 +150,34 @@ h2 {
   align-items: center; /* Розміщує контент по вертикалі по центру */
 }
 
-.shoplist-error-text {
-  font-weight: 400;
-  font-size: 14px;
-  margin: 0 auto;
-  line-height: 18px;
-  line-height: 1.29;
-  letter-spacing: -0.02em;
-  text-align: center;
-  color: rgba(0, 0, 0, 0.6);
-  margin-bottom: 14px;
-}
-
 .shoplist-error-img {
   margin: 0 auto; /* Збільшує відступи по обох боках для розміщення по центру */
 }
 
 @media screen and (min-width: 375px) {
   .container {
-    min-width: 375px;
+    max-width: 375px;
     padding: 0 20px;
     margin: 0 auto;
+  }
+
+  .shoplist-error-text {
+    font-weight: 400;
+    font-size: 14px;
+    margin: 0 auto;
+    line-height: 18px;
+    line-height: 1.29;
+    letter-spacing: -0.02em;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.6);
+    margin-bottom: 14px;
   }
 }
 
 @media screen and (max-width: 768px) {
   .container {
     padding: 0 32px;
-    min-width: 768px;
+    max-width: 768px;
     margin: 0 auto;
   }
   h1 {
@@ -227,7 +227,7 @@ h2 {
 @media screen and (min-width: 1440px) {
   .container {
     padding: 0 24px;
-    min-width: 1440px;
+    max-width: 1440px;
     margin: 0 auto;
   }
 
@@ -252,7 +252,7 @@ h2 {
     width: 356px;
     height: 474px;
 
-    background-color: #36f44f;
+    /* background-color: #36f44f; */
     border-radius: 16px;
   }
 
