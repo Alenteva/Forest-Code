@@ -1,12 +1,3 @@
-const check = document.querySelector('h1');
-console.log(check);
-
-const check1 = document.querySelector('.header-logo');
-console.log(check1);
-
-const divk = document.querySelector('.shoplist-title');
-console.log(divk);
-
 document.addEventListener('DOMContentLoaded', function () {
   const bookListContainer = document.querySelector('.shoppinglist-container');
   const btnDeleteBook = document.getElementById('deleteBtn');
@@ -91,6 +82,8 @@ function templateBook(book) {
     buy_links,
   } = book;
   return `
+   <div class="shoplist-error container is-active">
+      <div class="support-ukraine">
       <div class="container-block" id="${_id}">    
         <img src="${book_image}" alt="${title}" class="shoplist-bookcover">
         <div class="shoplist">
