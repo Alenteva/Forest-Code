@@ -1,8 +1,12 @@
 import iziToast from "izitoast";
 import axios from "axios";
 import { onOpenPopUpModal } from "./open-close-modalBtn.js";
+import SimpleLightBox from "simplelightbox"
+import { getId } from "./home.js";
 
-const bookImg = document.querySelector(".img-example");
+const listOne = document.querySelector(".list-one");
+
+const bookImg = document.querySelector(".content-image");
 const bookTitle = document.querySelector(".content-title");
 const bookAuthor = document.querySelector(".content-descr");
 const bookReview = document.querySelector(".modal-descr");
@@ -13,7 +17,19 @@ const btn = document.querySelector("#add");
 const congratMessage = document.querySelector(".hidden-information");
 
 
+
+
+listOne.addEventListener("click", (e) => {
+    if (listOne.querySelectorAll(".box-quick-view").length > 0) {
+        getId(e);
+    }
+});
+
+
 btn.addEventListener("click", addOrRemoveBook);
+
+
+
 
 
 
@@ -33,10 +49,10 @@ const bookApi = new BooksAPI();
 
 
 
+
 export async function modalAboutBook(bookId) {
   try {
-    getBookById = (bookId) => axios.get(`https://books-backend.p.goit.global/books/${bookId}`);
-    const { data: book } = await bookApi.getBookByID(`${bookId}`);
+    const { data: book } = await bookApi.getBookByID(`${bookId}`)
 
     checkLocalStorage(book);
 
@@ -51,12 +67,15 @@ export async function modalAboutBook(bookId) {
   
   } catch (err) {
     iziToast.error({
-                title: "Error",
-                message: error.message,
-            })
+      title: "Error",
+      message: err.message,
+    })
+
+   
   }
 }
-  
+
+
 function addOrRemoveBook(e) {
   const id = e.target.attributes.id.value;
   if (btn.textContent === 'Add to shopping list') {
@@ -69,7 +88,7 @@ function addOrRemoveBook(e) {
 function addBook(id) {
   let idBooks = localStorage.getItem(`idBooks`);
 
-  if (idBooks === "undefined" || !idBooks || idBooks === "") {
+  if (!idBooks || idBooks === "") {
     idBooks = [];
     localStorage.setItem(`idBooks`, JSON.stringify(idBooks));
 
@@ -90,6 +109,7 @@ function removeBook(id) {
   btn.textContent = "Add to shopping list";
   congratMessage.classList.add("visually-hidden");
 }
+
 
 function checkLocalStorage(book) {
   let constantLS = localStorage.getItem(`idBooks`);
