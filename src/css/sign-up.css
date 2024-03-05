@@ -65,12 +65,12 @@ html.dark .auth__modal {
   pointer-events: none;
 }
 
-.auth__backdrop.is-hiddenModal .auth__modal {
+/* .auth__backdrop.is-hiddenModal .auth__modal {
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
   transform: translate(-50%, -50%) scale(0);
-}
+} */
 
 .auth__modal-close {
   width: 20px;

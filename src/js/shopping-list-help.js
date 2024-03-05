@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
   const bookListContainer = document.querySelector('.shoplist-title');
-
   // Создание объекта книги
   const booksData = [
     {
@@ -54,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
     btnDeleteBook.forEach(btn => {
       btn.addEventListener('click', event => {
         console.log('Hello');
-        //перевірка натискання саме на кнопки
+        // перевірка натискання саме на кнопки
         function selectColor(event) {
           if (event.target.nodeName !== 'BUTTON') {
             return;
