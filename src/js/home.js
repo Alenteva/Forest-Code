@@ -266,7 +266,7 @@ export function getId(e) {
     if (e.target.closest(".box-quick-view")) {
         const LI = box.closest(".image_book") || box.closest(".book");
         const bookId = LI.dataset.category;
-        console.log(bookId);
+        return bookId;
     }
 }
 ////for another//////
