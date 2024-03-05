@@ -212,12 +212,6 @@ body {
 
 /*================ descktop ================ */
 
-@media screen and (min-width: 1024px) {
-  .header-seting {
-    margin-left: 300px;
-  }
-}
-
 @media screen and (min-width: 1440px) {
   .header {
     background-color: #ffffff;
