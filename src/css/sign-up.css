@@ -340,7 +340,7 @@ html.dark .form__btn-out:after {
 .form__icon {
   width: 18px;
   height: 18px;
-  fill: #111;
+  fill: #fff;
   position: absolute;
   top: 50%;
   right: 22px;

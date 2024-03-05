@@ -36,7 +36,7 @@ signUpButton.addEventListener('click', event => {
   const password = document.getElementById('password').value;
   firebase
     .auth()
-    .createUserWithEmailAndPassword(username, email, password)
+    .createUserWithEmailAndPassword(email, password)
     .then(userCredential => {
       // Успішно створено обліковий запис користувача
       const user = userCredential.user;
@@ -51,30 +51,29 @@ signUpButton.addEventListener('click', event => {
 });
 // ============================
 
-// const signUpButton = document.querySelector('.header-user'); // Змінюємо селектор на клас кнопки з іменем "header-user"
-
-// // Додавання обробника подій для кнопки "Sign up"
-// signUpButton.addEventListener('click', event => {
-//   event.preventDefault();
-//   const username = document.getElementById('username').value;
-//   const email = document.getElementById('email').value;
-//   const password = document.getElementById('password').value;
-
-//   firebase
-//     .auth()
-//     .createUserWithEmailAndPassword(email, password)
-//     .then(userCredential => {
-//       // Успішно створено обліковий запис користувача
-//       const user = userCredential.user;
-//       console.log('User registered:', user);
-
-//       // Відобразити ім'я користувача на кнопці "Sign up"
-//       signUpButton.textContent = username;
-//     })
-//     .catch(error => {
-//       // Обробка помилок під час реєстрації користувача
-//       const errorCode = error.code;
-//       const errorMessage = error.message;
-//       console.error('Registration error:', errorMessage);
-//     });
-// });
+//  Реєстрація нового користувача
+firebase
+  .auth()
+  .createUserWithEmailAndPassword(email, password)
+  .then(userCredential => {
+    // Успішна реєстрація користувача
+    const user = userCredential.user;
+  })
+  .catch(error => {
+    // Обробка помилок реєстрації користувача
+    const errorCode = error.code;
+    const errorMessage = error.message;
+  });
+// Вхід користувача
+firebase
+  .auth()
+  .signInWithEmailAndPassword(email, password)
+  .then(userCredential => {
+    // Успішний вхід користувача
+    const user = userCredential.user;
+  })
+  .catch(error => {
+    // Обробка помилок входу користувача
+    const errorCode = error.code;
+    const errorMessage = error.message;
+  });
