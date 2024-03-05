@@ -237,6 +237,11 @@ body {
   color: #b4afaf;
   margin-bottom: 18px;
   }
+  .selected-categories {
+    text-transform: uppercase;
+    color: #4f2ee8;
+    font-weight: 700;
+  }
 
   /*/////////////tablet//////////////*/ 
  @media (min-width: 768px) {

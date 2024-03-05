@@ -68,10 +68,22 @@ async function renderBooksMainPage(boo) {
 
 listOne.addEventListener("click", async (e) =>{
 
-    if (e.target.classList.contains('button-see-more')) {
+    if (e.target.classList.contains("button-see-more")) {
         const dataset = e.target.dataset.category;
 
         titleSelectedCategory.textContent = dataset;
+        
+        if (listCategories.querySelector(".categoria")) {
+
+            const categoryItems = listCategories.querySelectorAll(".categoria");
+            categoryItems.forEach(option => {
+                if (titleSelectedCategory.textContent === option.textContent) {
+                    document.querySelector('.selected-categories').classList.remove('selected-categories');
+                    option.classList.add('selected-categories');
+                }
+            });
+        } 
+
         const arrayWords = titleSelectedCategory.textContent.split(' ');
         const word = arrayWords[arrayWords.length-1];
         titleSelectedCategory.innerHTML = titleSelectedCategory.innerHTML.replace(word, `<span class="blue">${word}</span>`);
@@ -82,6 +94,7 @@ listOne.addEventListener("click", async (e) =>{
                 throw new Error(`Sorry, books in the selected category were not found`);
             }
             renderBooks(response.data);
+            
         })
         .catch(error => 
              iziToast.error({
@@ -130,14 +143,13 @@ updateBooksDisplay();
 
 
 
-
 //////////changes in menu and searching books//////////////
 
 async function renderCategories(list) {
     let listCard = ""; 
-    const categoriaAll = `<li tabindex="0" class="categoria">All categories</li>`;
+    const categoriaAll = `<li tabindex="0" data-name="Best Sellers Books" class="categoria selected-categories">All categories</li>`;
     list.forEach(option => {
-        listCard += `<li tabindex="0" class="categoria">${option.list_name}</li>`;
+        listCard += `<li tabindex="0" data-name="${option.list_name}" class="categoria">${option.list_name}</li>`;
     });
     listCategories.insertAdjacentHTML("beforeend", listCard);
     listCategories.insertAdjacentHTML("afterbegin", categoriaAll);
@@ -145,9 +157,11 @@ async function renderCategories(list) {
     const optionList = document.querySelectorAll(".categoria");
 
     optionList.forEach( select => {
+
         select.addEventListener("click", async (e) => {
             e.preventDefault();
-
+            document.querySelector('.selected-categories').classList.remove('selected-categories');
+            e.target.classList.add('selected-categories');
             selectedCategory = e.target.textContent;
             selectedCategory = selectedCategory.replace(/ /g, "%20");
             
@@ -230,3 +244,29 @@ async function renderBooks(books) {
     listOne.insertAdjacentHTML("beforeend", booksCard);
     preview();
 }
+
+////for another//////
+
+function darkHome() {
+    body.style.backgroundColor = "#202024";
+
+        const titleBook = document.querySelectorAll(".title-book");
+        titleBook.forEach(title.style.color = "white");
+
+    if(listCategories.querySelector(".categoria")) {
+        optionList.forEach(option => {
+            option.addEventListener('mouseover', (e) => e.style.color = "#eac645");
+            option.style.color = "rgba(255, 255, 255, 0.6)"
+        });
+    }
+}
+
+export function getId(e) {
+    const box = e.target.closest(".box-quick-view");
+    if (e.target.closest(".box-quick-view")) {
+        const LI = box.closest(".image_book") || box.closest(".book");
+        const bookId = LI.dataset.category;
+        console.log(bookId);
+    }
+}
+////for another//////
