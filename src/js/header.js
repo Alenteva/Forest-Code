@@ -35,15 +35,15 @@ function darckWallpaper() {
   header.style.backgroundColor = '#111111';
   header.style.borderColor = '#ffffff';
   menu.innerHTML =
-    '<svg width="28" height="28"><use href="../images/icons/symbol-defs.svg#icon-menu2"></use></svg>';
+    '<svg width="28" height="28"><use href="/images/icons/symbol-defs.svg#icon-menu2"></use></svg>';
   svgElement1.innerHTML =
-    '<svg class="header-logo-svg" width="109" height="28"><use href="../images/icons/symbol-defs.svg#icon-logo2"></use></svg>';
+    '<svg class="header-logo-svg" width="109" height="28"><use href="/images/icons/symbol-defs.svg#icon-logo2"></use></svg>';
   if (shopList.classList.contains('active-shop')) {
     svgElement2.innerHTML =
-      '<svg class="shop-list-svg-basket" width="14" height="18"><use href="../images/icons/symbol-defs.svg#icon-icon-basket"></use></svg>';
+      '<svg class="shop-list-svg-basket" width="14" height="18"><use href="/images/icons/symbol-defs.svg#icon-icon-basket"></use></svg>';
   } else {
     svgElement2.innerHTML =
-      '<svg class="shop-list-svg-basket" width="14" height="18"><use href="../images/icons/symbol-defs.svg#icon-icon-basket2"></use></svg>';
+      '<svg class="shop-list-svg-basket" width="14" height="18"><use href="/images/icons/symbol-defs.svg#icon-icon-basket2"></use></svg>';
   }
 }
 
@@ -53,11 +53,11 @@ function whiteWallpaper() {
   header.style.backgroundColor = '#ffffff';
   header.style.borderColor = '#111111';
   menu.innerHTML =
-    '<svg width="28" height="28"><use href="../images/icons/symbol-defs.svg#icon-menu"></use></svg>';
+    '<svg width="28" height="28"><use href="/images/icons/symbol-defs.svg#icon-menu"></use></svg>';
   svgElement1.innerHTML =
-    '<svg class="header-logo-svg" width="109" height="28"><use href="../images/icons/symbol-defs.svg#icon-logo"></use></svg>';
+    '<svg class="header-logo-svg" width="109" height="28"><use href="/images/icons/symbol-defs.svg#icon-logo"></use></svg>';
   svgElement2.innerHTML =
-    '<svg class="shop-list-svg-basket" width="14" height="18"><use href="../images/icons/symbol-defs.svg#icon-icon-basket"></use></svg>';
+    '<svg class="shop-list-svg-basket" width="14" height="18"><use href="/images/icons/symbol-defs.svg#icon-icon-basket"></use></svg>';
 }
 
 document.addEventListener('DOMContentLoaded', function () {
