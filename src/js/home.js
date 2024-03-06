@@ -1,21 +1,23 @@
 import iziToast from "izitoast";
-import axios from 'axios';
+import axios from "axios";
+import SimpleLightbox from "simplelightbox";
 
 const listOne = document.querySelector(".list-one");
 const listCategories = document.querySelector(".list_categories");
 const titleSelectedCategory = document.querySelector(".main-title");
-const buttonHome = document.querySelector(".home");
+let bigImage;
 let selectedCategory;
 let number;
 
 
 function isWidthDevice() {
-    let widthWindow = window.innerWidth;
+    let widthWindow = window.innerWidth;    
 
     if(widthWindow <= 767) return number = 0;
-    else if(widthWindow <= 1279) return number = 2;
+    else if(widthWindow <= 1439) return number = 2;
     else return number = 4;      
 }
+
 
 function changeColorTitle() {
     const arrayTitle = titleSelectedCategory.textContent.split(' ');
@@ -23,6 +25,10 @@ function changeColorTitle() {
                 titleSelectedCategory.innerHTML = titleSelectedCategory.innerHTML.replace(lastWord,`<span class="blue">${lastWord}</span>`);
 }
 
+
+async function preview() {
+    bigImage = new SimpleLightbox(".link-img");
+}
 
 ////////list books on main page/////////
 
@@ -38,9 +44,9 @@ async function renderBooksMainPage(boo) {
                 <ul class="images_books">`;
 
         for (let j in boo[i].books) {
-            stringOne +=  `<li class="image_book">
+            stringOne +=  `<li class="image_book" data-category="${boo[i].books[j]._id}">
                                     <div class="div-animation">
-                                        <img class="img-example" alt="Book title" src="${boo[i].books[j].book_image}"></img>
+                                            <a class="link-img" href="${boo[i].books[j].book_image}"><img class="img-example" alt="Book title" src="${boo[i].books[j].book_image}"></img></a>
                                         <div class="box-quick-view"><p class="animation-paragraf">Quick view</p></div>
                                     </div>
                                 
@@ -55,16 +61,29 @@ async function renderBooksMainPage(boo) {
         stringOne += `</ul><button class="button-see-more" data-category="${boo[i].list_name}">See more</button></li>`;
     }
     listOne.insertAdjacentHTML("beforeend", stringOne);
+    preview();
 }
 
 ///if click on button "See more"////
 
 listOne.addEventListener("click", async (e) =>{
 
-    if (e.target.classList.contains('button-see-more')) {
+    if (e.target.classList.contains("button-see-more")) {
         const dataset = e.target.dataset.category;
 
         titleSelectedCategory.textContent = dataset;
+        
+        if (listCategories.querySelector(".categoria")) {
+
+            const categoryItems = listCategories.querySelectorAll(".categoria");
+            categoryItems.forEach(option => {
+                if (titleSelectedCategory.textContent === option.textContent) {
+                    document.querySelector('.selected-categories').classList.remove('selected-categories');
+                    option.classList.add('selected-categories');
+                }
+            });
+        } 
+
         const arrayWords = titleSelectedCategory.textContent.split(' ');
         const word = arrayWords[arrayWords.length-1];
         titleSelectedCategory.innerHTML = titleSelectedCategory.innerHTML.replace(word, `<span class="blue">${word}</span>`);
@@ -75,6 +94,7 @@ listOne.addEventListener("click", async (e) =>{
                 throw new Error(`Sorry, books in the selected category were not found`);
             }
             renderBooks(response.data);
+            
         })
         .catch(error => 
              iziToast.error({
@@ -90,17 +110,31 @@ async function updateBooksDisplay() {
     listOne.innerHTML = "";
     if(titleSelectedCategory.textContent === "Best Sellers Books") {
         await axios.get(`https://books-backend.p.goit.global/books/top-books`)
-            .then(response => renderBooksMainPage(response.data))
-            .catch(error => console.log(error.message));
+        .then(response => {
+            if(response.data.length === 0) {
+                throw new Error(`Sorry, books in the selected category were not found`);
+            }
+            renderBooksMainPage(response.data);
+        })
+        .catch(error => 
+            iziToast.error({
+                title: "Error",
+                message: error.message,
+            }));
     } 
     else {
         await axios.get(`https://books-backend.p.goit.global/books/category?category=${selectedCategory}`)
-                .then(response => renderBooks(response.data))
-                    .catch(error => 
-                        iziToast.error({
-                            title: "Error",
-                            message: error.message,
-                        }));
+        .then(response => {
+            if(response.data.length === 0) {
+                throw new Error(`Sorry, books in the selected category were not found`);
+            }
+            renderBooks(response.data);
+        })
+        .catch(error => 
+                iziToast.error({
+                    title: "Error",
+                    message: error.message,
+                }));
     }
 }
 updateBooksDisplay();
@@ -109,14 +143,13 @@ updateBooksDisplay();
 
 
 
-
 //////////changes in menu and searching books//////////////
 
 async function renderCategories(list) {
     let listCard = ""; 
-    const categoriaAll = `<li tabindex="0" class="categoria">All categories</li>`;
+    const categoriaAll = `<li tabindex="0" data-name="Best Sellers Books" class="categoria selected-categories">All categories</li>`;
     list.forEach(option => {
-        listCard += `<li tabindex="0" class="categoria">${option.list_name}</li>`;
+        listCard += `<li tabindex="0" data-name="${option.list_name}" class="categoria">${option.list_name}</li>`;
     });
     listCategories.insertAdjacentHTML("beforeend", listCard);
     listCategories.insertAdjacentHTML("afterbegin", categoriaAll);
@@ -124,9 +157,11 @@ async function renderCategories(list) {
     const optionList = document.querySelectorAll(".categoria");
 
     optionList.forEach( select => {
+
         select.addEventListener("click", async (e) => {
             e.preventDefault();
-
+            document.querySelector('.selected-categories').classList.remove('selected-categories');
+            e.target.classList.add('selected-categories');
             selectedCategory = e.target.textContent;
             selectedCategory = selectedCategory.replace(/ /g, "%20");
             
@@ -158,9 +193,13 @@ async function renderCategories(list) {
                         if(response.data.length === 0) {
                             throw new Error(`Sorry, books in the selected category were not found`);
                         }
-                        renderBooksMainPage(response.data)(response.data);
+                        renderBooksMainPage(response.data);
                     })
-                    .catch(error => console.log(error.message));
+                    .catch(error => 
+                        iziToast.error({
+                            title: "Error",
+                            message: error.message,
+                        }));
             }
         });
     });
@@ -176,7 +215,11 @@ axios.get(`https://books-backend.p.goit.global/books/category-list`)
     .then(response => {
         renderCategories(response.data);    
     })
-    .catch(error => console.log(error.message));
+    .catch(error => 
+        iziToast.error({
+            title: "Error",
+            message: error.message,
+        }));
     
 //////////////list categories//////////////
 
@@ -187,9 +230,9 @@ async function renderBooks(books) {
     let booksCard = ""; 
     listOne.innerHTML = "";
     books.forEach(book => {
-        booksCard += `<li class="book">
+        booksCard += `<li class="book" data-category="${book._id}">
                         <div class="div-animation">
-                            <img class="img-example" alt="Book title" src="${book.book_image}"></img>
+                        <a class="link-img" href="${book.book_image}"><img class="img-example" alt="Book title" src="${book.book_image}"></img></a>
                             <div class="box-quick-view"><p class="animation-paragraf">Quick view</p></div>
                         </div>
                                 <div class="box-cards">
@@ -199,4 +242,31 @@ async function renderBooks(books) {
                       </li>`;
     });
     listOne.insertAdjacentHTML("beforeend", booksCard);
+    preview();
 }
+
+////for another//////
+
+function darkHome() {
+    body.style.backgroundColor = "#202024";
+
+        const titleBook = document.querySelectorAll(".title-book");
+        titleBook.forEach(title.style.color = "white");
+
+    if(listCategories.querySelector(".categoria")) {
+        optionList.forEach(option => {
+            option.addEventListener('mouseover', (e) => e.style.color = "#eac645");
+            option.style.color = "rgba(255, 255, 255, 0.6)"
+        });
+    }
+}
+
+export function getId(e) {
+    const box = e.target.closest(".box-quick-view");
+    if (e.target.closest(".box-quick-view")) {
+        const LI = box.closest(".image_book") || box.closest(".book");
+        const bookId = LI.dataset.category;
+        return bookId;
+    }
+}
+////for another//////

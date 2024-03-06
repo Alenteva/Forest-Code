@@ -1,8 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
   const bookListContainer = document.querySelector('.shoplist-title');
-
-  // ======================================================================================================
-  // ========= после проверки работы кода УДАЛИТЬ!! ================
+  // Создание объекта книги
   const idBooks = [
     {
       _id: '642fd89ac8cf5ee957f12361',
@@ -319,6 +317,14 @@ document.addEventListener('DOMContentLoaded', function () {
         const deleteLi = document.querySelector('li'); //знайдений li в DOM дереві
         console.log(deleteLi);
         deleteLi.remove(deleteLi); //видаляється  li на кнопку якої натиснуто
+
+        console.log('Hello');
+        // перевірка натискання саме на кнопки
+        function selectColor(event) {
+          if (event.target.nodeName !== 'BUTTON') {
+            return;
+          }
+        }
 
         const button = event.currentTarget; // Отримати саму кнопку, на яку було натиснуто
 
