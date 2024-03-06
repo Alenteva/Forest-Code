@@ -1,124 +1,145 @@
-import iziToast from "izitoast";
 import axios from "axios";
-import { onOpenPopUpModal } from "./open-close-modalBtn.js";
-import SimpleLightBox from "simplelightbox"
-import { getId } from "./home.js";
-
+import SimpleLightbox from "simplelightbox";
+import "simplelightbox/dist/simple-lightbox.min.css";
+import iziToast from "izitoast";
+import "izitoast/dist/css/iziToast.min.css";
 const listOne = document.querySelector(".list-one");
+let arrayBooksShop = getMapFromLocalStorage();
+updateLocalStorage();
+const congratulations = document.querySelector("#congratulations");
 
-const bookImg = document.querySelector(".content-image");
-const bookTitle = document.querySelector(".content-title");
-const bookAuthor = document.querySelector(".content-descr");
-const bookReview = document.querySelector(".modal-descr");
-const linkAmazon = document.querySelector(".amazon");
-const linkBook = document.querySelector(".apple");
-
-const btn = document.querySelector("#add");
-const congratMessage = document.querySelector(".hidden-information");
-
-
-
-
-listOne.addEventListener("click", (e) => {
-    if (listOne.querySelectorAll(".box-quick-view").length > 0) {
-        getId(e);
-    }
+const modalWindow = document.querySelector(".modal-window-shop");
+listOne.addEventListener('click', async (e) => {
+  if (e.target.classList.contains('box-quick-view')) {
+      const id = e.target.parentNode.parentNode.dataset.category;
+      renderBook(id);
+  } else if (e.target.classList.contains('animation-paragraf')) {
+      const id = e.target.parentNode.parentNode.parentNode.dataset.category;
+      renderBook(id);
+  }
 });
 
 
-btn.addEventListener("click", addOrRemoveBook);
 
-
-
-
-
-
-axios.defaults.timeout = 4000;
-export class BooksAPI {
-
-    #BASE_URL = 'https://books-backend.p.goit.global/books/';
-
-    getTopBooks = () => axios.get(`${this.#BASE_URL}top-books`);
-    getCategoryList = () => axios.get(`${this.#BASE_URL}category-list`);
-    getOneCategory = (category) => axios.get(`${this.#BASE_URL}category?category=${category}`);
-    getBookByID = (id) => axios.get(`${this.#BASE_URL}${id}`);
-};
-
-const bookApi = new BooksAPI();
-
-
-
-
-
-export async function modalAboutBook(bookId) {
-  try {
-    const { data: book } = await bookApi.getBookByID(`${bookId}`)
-
-    checkLocalStorage(book);
-
-    bookImg.attributes.src.value = book.book_image;
-    bookTitle.textContent = book.title;
-    bookAuthor.textContent = book.author;
-    bookReview.textContent = book.description;
-    linkAmazon.attributes.href.value = book.buy_links[0].url;
-    linkBook.attributes.href.value = book.buy_links[1].url;
-
-    onOpenPopUpModal();
+async function renderBook(_id) {
+  document.body.classList.add('modal-open');
+  const response = await axios.get(`https://books-backend.p.goit.global/books/${_id}`);
+  const book = response.data;
+  let shopBook = `
+      <span>
+          <svg class="close-window" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path class="close-window" d="M21 7L7 21M7 7L21 21" stroke="#111111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+      </span>
+      <div class="main-modal-window-content">
+          <div class="modal-image-container"><img class="modal-image" src="${book.book_image}" alt="${book.title}"></div>
+          <div class="modal-main-content-text">
+              <h2 class="">${book.title}</h2>
+              <p class="book-author">${book.author}</p>
+              <p class="modal-book-description">${book.description}</p>
+              <div class=" ">
+                  <a class=" " href="${book.amazon_product_url} rel="amazon ${book.title}" target="_blank"">amazon_product_url</a>
+              </div>
+          </div>
+      </div>
+      `; if (arrayBooksShop.has(book.title)) {
+    shopBook += `<button class="card-books-category-button margin-add" type="button" data-id="${book._id}" data-title="${book.title}">Remove from the shopping list</button>
+            `;
+  } else {
+    shopBook += `<button class="card-books-category-button margin-add" type="button" data-id="${book._id}" data-title="${book.title}">Add to shopping list</button>
+            <p id="congratulations" hidden>Сongratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.</p>`;
+    document.querySelector(".modal-content").innerHTML = shopBook;
+    document.querySelector(".modal-window-shop").style.display = "block";
+  }
+}
+modalWindow.addEventListener("click", async (e) => {
   
-  } catch (err) {
-    iziToast.error({
-      title: "Error",
-      message: err.message,
-    })
-
-   
+  if (e.target.classList.contains('close-window')) {
+    document.querySelector(".modal-window-shop").style.display = "none";
+    // этот класс убирает сдвиг из-за того что пропадает справа полоса прокрутки
+    document.body.classList.remove('modal-open');
   }
-}
-
-
-function addOrRemoveBook(e) {
-  const id = e.target.attributes.id.value;
-  if (btn.textContent === 'Add to shopping list') {
-    addBook(id);
-  } else {
-    removeBook(id);
+  else if (e.target.classList.contains('modal-window-shop')) {
+    document.querySelector(".modal-window-shop").style.display = "none";
+    document.body.classList.remove('modal-open');
   }
-}
-
-function addBook(id) {
-  let idBooks = localStorage.getItem(`idBooks`);
-
-  if (!idBooks || idBooks === "") {
-    idBooks = [];
-    localStorage.setItem(`idBooks`, JSON.stringify(idBooks));
-
-    idBooks = JSON.parse(localStorage.getItem(`idBooks`));
-
-    idBooks.push(id);
-    localStorage.setItem(`idBooks`, JSON.stringify(idBooks));
-    btn.textContent = "Remove from shopping list";
-    congratMessage.classList.remove("visually-hidden");
+  else if (e.target.classList.contains('card-books-category-button')) {
+    bookSaveInShop(e.target);
   }
+ });
+
+
+
+
+async function bookSaveInShop(buttonShL) {
+    try {
+        if (buttonShL.textContent === "Add to shopping list") {
+            if (arrayBooksShop.has(buttonShL.dataset.title)) {
+              throw new Error('This book has added');
+              
+            }
+            arrayBooksShop.set(buttonShL.dataset.title, buttonShL.dataset.id);
+          buttonShL.textContent = "Remove from the shopping list";
+          const congratulations = document.querySelector("#congratulations");
+          congratulations.removeAttribute("hidden");
+        }
+        else {
+            arrayBooksShop.delete(buttonShL.dataset.title);
+          buttonShL.textContent = "Add to shopping list";
+           const congratulations = document.querySelector("#congratulations");
+           congratulations.setAttribute("hidden", "");
+        }
+    } catch (error) {
+        iziToast.error({
+            title: "Error",
+            message: error.message,
+        });
+    } finally {
+        updateLocalStorage();
+        updateArrayMap();
+    }
 }
 
-function removeBook(id) {
-  let idBooks = JSON.parse(localStorage.getItem(`idBooks`));
-
-  idBooks.splice(idBooks.indexOf(id), 1);
-  localStorage.setItem(`idBooks`, JSON.stringify(idBooks));
-  btn.textContent = "Add to shopping list";
-  congratMessage.classList.add("visually-hidden");
+function getMapFromLocalStorage() {
+    const serializedData = localStorage.getItem('arrayBooksShop');
+    if (serializedData) {
+        const dataArray = JSON.parse(serializedData);
+        return new Map(dataArray);
+    }
+    return new Map();
+}
+function updateLocalStorage() {
+    const serializedData = JSON.stringify([...arrayBooksShop]);
+    localStorage.setItem('arrayBooksShop', serializedData);
+}
+function updateArrayMap() {
+  arrayBooksShop = getMapFromLocalStorage();
 }
 
 
-function checkLocalStorage(book) {
-  let constantLS = localStorage.getItem(`idBooks`);
 
-  if (!constantLS || constantLS === "" || !constantLS.includes(book._id)) {
-    btn.textContent = "Add to shopping list";
-  } else {
-    btn.textContent = "Remove from the shopping list";
-    congratMessage.classList.remove("visually-hidden");
-  }
-  btn.attributes.id.value = book._id;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
