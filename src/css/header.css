@@ -28,6 +28,7 @@ body {
   padding: 18px 0 18px 0;
   display: flex;
   align-items: center;
+  gap: 5px;
 }
 
 .header-seting {
@@ -172,7 +173,7 @@ body {
   .header-nav {
     display: flex;
     align-items: center;
-    gap: 40px;
+    gap: 30px;
     padding-left: 40px;
   }
 

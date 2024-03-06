@@ -1,10 +1,10 @@
+import { darkHome } from './home.js';
+
 const switcher = document.querySelector('.header-switch');
 const bodyWallpaper = document.querySelector('body');
 const header = document.querySelector('.header');
 const svgElement1 = document.querySelector('.header-logo-svg');
 const svgElement2 = document.querySelector('.shop-list-svg-basket');
-const links = document.querySelector('.header-nav');
-const home = document.querySelector('.home');
 const menu = document.querySelector('.header-menu');
 const shopList = document.querySelector('.shop-list');
 
@@ -13,6 +13,7 @@ const isDarkTheme = localStorage.getItem('darkTheme');
 if (isDarkTheme === 'true') {
   document.body.classList.add('dark-theme');
   darckWallpaper();
+  // darkHome();
 } else {
   whiteWallpaper();
 }
@@ -35,15 +36,13 @@ function darckWallpaper() {
   header.style.backgroundColor = '#111111';
   header.style.borderColor = '#ffffff';
   menu.innerHTML =
-    '<svg width="28" height="28"><use href="/images/icons/symbol-defs.svg#icon-menu2"></use></svg>';
-  svgElement1.innerHTML =
-    '<svg class="header-logo-svg" width="109" height="28"><use href="/images/icons/symbol-defs.svg#icon-logo2"></use></svg>';
+    '<svg width="28" height="28"><use href="../images/icon.svg#icon-menu2"></use></svg>';
   if (shopList.classList.contains('active-shop')) {
     svgElement2.innerHTML =
-      '<svg class="shop-list-svg-basket" width="14" height="18"><use href="/images/icons/symbol-defs.svg#icon-icon-basket"></use></svg>';
+      '<svg class="shop-list-svg-basket" width="14" height="18"><use href="../images/icon.svg#icon-shopping-bag"></use></svg>';
   } else {
     svgElement2.innerHTML =
-      '<svg class="shop-list-svg-basket" width="14" height="18"><use href="/images/icons/symbol-defs.svg#icon-icon-basket2"></use></svg>';
+      '<svg class="shop-list-svg-basket" width="20" height="20"><use href="../images/icon.svg#icon-shopping-bag2"></use></svg>';
   }
 }
 
@@ -53,11 +52,9 @@ function whiteWallpaper() {
   header.style.backgroundColor = '#ffffff';
   header.style.borderColor = '#111111';
   menu.innerHTML =
-    '<svg width="28" height="28"><use href="/images/icons/symbol-defs.svg#icon-menu"></use></svg>';
-  svgElement1.innerHTML =
-    '<svg class="header-logo-svg" width="109" height="28"><use href="/images/icons/symbol-defs.svg#icon-logo"></use></svg>';
+    '<svg width="28" height="28"><use href="../images/icon.svg#icon-menu"></use></svg>';
   svgElement2.innerHTML =
-    '<svg class="shop-list-svg-basket" width="14" height="18"><use href="/images/icons/symbol-defs.svg#icon-icon-basket"></use></svg>';
+    '<svg class="shop-list-svg-basket" width="20" height="20"><use href="../images/icon.svg#icon-shopping-bag"></use></svg>';
 }
 
 document.addEventListener('DOMContentLoaded', function () {
