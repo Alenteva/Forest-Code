@@ -25,18 +25,6 @@
   flex-direction: column;
   gap: 40px;
 }
-.supporters-container {
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  padding: 24px 0;
-}
-.swiper-wraper {
-  height: 292px;
-  overflow: hidden;
-}
 /*support*/
 
 /*styles for scroll */
