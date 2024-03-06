@@ -1,5 +1,12 @@
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
+
 import { initializeApp } from 'firebase/app';
 import { getAnalytics } from 'firebase/analytics';
+// import { getAuth } from 'firebase/auth';
+// import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
+// import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+// import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import {
   connectAuthEmulator,
   createUserWithEmailAndPassword,
@@ -31,6 +38,7 @@ const passwordInput = document.getElementById('password');
 const usernamelInput = document.getElementById('username');
 const signInButton = document.querySelector('.quickstart-sign-in');
 const signUpButton = document.querySelector('.quickstart-sign-up');
+const headerNav = document.querySelector('.header-nav');
 
 // ========================================================================
 
@@ -61,7 +69,15 @@ function handleSignUp() {
   createUserWithEmailAndPassword(auth, email, password)
     .then(userCredential => {
       const user = userCredential.user;
-      console.log('User registered successfully:', user);
+      formContainer.classList.remove('is-open');
+      headerNav.style.display = 'block';
+
+      return iziToast.show({
+        title: 'Ok',
+        message: 'You have successfully registered!',
+        color: 'blue',
+        position: 'topCenter',
+      });
     })
     .catch(function (error) {
       // Handle Errors here.
@@ -86,4 +102,29 @@ function handleSignUp() {
     );
   });
 }
-signUpButton.addEventListener('submit', handleSignUp, false);
+formContainer.addEventListener('submit', function (event) {
+  event.preventDefault(); // Це зупиняє стандартну дію форми (відправку)
+
+  handleSignUp(); // Викликаємо функцію обробки реєстрації
+});
+
+// ======================================================================
+
+// // Вхід користувача
+// signInWithEmailAndPassword(auth, email, password)
+//   .then(userCredential => {
+//     // Успішний вхід користувача
+//     const user = userCredential.user;
+//     console.log('successfully:', user);
+//   })
+//   .catch(error => {
+//     // Обробка помилок входу користувача
+//     const errorCode = error.code;
+//     const errorMessage = error.message;
+//     if (errorCode == 'auth/weak-password') {
+//       alert('The password is too weak.');
+//     } else {
+//       alert(errorMessage);
+//     }
+//     console.log(error);
+//   });
