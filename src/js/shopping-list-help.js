@@ -301,42 +301,50 @@ document.addEventListener('DOMContentLoaded', function () {
   localStorage.setItem('idBooks', JSON.stringify(idBooks));
 
   //=============================================================================================================
-  // Викликаємо функцію для отримання книг з localStorage
-  const books = loadFromLS();
+  const books = loadFromLS(); // присвоємо змінній функцію для отримання книг з localStorage
+  const btnDeleteBook = document.querySelectorAll('.shoplist-btn-delete'); // знайшли всі кнопки видалення
 
   //==================== логіка відкриття вікна з книжками або без та видалення книжок по click
   if (books.length === 0) {
-    bookListContainer.innerHTML = emptyMessage;
+    bookListContainer.innerHTML = emptyMessage();
+    alert('ooooops');
   } else {
     renderBooks(books);
 
-    const btnDeleteBook = document.querySelectorAll('.shoplist-btn-delete'); // знайшли всі кнопки видалення
-    console.log(btnDeleteBook);
+    deleteUpdateLs();
+  }
 
-    // функція видалення li з DOMдерева та LS
+  //==================Всі функціі =================================
+  // функція видалення li з DOMдерева та LS
+  function deleteUpdateLs() {
     btnDeleteBook.forEach(btn => {
       btn.addEventListener('click', event => {
         const deleteLi = document.querySelector('li'); //знайдений li в DOM дереві
-        console.log(deleteLi);
+        selectColor(event);
         deleteLi.remove(deleteLi); //видаляється  li на кнопку якої натиснуто
 
-        console.log('Hello');
-        // перевірка натискання саме на кнопки
-        function selectColor(event) {
-          if (event.target.nodeName !== 'BUTTON') {
-            return;
-          }
-        }
+        const button = event.currentTarget; // Отримання поточної кнопки, на яку було натиснуто, з об'єкта події event.
+        const bookIdToDelete = button.dataset.bookId; //Отримання id книги, пов'язаної з цією кнопкою, з атрибуту data-bookId.
+        const localStorageData = JSON.parse(localStorage.getItem('idBooks')); // Отримання даних про книги з локального сховища браузера з ключем 'idBooks'.
+        //Фільтрація цих даних таким чином, щоб вони не містили об'єкт з id, який ми хочемо видалити.
+        const updatedLocalStorageData = localStorageData.filter(
+          item => item._id !== bookIdToDelete
+        );
 
-        const button = event.currentTarget; // Отримати саму кнопку, на яку було натиснуто
-
-        const bookIdToDelete = button.dataset.bookId;
-        console.log(bookIdToDelete);
-        localStorage.removeItem('bookIdToDelete'); //видалення обранного елемента з LS
-
-        // localStorage.removeItem('idBooks'); // видалення всіх книг з LS
+        localStorage.setItem(
+          'idBooks',
+          JSON.stringify(updatedLocalStorageData) // Збереження оновлених даних про книги до локального сховища браузера з ключем 'idBooks'.
+        );
+        renderBooks(updatedLocalStorageData); //Оновлення відображення списку книг на сторінці за допомогою функції renderBooks, передаючи їй оновлені дані про книги.
       });
     });
+  }
+
+  //================= функція перевірки натискання саме на кнопки ==========================
+  function selectColor(event) {
+    if (event.target.nodeName !== 'BUTTON') {
+      return;
+    }
   }
 
   // ================= функція відображення трьох книжок на сторінці==================
@@ -351,12 +359,48 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const bookListContainer = document.querySelector('.marcup');
     bookListContainer.innerHTML = `<ul>${bookItemsHTML}</ul>`;
+
+    // Встановлення обробників подій для нових кнопок видалення
+    const btnDeleteBook = document.querySelectorAll('.shoplist-btn-delete');
+    btnDeleteBook.forEach(btn => {
+      btn.addEventListener('click', deleteBookAndUpdateLs);
+    });
+  }
+
+  // ========================= функція видалення книги та оновлення
+  function deleteBookAndUpdateLs(event) {
+    const button = event.currentTarget; // Отримати кнопку, на яку натиснуто
+    const bookIdToDelete = button.dataset.bookId; // Отримати id книги для видалення
+
+    // Отримати дані з localStorage
+    let localStorageData = JSON.parse(localStorage.getItem('idBooks'));
+
+    // Знайти індекс книги для видалення за її id
+    const indexToDelete = localStorageData.findIndex(
+      item => item._id === bookIdToDelete
+    );
+
+    if (indexToDelete !== -1) {
+      localStorageData.splice(indexToDelete, 1); // Видалити книгу з масиву
+      localStorage.setItem('idBooks', JSON.stringify(localStorageData)); // Оновити дані в localStorage
+      renderBooks(localStorageData); // Оновити список книг на сторінці
+      checkAndUpdateEmptyMessage(); // Перевірити, чи пусте локальне сховище та відображення відповідного повідомлення
+    }
   }
 
   // ================функція для отримання книг з localStorage
   function loadFromLS() {
     const booksJSON = localStorage.getItem('idBooks') || '[]';
     return JSON.parse(booksJSON);
+  }
+
+  // ====Функція для перевірки пустоти локального сховища та відображення відповідного повідомлення
+
+  function checkAndUpdateEmptyMessage() {
+    const localStorageData = JSON.parse(localStorage.getItem('idBooks'));
+    if (!localStorageData || localStorageData.length === 0) {
+      bookListContainer.innerHTML = emptyMessage();
+    }
   }
 
   //   =============== функція рендеру розмітки кратинки однієї книжки в LS ========
@@ -400,10 +444,9 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   //=============== функція рендеру розмітки вікна, якщо немає книжок в LS ========
-  const img = 'books-tab-2x.png'; // назва файлу зображення
-  const imgPath = 'images/shopping-list/' + img;
 
-  const emptyMessage = `
+  function emptyMessage() {
+    return `
     <div class="shoplist-error container is-active">
       </div>
       <div class="shoplist-error">
@@ -413,9 +456,10 @@ document.addEventListener('DOMContentLoaded', function () {
         </h1>
         <div class="shoplist-error-content">
           <p class="shoplist-error-text">This page is empty, add some books and proceed to order.</p>
-          <img src="${imgPath}" alt="books" class="shoplist-error-books">
+          <img src="../images/shopping-list/books-dt-2x.png" alt="books" class="shoplist-error-books">
         </div>
       </div>
     </div>
   `;
+  }
 });
