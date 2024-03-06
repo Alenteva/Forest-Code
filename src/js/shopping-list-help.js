@@ -1,3 +1,5 @@
+// import tuiPagination from 'tui-pagination'; // Імпортуємо бібліотеку пагінації
+
 document.addEventListener('DOMContentLoaded', function () {
   const bookListContainer = document.querySelector('.shoplist-title');
   // Создание объекта книги
@@ -383,7 +385,7 @@ document.addEventListener('DOMContentLoaded', function () {
          <div class="logo-book">
         <button id="deleteBtn-${_id}" type="button" class="shoplist-btn-delete" data-book-id="${_id}">
           <svg class="shoplist-btn-icon" width="16" height="16">
-            <use href="../images/icons/symbol-defs.svg#icon-cart"></use>
+            <use href=" ./images/icon.svg#icon-free-icon-trash"></use>
           </svg>
         </button>
                <ul class="shoplist-links">
