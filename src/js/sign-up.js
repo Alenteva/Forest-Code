@@ -39,6 +39,7 @@ const usernamelInput = document.getElementById('username');
 const signInButton = document.querySelector('.quickstart-sign-in');
 const signUpButton = document.querySelector('.quickstart-sign-up');
 const headerNav = document.querySelector('.header-nav');
+const passwordResetButton = document.querySelector('.reset-btn');
 
 // ========================================================================
 
@@ -51,7 +52,76 @@ closeFormBtn.addEventListener('click', function () {
   formContainer.classList.remove('is-open');
   //   document.body.style.overflow = '';
 });
+// =================================================
+function resetPassword() {
+  const email = emailInput.value;
+  sendPasswordResetEmail(auth, email)
+    .then(function () {
+      // Email sent.
+      alert('Password reset email sent. Check your email');
+      return;
+    })
+    .catch(function (error) {
+      // Handle Errors here.
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      if (errorCode == 'auth/invalid-email') {
+        alert(errorMessage);
+      } else if (errorCode == 'auth/user-not-found') {
+        alert(errorMessage);
+      }
+      console.log(error);
+    });
+}
+// ===============================================
+function toggleSignIn() {
+  if (auth.currentUser) {
+    signOut(auth).then(() => {
+      // Clear cached user data
+      localStorage.removeItem('user-data');
+    });
+  } else {
+    const email = emailInput.value;
+    const password = passwordInput.value;
+    const name = usernamelInput.value;
 
+    if (email.length < 4) {
+      alert('Please enter an email address');
+      return;
+    }
+
+    if (password.length < 4) {
+      alert('Please enter a password with at least 4 characters');
+      return;
+    }
+
+    signInWithEmailAndPassword(auth, email, password)
+      .then(userCredential => {
+        const user = userCredential.user;
+        user.displayName = name;
+        formContainer.classList.remove('is-open');
+        headerNav.style.display = 'block';
+        headerSignUp.textContent = user.displayName;
+        iziToast.show({
+          title: 'Hello',
+          message: `Welcome, ${user.displayName}!`,
+          color: 'blue',
+          position: 'topCenter',
+        });
+      })
+      .catch(error => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+
+        if (errorCode === 'auth/wrong-password') {
+          alert('Wrong password');
+        } else {
+          alert(errorMessage);
+        }
+        console.error(error);
+      });
+  }
+}
 // ============================================
 function handleSignUp() {
   const email = emailInput.value;
@@ -68,7 +138,6 @@ function handleSignUp() {
   // Create user with email and pass.
   createUserWithEmailAndPassword(auth, email, password)
     .then(userCredential => {
-      console.log(userCredential);
       const user = userCredential.user;
       user.displayName = name;
       formContainer.classList.remove('is-open');
@@ -99,13 +168,22 @@ function handleSignUp() {
     localStorage.setItem(
       'user-data',
       JSON.stringify({
-        name: user.name,
+        name: user.displayName,
         mail: user.email,
       })
     );
   });
 }
-formContainer.addEventListener('submit', function (event) {
+passwordResetButton.addEventListener('click', function (event) {
+  event.preventDefault();
+  resetPassword();
+});
+
+signInButton.addEventListener('click', function (event) {
+  event.preventDefault();
+  toggleSignIn();
+});
+signUpButton.addEventListener('click', function (event) {
   event.preventDefault(); // Це зупиняє стандартну дію форми (відправку)
 
   handleSignUp(); // Викликаємо функцію обробки реєстрації
