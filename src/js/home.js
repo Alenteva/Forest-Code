@@ -44,8 +44,8 @@ async function renderBooksMainPage(boo) {
                 <ul class="images_books">`;
 
         for (let j in boo[i].books) {
-            stringOne +=  `<li class="image_book" data-category="${boo[i].books[j]._id}">
-                                    <div class="div-animation">
+            stringOne +=  `<li class="image_book">
+                                    <div id="${boo[i].books[j]._id}" class="div-animation">
                                             <a class="link-img" href="${boo[i].books[j].book_image}"><img class="img-example" alt="Book title" src="${boo[i].books[j].book_image}"></img></a>
                                         <div class="box-quick-view"><p class="animation-paragraf">Quick view</p></div>
                                     </div>
@@ -230,8 +230,8 @@ async function renderBooks(books) {
     let booksCard = ""; 
     listOne.innerHTML = "";
     books.forEach(book => {
-        booksCard += `<li class="book" data-category="${book._id}">
-                        <div class="div-animation">
+        booksCard += `<li class="book">
+                        <div id="${book._id}" class="div-animation">
                         <a class="link-img" href="${book.book_image}"><img class="img-example" alt="Book title" src="${book.book_image}"></img></a>
                             <div class="box-quick-view"><p class="animation-paragraf">Quick view</p></div>
                         </div>
@@ -261,12 +261,46 @@ function darkHome() {
     }
 }
 
-export function getId(e) {
-    const box = e.target.closest(".box-quick-view");
-    if (e.target.closest(".box-quick-view")) {
-        const LI = box.closest(".image_book") || box.closest(".book");
-        const bookId = LI.dataset.category;
-        return bookId;
+//
+listOne.addEventListener('click', async (e) => {
+    if (e.target.classList.contains('box-quick-view')) {
+        const id = e.target.parentNode.id;
+        console.log(id);
+        renderBook(id);
+    } else if (e.target.classList.contains('animation-paragraf')) {
+        const id = e.target.parentNode.parentNode.id;
+        console.log(id);
+        renderBook(id);
     }
-}
+});
+
+async function renderBook(_id) {
+    const response = await axios.get(`https://books-backend.p.goit.global/books/${_id}`);
+    const book = response.data;
+    let shopBook = `
+        <span>
+            <svg class="close-window" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path class="close-window" d="M21 7L7 21M7 7L21 21" stroke="#111111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+        </span>
+        <div class="main-modal-window-content">
+            <div class="modal-image-container"><img class="modal-image" src="${book.book_image}" alt="${book.title}"></div>
+
+            <div class="modal-main-content-text">
+                <h2 class="">${book.title}</h2>
+                <p class="book-author">${book.author}</p>
+                <p class="modal-book-description">${book.description}</p>
+                <div class=" ">
+                    <a class=" " href="${book.amazon_product_url} rel="amazon ${book.title}" target="_blank"">amazon_product_url</a>
+                </div>
+            </div>
+        </div>
+            
+        <button class="card-books-category-button margin-add" type="button" data-id="${book._id}" data-title="${book.title}">Add to shopping list</button>`;
+            
+    document.querySelector(".modal-content").innerHTML = shopBook;
+    document.querySelector(".modal-window-shop").style.display = "block";
+}          
+//
+
 ////for another//////
