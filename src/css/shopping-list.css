@@ -31,17 +31,23 @@ h2 {
   color: rgb(17, 17, 17);
   font-weight: 700;
 }
-
+/* 
 .container {
   outline: 2px dashed #f44336;
-}
+} */
 
 .shopping-list {
   margin-top: 40px;
   margin-bottom: 20px;
 }
 
-.shoplist-container {
+/* .shoplist-container {
+  display: flex;
+  padding: 14px;
+  border: 2px solid rgba(79, 46, 232, 0.4);
+  border-radius: 16px;
+} */
+.shoplist-error {
   display: flex;
   padding: 14px;
   border: 2px solid rgba(79, 46, 232, 0.4);
@@ -115,7 +121,7 @@ h2 {
 
 .shoplist-links {
   display: flex;
-  align-self: flex-end; /* Элементы списка прижимаются к нижнему краю .logo-book */
+  align-items: center;
   margin-top: 110px;
 }
 .shoplist-description {
@@ -174,7 +180,7 @@ h2 {
 
 @media screen and (min-width: 375px) {
   .container {
-    max-width: 375px;
+    /* max-width: 375px; */
     padding: 0 20px;
     margin: 0 auto;
   }
@@ -283,7 +289,7 @@ h2 {
 
 .shoplist-error.container {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   margin-top: 40px;
 }
 
