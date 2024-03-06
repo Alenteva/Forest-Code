@@ -68,9 +68,12 @@ function handleSignUp() {
   // Create user with email and pass.
   createUserWithEmailAndPassword(auth, email, password)
     .then(userCredential => {
+      console.log(userCredential);
       const user = userCredential.user;
+      user.displayName = name;
       formContainer.classList.remove('is-open');
       headerNav.style.display = 'block';
+      headerSignUp.textContent = user.displayName;
 
       return iziToast.show({
         title: 'Ok',
