@@ -1,15 +1,21 @@
-<div id="burgerMenu" class="burger-menu container">
+<div id="burgerMenu" class="burger-menu">
+  <div class="burger-image">
     <ul class="burger-menu-list">
-        <li class="burger-menu-item burger-mark">
-            <a href="../index.html">Home</a>
-        </li>
-        <li class="burger-menu-item">
-            <a href="../shopping-list.html">Shopping list
-                <svg width="20" height="20">
-                  <use href="./images/symbol-defs.svg#icon-Vector"></use>
-                </svg>
-            </a>
-        </li>
+      <li class="burger-menu-item">
+        <a id="home" class="burger-menu-home" href="./index.html">Home</a>
+      </li>
+      <li class="burger-menu-item">
+        <a
+          id="shopping-list"
+          class="burger-menu-shopping"
+          href="./shopping-list.html"
+        >
+          Shopping list
+          <svg class="burger-basket-icon" width="20" height="20">
+            <use href="../images/icon.svg#icon-Vector"></use>
+          </svg>
+        </a>
+      </li>
     </ul>
-    <div class="burger-image"></div>
+  </div>
 </div>

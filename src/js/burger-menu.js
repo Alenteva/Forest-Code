@@ -16,9 +16,27 @@ export function initBurgerMenu() {
           <use href="./images/icons/symbol-defs.svg#icon-menu"></use>
         </svg>`;
     }
+
   });
 }
 
 document.addEventListener('DOMContentLoaded', function () {
   initBurgerMenu();
 });
+
+const home = document.getElementById('home');
+const shoppingList = document.getElementById('shopping-list');
+
+home.classList.add('active');
+
+const handleClick = event => {
+  if (event.target === home) {
+    home.classList.add('active');
+    shoppingList.classList.remove('active');
+  } else if (event.target === shoppingList) {
+    home.classList.remove('active');
+    shoppingList.classList.add('active');
+  }
+};
+
+
