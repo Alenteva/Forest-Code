@@ -47,7 +47,25 @@
     background-image: url(../images/Group@2x.png);
   }
 }
-
+.burger-menu-user {
+    position: absolute;
+    width: 184px;
+    height: 48px;
+    left: 20px;
+    top: 40px;
+    box-sizing: border-box;
+    border: 1.5px solid rgb(17, 17, 17);
+    border-radius: 18px;
+    background: rgb(79, 46, 232);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    padding: 0 14px;
+}
 .burger-menu-list {
   margin: 183px auto;
   justify-content: center;
