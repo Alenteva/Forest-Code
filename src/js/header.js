@@ -1,61 +1,35 @@
-import { darkHome } from './home.js';
-
 const switcher = document.querySelector('.header-switch');
 const bodyWallpaper = document.querySelector('body');
 const header = document.querySelector('.header');
-const svgElement1 = document.querySelector('.header-logo-svg');
 const svgElement2 = document.querySelector('.shop-list-svg-basket');
 const menu = document.querySelector('.header-menu');
 const shopList = document.querySelector('.shop-list');
+const topicMain = document.querySelector('body');
 
 const isDarkTheme = localStorage.getItem('darkTheme');
 
 if (isDarkTheme === 'true') {
   document.body.classList.add('dark-theme');
-  darckWallpaper();
-  // darkHome();
+  topicMain.classList.remove('light');
+  topicMain.classList.add('dark');
 } else {
-  whiteWallpaper();
+  topicMain.classList.remove('dark');
+  topicMain.classList.add('light');
 }
 
 switcher.addEventListener('click', () => {
   if (switcher.checked) {
     document.body.classList.add('dark-theme');
     localStorage.setItem('darkTheme', 'true');
-    darckWallpaper();
+    topicMain.classList.remove('light');
+    topicMain.classList.add('dark');
   } else {
     document.body.classList.remove('dark-theme');
     localStorage.setItem('darkTheme', 'false');
-    whiteWallpaper();
+    topicMain.classList.remove('dark');
+    topicMain.classList.add('light');
   }
 });
-
-function darckWallpaper() {
-  bodyWallpaper.style.backgroundColor = '#202024';
-  bodyWallpaper.style.color = '#ffffff';
-  header.style.backgroundColor = '#111111';
-  header.style.borderColor = '#ffffff';
-  menu.innerHTML =
-    '<svg width="28" height="28"><use href="../images/icon.svg#icon-menu2"></use></svg>';
-  if (shopList.classList.contains('active-shop')) {
-    svgElement2.innerHTML =
-      '<svg class="shop-list-svg-basket" width="14" height="18"><use href="../images/icon.svg#icon-shopping-bag"></use></svg>';
-  } else {
-    svgElement2.innerHTML =
-      '<svg class="shop-list-svg-basket" width="20" height="20"><use href="../images/icon.svg#icon-shopping-bag2"></use></svg>';
-  }
-}
-
-function whiteWallpaper() {
-  bodyWallpaper.style.backgroundColor = '#F6F6F6';
-  bodyWallpaper.style.color = '#111111';
-  header.style.backgroundColor = '#ffffff';
-  header.style.borderColor = '#111111';
-  menu.innerHTML =
-    '<svg width="28" height="28"><use href="../images/icon.svg#icon-menu"></use></svg>';
-  svgElement2.innerHTML =
-    '<svg class="shop-list-svg-basket" width="20" height="20"><use href="../images/icon.svg#icon-shopping-bag"></use></svg>';
-}
 
 document.addEventListener('DOMContentLoaded', function () {
   const homeLink = document.querySelector('.home');
