@@ -41,4 +41,4 @@ import{d as D}from"./vendor-0b56a377.js";(function(){const A=document.createElem
       </div>
     </div>
   `}});
-//# sourceMappingURL=shopping-list-help-2fe8cb81.js.map
+//# sourceMappingURL=shopping-list-help-6a01eabf.js.map
