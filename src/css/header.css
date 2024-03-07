@@ -112,6 +112,7 @@ body {
 .shop-list-svg-basket,
 .menu-svg-icon {
   fill: var(--text-color);
+  stroke: var(--text-color);
 }
 
 /* === start switch styles === */
