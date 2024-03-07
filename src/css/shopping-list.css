@@ -55,14 +55,13 @@ h2 {
 }
 
 .shoplist-error {
-  display: flex;
   padding: 14px;
-  border: 2px solid rgba(79, 46, 232, 0.4);
+  /* border: 2px solid rgba(79, 46, 232, 0.4); */
   border-radius: 16px;
 }
 
 /* Сховати блок на мобільних пристроях */
-.mobile-only {
+.desktop-only {
   display: none;
 }
 
@@ -77,7 +76,7 @@ h2 {
 .shoplist-tophalf {
 }
 .shoplist-title {
-  margin-bottom: 40px;
+  margin-bottom: 120px;
 }
 .shoplist-title-span {
   color: blue;
@@ -93,6 +92,11 @@ h2 {
   margin-bottom: 8px;
 }
 .shoplist-title-book {
+}
+
+.shoplist-error-books {
+  width: 265px;
+  margin: 0 auto;
 }
 .shoplist-category-book {
   font-weight: 400;
@@ -192,10 +196,6 @@ h2 {
   filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
 }
 
-.error {
-  margin-bottom: 120px;
-}
-
 .shoplist-error-content {
   justify-content: center; /* Розміщує контент по горизонталі по центру */
   align-items: center; /* Розміщує контент по вертикалі по центру */
@@ -212,7 +212,16 @@ h2 {
   /* padding: 0 20px;
     margin: 0 auto;
   } */
+  .shoplist-title-error {
+    font-weight: 700;
+    font-size: 32px;
 
+    line-height: 38px;
+    line-height: 1.1875;
+    letter-spacing: -0.04em;
+    color: black;
+    margin-bottom: 120px;
+  }
   .shoplist-error-text {
     font-weight: 400;
     font-size: 14px;
@@ -224,6 +233,9 @@ h2 {
     color: rgba(0, 0, 0, 0.6);
     margin-bottom: 14px;
   }
+  .shoplist-error.container {
+    width: 265px;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -232,62 +244,67 @@ h2 {
     max-width: 768px;
     margin: 0 auto;
   }
-  .support-wrapper {
-    display: none;
+
+  .shoplist-error-books {
+    width: 322px;
   }
-}
 
-h1 {
-  font-size: 48px;
-  line-height: 52px;
-  line-height: 1.08;
-}
-.shoplist-bookcover {
-  width: 116px;
-  margin-right: 24px;
-}
+  h1 {
+    font-size: 48px;
+    line-height: 52px;
+    line-height: 1.08;
+  }
+  .shoplist-bookcover {
+    width: 116px;
+    margin-right: 24px;
+  }
 
-.shoplist-shotcontens {
-  margin-bottom: 38px;
-}
-.shoplist-btn-delete {
-  width: 34px;
-  height: 34px;
-}
+  .shoplist-shotcontens {
+    margin-bottom: 38px;
+  }
+  .shoplist-btn-delete {
+    width: 34px;
+    height: 34px;
+  }
 
-.shoplist-links {
-  gap: 16px;
-}
-.shoplist-item {
-  width: 48px;
-  height: 15px;
-}
+  .shoplist-links {
+    gap: 16px;
+  }
+  .shoplist-item {
+    width: 48px;
+    height: 15px;
+  }
 
-.apple-book {
-  width: 28px;
-  height: 28px;
-}
+  .apple-book {
+    width: 28px;
+    height: 28px;
+  }
 
-.error {
-  margin-bottom: 140px;
-}
-.shoplist-error-content {
-  width: 349px;
-  height: 309px;
-  margin: 0 auto;
-}
+  .shoplist-error-content {
+    margin: 0 auto;
+  }
 
-.shoplist-error-text {
-  font-size: 18px;
-  line-height: 24px;
-  line-height: 1.33;
-  margin-bottom: 20px;
-}
+  .shoplist-error-text {
+    font-size: 18px;
+    line-height: 24px;
+    line-height: 1.33;
+    margin-bottom: 20px;
+  }
 
-.shoplist-links {
-}
-.shoplist-logo-box {
-  width: 92px;
+  .shoplist-links {
+  }
+  .shoplist-logo-box {
+    width: 92px;
+  }
+
+  .shoplist-title-error {
+    font-size: 48px;
+
+    line-height: 52px;
+    line-height: 1.08;
+    letter-spacing: -0.04em;
+    margin-bottom: 140px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
@@ -295,6 +312,9 @@ h1 {
     padding: 0 24px;
     /* max-width: 1440px; */
     /* margin: 0 auto; */
+  }
+  .desktop-only {
+    display: block;
   }
 
   h1 {
