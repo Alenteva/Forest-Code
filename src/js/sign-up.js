@@ -54,8 +54,9 @@ function toggleSignIn() {
   if (auth.currentUser) {
     signOut(auth).then(() => {
       // Clear cached user data
-      localStorage.removeItem('user-data');
-      localStorage.removeItem('userToken');
+      // localStorage.removeItem('user-data');
+      // localStorage.removeItem('userToken');
+      handleSignOut();
       updateUI();
     });
   } else {
@@ -78,7 +79,7 @@ function toggleSignIn() {
         const user = userCredential.user;
         user.displayName = name;
         formContainer.classList.remove('is-open');
-        headerNav.style.display = 'block';
+        headerNav.style.display = 'flex';
         headerSignUp.textContent = user.displayName;
         iziToast.show({
           title: 'Hello',
@@ -129,7 +130,7 @@ function handleSignUp() {
       const user = userCredential.user;
       user.displayName = name;
       formContainer.classList.remove('is-open');
-      headerNav.style.display = 'block';
+      headerNav.style.display = 'flex';
       headerSignUp.textContent = user.displayName;
       iziToast.show({
         title: 'Ok',
@@ -171,14 +172,14 @@ window.onload = function () {
           user.displayName = userData.name;
           user.email = userData.mail;
           formContainer.classList.remove('is-open');
-          headerNav.style.display = 'block';
+          headerNav.style.display = 'flex';
           headerSignUp.textContent = user.displayName;
           updateUI(user);
         }
       })
       .catch(error => {
         console.error(error);
-        localStorage.removeItem('userToken');
+        // localStorage.removeItem('userToken');
       });
   } else {
     updateUI();
@@ -189,13 +190,14 @@ function updateUI(user = null) {
   if (user) {
     // Відображення UI для автентифікованого користувача
     formContainer.classList.remove('is-open');
-    headerNav.style.display = 'block';
+    headerNav.style.display = 'flex';
     headerSignUp.textContent = user.displayName;
   } else {
     // Відображення UI для неавтентифікованого користувача
-    formContainer.classList.add('is-open');
+    // formContainer.classList.add('is-open');
     headerNav.style.display = 'none';
-    headerSignUp.textContent = 'Sign Up';
+    formContainer.classList.remove('is-open');
+    // headerSignUp.textContent = 'Sign Up';
   }
 }
 // ========================================================================
