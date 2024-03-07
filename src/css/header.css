@@ -33,7 +33,7 @@ body {
 
 .header-nav,
 .header-user {
-  /* display: none; */
+  display: none;
 }
 
 .header {

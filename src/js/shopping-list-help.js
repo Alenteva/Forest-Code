@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function () {
     return `
    <div class="shoplist-error container">
 
-      <div id="${_id}"></div>   
+      <div id="${_id}"></div>
         <img src="${book_image}" alt="${title}" class="shoplist-bookcover"/>
         <div class="shoplist">
           <h2 class="shoplist-title-book">${title}</h2>

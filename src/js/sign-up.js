@@ -53,9 +53,6 @@ closeFormBtn.addEventListener('click', function () {
 function toggleSignIn() {
   if (auth.currentUser) {
     signOut(auth).then(() => {
-      // Clear cached user data
-      // localStorage.removeItem('user-data');
-      // localStorage.removeItem('userToken');
       handleSignOut();
       updateUI();
     });
@@ -179,7 +176,6 @@ window.onload = function () {
       })
       .catch(error => {
         console.error(error);
-        // localStorage.removeItem('userToken');
       });
   } else {
     updateUI();
@@ -194,10 +190,8 @@ function updateUI(user = null) {
     headerSignUp.textContent = user.displayName;
   } else {
     // Відображення UI для неавтентифікованого користувача
-    // formContainer.classList.add('is-open');
     headerNav.style.display = 'none';
     formContainer.classList.remove('is-open');
-    // headerSignUp.textContent = 'Sign Up';
   }
 }
 // ========================================================================
