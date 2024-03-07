@@ -37,17 +37,37 @@ h2 {
 }
 
 .shopping-list {
+  display: flex;
   margin-top: 40px;
   margin-bottom: 20px;
 }
-
+.shoppinglist {
+  margin: 0 auto;
+}
+.shoplist {
+  /* margin-top: 40px; */
+}
 .shoplist-container {
   display: flex;
   padding: 14px;
-  border: 2px solid rgba(79, 46, 232, 0.4);
+  /* border: 2px solid rgba(79, 46, 232, 0.4); */
   border-radius: 16px;
 }
 
+.shoplist-error {
+  padding: 14px;
+  /* border: 2px solid rgba(79, 46, 232, 0.4); */
+  border-radius: 16px;
+}
+
+/* Сховати блок на мобільних пристроях */
+.desktop-only {
+  display: none;
+}
+
+/* .shoplist-item {
+  border: 2px solid rgba(79, 46, 232, 0.4);
+} */
 .shoplist-bookcover {
   border-radius: 8px;
   width: 100px;
@@ -56,7 +76,7 @@ h2 {
 .shoplist-tophalf {
 }
 .shoplist-title {
-  margin-bottom: 40px;
+  margin-bottom: 120px;
 }
 .shoplist-title-span {
   color: blue;
@@ -73,6 +93,11 @@ h2 {
 }
 .shoplist-title-book {
 }
+
+.shoplist-error-books {
+  width: 265px;
+  margin: 0 auto;
+}
 .shoplist-category-book {
   font-weight: 400;
   font-size: 12px;
@@ -83,24 +108,23 @@ h2 {
 }
 
 .logo-book {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
   position: relative; /* Устанавливаем позицию элемента как относительную */
-
-  justify-content: space-between;
-  align-items: flex-end;
 }
 
 .shoplist-btn-delete {
   position: absolute; /* Устанавливаем позицию элемента как абсолютную */
   top: 0; /* Располагаем кнопку в верхнем краю контейнера */
   right: 0; /* Располагаем кнопку в правом краю контейнера */
-
   width: 28px;
   height: 28px;
-
   background-color: #4f2ee8;
   border-radius: 50%;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .shoplist-btn-delete:hover:focus {
   background-color: #404bbf;
 }
@@ -111,16 +135,29 @@ h2 {
   justify-content: center;
   width: 100%;
   height: 100%;
+  fill: white;
 }
 
 .shoplist-links {
   display: flex;
-  align-self: flex-end; /* Элементы списка прижимаются к нижнему краю .logo-book */
-  margin-top: 110px;
+  align-items: center;
+
+  margin-top: 145px;
+  gap: 8px; /* Встановлюємо проміжок між елементами */
 }
+
+.shoplist-item {
+  width: 32px;
+  height: 11px;
+}
+.apple-book {
+  width: 16px;
+  height: 16px;
+}
+
 .shoplist-description {
   height: 68px;
-  margin-bottom: 22px;
+  margin-bottom: 46px;
   overflow: hidden; /* Ця властивість приховує текст, що виходить за рамки */
   font-weight: 400;
   font-size: 14px;
@@ -159,13 +196,10 @@ h2 {
   filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
 }
 
-.error {
-  margin-bottom: 120px;
-}
-
 .shoplist-error-content {
   justify-content: center; /* Розміщує контент по горизонталі по центру */
   align-items: center; /* Розміщує контент по вертикалі по центру */
+  padding: 14px;
 }
 
 .shoplist-error-img {
@@ -173,12 +207,21 @@ h2 {
 }
 
 @media screen and (min-width: 375px) {
-  .container {
-    max-width: 375px;
-    padding: 0 20px;
+  /* .container {
+    /* max-width: 375px; */
+  /* padding: 0 20px;
     margin: 0 auto;
-  }
+  } */
+  .shoplist-title-error {
+    font-weight: 700;
+    font-size: 32px;
 
+    line-height: 38px;
+    line-height: 1.1875;
+    letter-spacing: -0.04em;
+    color: black;
+    margin-bottom: 120px;
+  }
   .shoplist-error-text {
     font-weight: 400;
     font-size: 14px;
@@ -190,6 +233,9 @@ h2 {
     color: rgba(0, 0, 0, 0.6);
     margin-bottom: 14px;
   }
+  .shoplist-error.container {
+    width: 265px;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -198,6 +244,11 @@ h2 {
     max-width: 768px;
     margin: 0 auto;
   }
+
+  .shoplist-error-books {
+    width: 322px;
+  }
+
   h1 {
     font-size: 48px;
     line-height: 52px;
@@ -207,26 +258,29 @@ h2 {
     width: 116px;
     margin-right: 24px;
   }
+
+  .shoplist-shotcontens {
+    margin-bottom: 38px;
+  }
   .shoplist-btn-delete {
     width: 34px;
     height: 34px;
   }
 
-  .shoplist-shotcontens {
-    margin-bottom: 38px;
+  .shoplist-links {
+    gap: 16px;
+  }
+  .shoplist-item {
+    width: 48px;
+    height: 15px;
   }
 
-  .shoplist-logo-amazon {
-    width: 92px;
-    height: 27px;
+  .apple-book {
+    width: 28px;
+    height: 28px;
   }
 
-  .error {
-    margin-bottom: 140px;
-  }
   .shoplist-error-content {
-    width: 349px;
-    height: 309px;
     margin: 0 auto;
   }
 
@@ -242,13 +296,25 @@ h2 {
   .shoplist-logo-box {
     width: 92px;
   }
+
+  .shoplist-title-error {
+    font-size: 48px;
+
+    line-height: 52px;
+    line-height: 1.08;
+    letter-spacing: -0.04em;
+    margin-bottom: 140px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
   .container {
     padding: 0 24px;
-    max-width: 1440px;
-    margin: 0 auto;
+    /* max-width: 1440px; */
+    /* margin: 0 auto; */
+  }
+  .desktop-only {
+    display: block;
   }
 
   h1 {
@@ -256,52 +322,57 @@ h2 {
     line-height: 52px;
     line-height: 1.08;
   }
+
+  .shoppinglist {
+    margin-left: 40px;
+  }
+
+  .shoppinglist-container {
+    /* max-width: 1440px; */
+    margin: 0 auto;
+  }
+
   .shopping-list {
+    /* margin: 0 auto; */
     display: flex;
   }
 
   .shoplist {
     margin-left: 40px;
-
     width: calc(
       100% - 396px
     ); /* 100% ширина контейнера мінус ширина .support-ukraine та відстань 40px */
   }
 
-  /* .support-ukraine {
-    width: 356px;
-    height: 474px;
+  .support-ukraine {
+    margin: 0 auto;
+    margin-right: 40px;
+  }
 
-    /* background-color: #36f44f; */
-  /* border-radius: 16px; */
-}
-*/ .shoplist-error-content {
-  width: 349px;
-  height: 309px;
-  margin: 0 auto;
-}
+  .shoplist-error-content {
+    width: 349px;
+    height: 309px;
+    margin: 0 auto;
+  }
 
-.shoplist-error.container {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 40px;
-}
+  .shoplist-error.container {
+    display: flex;
+    /* justify-content: space-between; */
+    margin-top: 40px;
+  }
 
-.support-ukraine {
-  margin-right: 40px;
-}
+  .shoplist-error {
+    flex-grow: 1; /* Розтягує елемент, щоб заповнити доступний простір */
+  }
 
-.shoplist-error {
-  flex-grow: 1; /* Розтягує елемент, щоб заповнити доступний простір */
-}
+  .shoplist-error-text {
+    font-size: 18px;
+    line-height: 24px;
+    line-height: 1.33;
+    margin-bottom: 20px;
+  }
 
-.shoplist-error-text {
-  font-size: 18px;
-  line-height: 24px;
-  line-height: 1.33;
-  margin-bottom: 20px;
-}
-
-.shoplist-logo-box {
-  width: 92px;
+  .shoplist-logo-box {
+    width: 92px;
+  }
 }

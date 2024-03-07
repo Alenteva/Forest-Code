@@ -6,18 +6,20 @@ export function initBurgerMenu() {
     burgerMenu.classList.toggle('burger-menu-show');
 
     if (burgerMenu.classList.contains('burger-menu-show')) {
+      const closeIconPath = './images/icon.svg#icon-close'; 
       burgerToggle.innerHTML = `
-        <svg width="18" height="18" stroke="#000">
-          <use href="./images/icons/symbol-defs.svg#icon-close"></use>
-        </svg>`;
+      <svg width="18" height="18" stroke="#000">
+        <use href="${closeIconPath}"></use>
+      </svg>`;
     } else {
+      const menuIconPath = './images/icon.svg#icon-menu'; 
       burgerToggle.innerHTML = `
-        <svg width="28" height="28">
-          <use href="./images/icons/symbol-defs.svg#icon-menu"></use>
-        </svg>`;
+      <svg width="28" height="28">
+        <use href="${menuIconPath}"></use>
+      </svg>`;
     }
-
   });
+
 }
 
 document.addEventListener('DOMContentLoaded', function () {
