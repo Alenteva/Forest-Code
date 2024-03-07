@@ -2,10 +2,8 @@ body.light {
   --bg-color: #f6f6f6;
   --bg-header-color: #ffffff;
   --text-color: #111111;
+  --br-color: #111111;
   --color-cal: #4f2ee8;
-  --color-category: rgba(17, 17, 17, 0.6);
-  --bg-btn: #4f2ee8;
-  --color-btn: #111;
   /* --amazon: grayscale(100%);
   --amazon-hover: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
   --apple: grayscale(100%);
@@ -16,10 +14,8 @@ body.dark {
   --bg-color: #202024;
   --bg-header-color: #111111;
   --text-color: #ffffff;
+  --br-color: #ffffff;
   --color-cal: #eac645;
-  --color-category: rgba(255, 255, 255, 0.6);
-  --bg-btn: #202024;
-  --color-btn: #fff;
   /* --amazon: drop-shadow(0px 3px 3px rgba(255, 255, 255, 0.35));
   --amazon-hover: brightness(0) invert(1);
   --apple: drop-shadow(0px 3px 3px rgba(255, 255, 255, 0.35));
@@ -39,7 +35,7 @@ body {
 .header {
   background-color: var(--bg-header-color);
   height: 64px;
-  border: solid 1.5px var(--text-color);
+  border: solid 1.5px var(--br-color);
   border-radius: 0 0 8px 8px;
   display: flex;
   align-items: center;

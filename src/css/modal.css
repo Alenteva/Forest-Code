@@ -16,10 +16,10 @@
 }
 
 .modal-content {
-  background-color: #FEFEFE;
+  background-color: var(--bg-color);
   margin: auto;
   padding: 40px;
-  border: 2px solid black;
+  border: 2px solid var(--br-color);
   border-radius: 18px;
   width: 579px;
   position: absolute;
@@ -44,11 +44,7 @@
   }
 }
 
-
-
-
-
- .main-modal-window-content {
+.main-modal-window-content {
   display: flex;
   justify-content: space-between;
 }
@@ -67,6 +63,10 @@
   width: 279px;
 }
 
+.modal-main-content-text h2 {
+  color: var(--text-color);
+}
+
 .modal-book-description {
   font-family: var(--myFont);
   font-weight: 400;
@@ -81,6 +81,7 @@
   top: 24px;
   right: 24px;
   cursor: pointer;
+  stroke: var(--text-color);
 }
 
 .close-window:hover path {
@@ -104,16 +105,16 @@
   font-size: 12px;
   line-height: 117%;
   letter-spacing: -0.04em;
-  color: #B4AFAF;
+  color: #b4afaf;
 }
 
 .card-books-category-button {
-  color: black;
+  color: var(--text-color);
   text-transform: uppercase;
   font-size: 14px;
   font-family: var(--myFont);
-  background-color: white;
-  border: 3px solid #4F2EE8;
+  background-color: var(--bg-color);
+  border: 3px solid #4f2ee8;
   border-radius: 40px;
   padding: 14px 28px;
   margin-top: 40px;
@@ -122,14 +123,14 @@
 
 .card-books-category-button:hover {
   color: white;
-  background-color: #4F2EE8;
+  background-color: #4f2ee8;
 }
 
 .card-books-category-button:focus {
   color: white;
-  background-color: #4F2EE8;
+  background-color: #4f2ee8;
 }
 
 :root {
-  --myFont: "DM Sans", sans-serif;
+  --myFont: 'DM Sans', sans-serif;
 }
