@@ -322,6 +322,7 @@ h2 {
     line-height: 52px;
     line-height: 1.08;
   }
+
   .shoppinglist {
     margin-left: 40px;
   }
@@ -330,6 +331,7 @@ h2 {
     /* max-width: 1440px; */
     margin: 0 auto;
   }
+
   .shopping-list {
     /* margin: 0 auto; */
     display: flex;
@@ -337,7 +339,6 @@ h2 {
 
   .shoplist {
     margin-left: 40px;
-
     width: calc(
       100% - 396px
     ); /* 100% ширина контейнера мінус ширина .support-ukraine та відстань 40px */
@@ -345,7 +346,9 @@ h2 {
 
   .support-ukraine {
     margin: 0 auto;
+    margin-right: 40px;
   }
+
   .shoplist-error-content {
     width: 349px;
     height: 309px;
@@ -356,10 +359,6 @@ h2 {
     display: flex;
     /* justify-content: space-between; */
     margin-top: 40px;
-  }
-
-  .support-ukraine {
-    margin-right: 40px;
   }
 
   .shoplist-error {
