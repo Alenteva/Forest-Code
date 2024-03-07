@@ -33,7 +33,7 @@ body {
 
 .header-nav,
 .header-user {
-  display: none;
+  /* display: none; */
 }
 
 .header {
@@ -202,7 +202,7 @@ body {
     align-items: center;
     gap: 30px;
     padding-left: 40px;
-    display: none;
+    /* display: none; */
   }
 
   .shop-list-svg-basket {
@@ -253,7 +253,7 @@ body {
     display: flex;
     align-items: center;
     gap: 24px;
-    display: none;
+    /* display: none; */
   }
 
   .shop-list-svg-basket {
