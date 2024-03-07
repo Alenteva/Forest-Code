@@ -29,29 +29,23 @@ const auth = getAuth();
 
 const formContainer = document.querySelector('.Form-window');
 const closeFormBtn = document.querySelector('.Close-form-btn');
-const headerSignUp = document.querySelector('.sign-up');
+const headerSignUp = document.querySelectorAll('.sign-up');
+const burgSignUp = document.querySelector('.burger-menu-user');
 const emailInput = document.getElementById('email');
 const passwordInput = document.getElementById('password');
 const usernamelInput = document.getElementById('username');
 const signInButton = document.querySelector('.quickstart-sign-in');
 const signUpButton = document.querySelector('.quickstart-sign-up');
 const headerNav = document.querySelector('.header-nav');
+const burgMenu = document.querySelector('.burger-menu-list');
 const passwordResetButton = document.querySelector('.reset-btn');
 const logOutBtn = document.querySelector('.log-out-btn');
 // ========================================================================
-// const signupHeaderBtn = document.getElementById('signupHeader');
-// const signupBurgerBtn = document.getElementById('signupBurger');
-// function handleButtonClick(event) {
-//   formContainer.classList.add('is-open');
-// }
-// signupHeaderBtn.addEventListener('click', handleButtonClick);
-// signupBurgerBtn.addEventListener('click', handleButtonClick);
-
-headerSignUp.addEventListener('click', function () {
-  formContainer.classList.add('is-open');
-  //   document.body.style.overflow = 'hidden';
+headerSignUp.forEach(el => {
+  el.addEventListener('click', function () {
+    formContainer.classList.add('is-open');
+  });
 });
-
 closeFormBtn.addEventListener('click', function () {
   formContainer.classList.remove('is-open');
 });
@@ -83,7 +77,9 @@ function toggleSignIn() {
         user.displayName = name;
         formContainer.classList.remove('is-open');
         headerNav.style.display = 'flex';
+        burgMenu.style.display = 'block';
         headerSignUp.textContent = user.displayName;
+        burgSignUp.textContent = user.displayName;
         iziToast.show({
           title: 'Hello',
           message: `Welcome, ${user.displayName}!`,
@@ -134,7 +130,9 @@ function handleSignUp() {
       user.displayName = name;
       formContainer.classList.remove('is-open');
       headerNav.style.display = 'flex';
+      burgMenu.style.display = 'block';
       headerSignUp.textContent = user.displayName;
+      burgSignUp.textContent = user.displayName;
       iziToast.show({
         title: 'Ok',
         message: 'You have successfully registered!',
@@ -176,7 +174,9 @@ window.onload = function () {
           user.email = userData.mail;
           formContainer.classList.remove('is-open');
           headerNav.style.display = 'flex';
+          burgMenu.style.display = 'block';
           headerSignUp.textContent = user.displayName;
+          burgSignUp.textContent = user.displayName;
           updateUI(user);
         }
       })
@@ -193,10 +193,13 @@ function updateUI(user) {
     // Відображення UI для автентифікованого користувача
     formContainer.classList.remove('is-open');
     headerNav.style.display = 'flex';
+    burgMenu.style.display = 'block';
     headerSignUp.textContent = user.displayName;
+    burgSignUp.textContent = user.displayName;
   } else {
     // Відображення UI для неавтентифікованого користувача
     headerNav.style.display = 'none';
+    burgMenu.style.display = 'none';
     formContainer.classList.remove('is-open');
   }
 }
