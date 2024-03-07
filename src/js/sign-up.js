@@ -39,6 +39,13 @@ const headerNav = document.querySelector('.header-nav');
 const passwordResetButton = document.querySelector('.reset-btn');
 const logOutBtn = document.querySelector('.log-out-btn');
 // ========================================================================
+// const signupHeaderBtn = document.getElementById('signupHeader');
+// const signupBurgerBtn = document.getElementById('signupBurger');
+// function handleButtonClick(event) {
+//   formContainer.classList.add('is-open');
+// }
+// signupHeaderBtn.addEventListener('click', handleButtonClick);
+// signupBurgerBtn.addEventListener('click', handleButtonClick);
 
 headerSignUp.addEventListener('click', function () {
   formContainer.classList.add('is-open');
@@ -47,7 +54,6 @@ headerSignUp.addEventListener('click', function () {
 
 closeFormBtn.addEventListener('click', function () {
   formContainer.classList.remove('is-open');
-  //   document.body.style.overflow = '';
 });
 // =================================================
 function toggleSignIn() {
@@ -182,7 +188,7 @@ window.onload = function () {
   }
 };
 
-function updateUI(user = null) {
+function updateUI(user) {
   if (user) {
     // Відображення UI для автентифікованого користувача
     formContainer.classList.remove('is-open');
