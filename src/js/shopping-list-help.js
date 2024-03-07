@@ -1,12 +1,19 @@
 // import tuiPagination from 'tui-pagination'; // Імпортуємо бібліотеку пагінації
+const KEY = 'arrayBooksShop';
+const bookListContainer = document.querySelector('.marcup');
 
 document.addEventListener('DOMContentLoaded', function () {
-  const bookListContainer = document.querySelector('.marcup');
-
   //=============================================================================================================
+
+
+
   const books = loadFromLS(); // присвоємо змінній функцію для отримання книг з localStorage
   console.log(books);
+
   const btnDeleteBook = document.querySelectorAll('.shoplist-btn-delete'); // знайшли всі кнопки видалення
+  console.log(btnDeleteBook);
+
+  console.log(localStorage);
   // Получение buy_links из Local Storage
   const buy_links = JSON.parse(localStorage.getItem('buy_links')) || [];
 
@@ -30,16 +37,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const button = event.currentTarget; // Отримання поточної кнопки, на яку було натиснуто, з об'єкта події event.
         const bookIdToDelete = button.dataset.bookId; //Отримання id книги, пов'язаної з цією кнопкою, з атрибуту data-bookId.
-        const localStorageData = JSON.parse(
-          localStorage.getItem('arrayBooksShop')
-        ); // Отримання даних про книги з локального сховища браузера з ключем 'idBooks'.
+        const localStorageData = JSON.parse(localStorage.getItem('KEY')); // Отримання даних про книги з локального сховища браузера з ключем 'idBooks'.
         //Фільтрація цих даних таким чином, щоб вони не містили об'єкт з id, який ми хочемо видалити.
         const updatedLocalStorageData = localStorageData.filter(
           item => item._id !== bookIdToDelete
         );
 
         localStorage.setItem(
-          'arrayBooksShop',
+          'KEY',
           JSON.stringify(updatedLocalStorageData) // Збереження оновлених даних про книги до локального сховища браузера з ключем 'idBooks'.
         );
 
@@ -91,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const bookIdToDelete = button.dataset.bookId; // Отримати id книги для видалення
 
     // Отримати дані з localStorage
-    let localStorageData = JSON.parse(localStorage.getItem('arrayBooksShop'));
+    let localStorageData = JSON.parse(localStorage.getItem('KEY'));
 
     // Знайти індекс книги для видалення за її id
     const indexToDelete = localStorageData.findIndex(
@@ -100,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (indexToDelete !== -1) {
       localStorageData.splice(indexToDelete, 1); // Видалити книгу з масиву
-      localStorage.setItem('arrayBooksShop', JSON.stringify(localStorageData)); // Оновити дані в localStorage
+      localStorage.setItem('KEY', JSON.stringify(localStorageData)); // Оновити дані в localStorage
       renderBooks(localStorageData); // Оновити список книг на сторінці
       checkAndUpdateEmptyMessage(); // Перевірити, чи пусте локальне сховище та відображення відповідного повідомлення
     }
@@ -108,14 +113,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // ================функція для отримання книг з localStorage
   function loadFromLS() {
-    const booksJSON = localStorage.getItem('arrayBooksShop') || '[]';
+    const booksJSON = localStorage.getItem('KEY') || '[]';
     return JSON.parse(booksJSON);
   }
 
   // ====Функція для перевірки пустоти локального сховища та відображення відповідного повідомлення
 
   function checkAndUpdateEmptyMessage() {
-    const localStorageData = JSON.parse(localStorage.getItem('arrayBooksShop'));
+    const localStorageData = JSON.parse(localStorage.getItem('KEY'));
     if (!localStorageData || localStorageData.length === 0) {
       bookListContainer.innerHTML = emptyMessage();
     }
@@ -137,7 +142,17 @@ document.addEventListener('DOMContentLoaded', function () {
     return `
    <div class="shoplist-error container">
 
-      <div id="${_id}"></div>
+<div class="shoplist">
+            <h1 class="shoplist-title">
+              Shopping
+              <span class="shoplist-title-span"> List</span>
+            </h1>
+          </div>
+      <div id="${_id}"></div>   
+=======
+
+      
+
         <img src="${book_image}" alt="${title}" class="shoplist-bookcover"/>
         <div class="shoplist">
           <h2 class="shoplist-title-book">${title}</h2>
@@ -167,10 +182,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function emptyMessage() {
     return `
-    <div class="shoplist-error container is-active">
+    <div class="shoplist-error container">
       </div>
       <div class="shoplist-error">
-        <h1 class="shoplist-title error">
+        <h1 class="shoplist-title-error">
           Shopping
           <span class="shoplist-title-span">List</span>
         </h1>
