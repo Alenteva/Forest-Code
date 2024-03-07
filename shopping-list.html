@@ -10,30 +10,89 @@
       href="https://cdn.jsdelivr.net/npm/modern-normalize@2.0.0/modern-normalize.min.css"
     />
     
-    <script type="module" crossorigin src="/Forest-Code/assets/vendor-41089998.js"></script>
-    <script type="module" crossorigin src="/Forest-Code/assets/shopping-list-help-90231ac5.js"></script>
-    <link rel="stylesheet" href="/Forest-Code/assets/vendor-9473f0a0.css">
-    <link rel="stylesheet" href="/Forest-Code/assets/shopping-list-help-58ce38d4.css">
+    <script type="module" crossorigin src="/Forest-Code/assets/shopping-list-help-b3e44a1b.js"></script>
+    <link rel="stylesheet" href="/Forest-Code/assets/shopping-list-help-edf07d88.css">
   </head>
   <body>
     <div id="shopping-list"></div>
     <header>
-      
+      <div class="header container">
+  <div>
+    <a class="header-logo" href="./index.html"
+      ><svg class="header-logo-svg" width="24" height="24">
+        <use href="/Forest-Code/assets/icon-4664cafe.svg#icon-logo1"></use>
+      </svg>
+      <h3>Bookshelf</h3>
+    </a>
+  </div>
+
+  <nav class="header-nav">
+    <a class="home" href="./index.html">HOME</a>
+    <a class="shop-list header-shop-nav" href="./shopping-list.html"
+      >SHOPPING LIST
+      <svg class="shop-list-svg-basket" width="20" height="20">
+        <use href="/Forest-Code/assets/icon-4664cafe.svg#icon-shopping-bag"></use>
+      </svg>
+    </a>
+  </nav>
+
+  <div class="header-seting">
+    <label class="form-switch">
+      <input type="checkbox" class="header-switch" />
+      <i></i>
+    </label>
+
+    <button class="header-user sign-up">
+      Sign up
+      <svg class="singl-up-svg-icon" width="20" height="20">
+        <use href="/Forest-Code/assets/icon-4664cafe.svg#icon-right-singl-up"></use>
+      </svg>
+    </button>
+
+    <span class="header-menu" id="burgerToggle"
+      ><svg class="menu-svg-icon" width="28" height="28">
+        <use href="/Forest-Code/assets/icon-4664cafe.svg#icon-menu-burg"></use>
+      </svg>
+    </span>
+  </div>
+</div>
+
     </header>
 
     <main>
       <div class="shopping-list container">
-        
-      </div>
-
-      <div class="shoppinglist-container">
-        <div class="shoplist">
-          <h1 class="shoplist-title">
-            Shopping
-            <span class="shoplist-title-span"> List</span>
-          </h1>
+        <div class="support-wrapper desktop-tablet-only">
+          <div class="support-title">
+            <span class="support-paragraph">Support Ukraine</span>
+            <svg class="ukraine-emblem" width="20" height="32">
+              <use href="/Forest-Code/assets/icon-4664cafe.svg#icon-Vector-emblem"></use>
+            </svg>
+          </div>
+          <div class="swiper-container">
+            <div class="swiper">
+              <div class="swiper-wrapper"></div>
+            </div>
+          </div>
+          <button
+            class="support-swiper-btn"
+            type="button"
+            aria-label="Scroll more funds"
+          >
+            <svg class="swiper-button-icon">
+              <use href="/Forest-Code/assets/icon-4664cafe.svg#icon-fi-rr-angle-small-left"></use>
+            </svg>
+          </button>
         </div>
-        <div class="marcup"></div>
+
+        <div class="shoppinglist">
+          <div class="shoplist">
+            <h1 class="shoplist-title">
+              Shopping
+              <span class="shoplist-title-span"> List</span>
+            </h1>
+          </div>
+          <div class="marcup"></div>
+        </div>
       </div>
     </main>
 
