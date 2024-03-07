@@ -168,6 +168,9 @@
   line-height: 117%;
   letter-spacing: -0.04em;
   color: #b4afaf;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .books_list {
   display: flex;
