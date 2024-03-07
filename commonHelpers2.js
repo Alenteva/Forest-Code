@@ -1,11 +1,21 @@
-import"./assets/styles-02ccdce5.js";document.addEventListener("DOMContentLoaded",function(){const p=document.querySelector(".marcup"),r=h();console.log(r);const g=document.querySelectorAll(".shoplist-btn-delete");JSON.parse(localStorage.getItem("buy_links")),r.length===0?p.innerHTML=d():(c(r),u());async function u(){g.forEach(o=>{o.addEventListener("click",async e=>{const l=o.querySelector("li");m(e),l.remove();const a=e.currentTarget.dataset.bookId,i=JSON.parse(localStorage.getItem("arrayBooksShop")).filter(n=>n._id!==a);localStorage.setItem("arrayBooksShop",JSON.stringify(i)),await new Promise(n=>setTimeout(n,1e3)),c(i)})})}function m(o){o.target.nodeName}function c(o){const e=o.slice(0,3);if((JSON.parse(localStorage.getItem("buy_links"))||[]).find(t=>t.name==="Amazon")){const t=e.map(n=>`<li>${S(n)}</li>`).join(""),i=document.querySelector(".marcup");i.innerHTML=`<ul>${t}</ul>`}else console.log("Ссылка на Amazon не найдена в localStorage.");document.querySelectorAll(".shoplist-btn-delete").forEach(t=>{t.addEventListener("click",k)})}function k(o){const l=o.currentTarget.dataset.bookId;let s=JSON.parse(localStorage.getItem("arrayBooksShop"));const a=s.findIndex(t=>t._id===l);a!==-1&&(s.splice(a,1),localStorage.setItem("arrayBooksShop",JSON.stringify(s)),c(s),b())}function h(){const o=localStorage.getItem("arrayBooksShop")||"[]";return JSON.parse(o)}function b(){const o=JSON.parse(localStorage.getItem("arrayBooksShop"));(!o||o.length===0)&&(p.innerHTML=d())}function S(o){const{_id:e,book_image:l,title:s,list_name:a,description:t,author:i,buy_links:n}=o;return`
+import"./assets/support-ukraine-4272b221.js";import"./assets/vendor-41089998.js";const g=document.querySelector(".marcup");document.addEventListener("DOMContentLoaded",function(){const c=b();console.log(c);const p=document.querySelectorAll(".shoplist-btn-delete");console.log(p),console.log(localStorage),JSON.parse(localStorage.getItem("buy_links")),c.length===0?g.innerHTML=d():(r(c),m());async function m(){p.forEach(o=>{o.addEventListener("click",async e=>{const a=o.querySelector("li");u(e),a.remove();const l=e.currentTarget.dataset.bookId,i=JSON.parse(localStorage.getItem("KEY")).filter(n=>n._id!==l);localStorage.setItem("KEY",JSON.stringify(i)),await new Promise(n=>setTimeout(n,1e3)),r(i)})})}function u(o){o.target.nodeName}function r(o){const e=o.slice(0,3);if((JSON.parse(localStorage.getItem("buy_links"))||[]).find(t=>t.name==="Amazon")){const t=e.map(n=>`<li>${S(n)}</li>`).join(""),i=document.querySelector(".marcup");i.innerHTML=`<ul>${t}</ul>`}else console.log("Ссылка на Amazon не найдена в localStorage.");document.querySelectorAll(".shoplist-btn-delete").forEach(t=>{t.addEventListener("click",h)})}function h(o){const a=o.currentTarget.dataset.bookId;let s=JSON.parse(localStorage.getItem("KEY"));const l=s.findIndex(t=>t._id===a);l!==-1&&(s.splice(l,1),localStorage.setItem("KEY",JSON.stringify(s)),r(s),k())}function b(){const o=localStorage.getItem("KEY")||"[]";return JSON.parse(o)}function k(){const o=JSON.parse(localStorage.getItem("KEY"));(!o||o.length===0)&&(g.innerHTML=d())}function S(o){const{_id:e,book_image:a,title:s,list_name:l,description:t,author:i,buy_links:n}=o;return`
    <div class="shoplist-error container">
 
-      <div id="${e}"></div>
-        <img src="${l}" alt="${s}" class="shoplist-bookcover"/>
+<div class="shoplist">
+            <h1 class="shoplist-title">
+              Shopping
+              <span class="shoplist-title-span"> List</span>
+            </h1>
+          </div>
+      <div id="${e}"></div>   
+=======
+
+      
+
+        <img src="${a}" alt="${s}" class="shoplist-bookcover"/>
         <div class="shoplist">
           <h2 class="shoplist-title-book">${s}</h2>
-          <p class="shoplist-category-book">${a}</p>
+          <p class="shoplist-category-book">${l}</p>
           <p class="shoplist-description">${t}</p>
           <p class="shoplist-author">${i}</p>
         </div>
@@ -23,10 +33,10 @@ import"./assets/styles-02ccdce5.js";document.addEventListener("DOMContentLoaded"
       </div>
 
     `}function d(){return`
-    <div class="shoplist-error container is-active">
+    <div class="shoplist-error container">
       </div>
       <div class="shoplist-error">
-        <h1 class="shoplist-title error">
+        <h1 class="shoplist-title-error">
           Shopping
           <span class="shoplist-title-span">List</span>
         </h1>
