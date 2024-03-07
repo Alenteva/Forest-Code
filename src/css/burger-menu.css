@@ -11,9 +11,9 @@
 }
 .burger-menu {
   position: fixed;
-  top: 64px;
+  top: 0;
   left: 0;
-  z-index: 999;
+  z-index: 99;
   width: 100%;
   height: 100%;
   box-shadow: 0 10px 10px 0 rgba(245, 245, 247, 0.1);
@@ -52,7 +52,7 @@
     width: 184px;
     height: 48px;
     left: 20px;
-    top: 40px;
+    top: 104px;
     box-sizing: border-box;
     border: 1.5px solid rgb(17, 17, 17);
     border-radius: 18px;
@@ -67,7 +67,7 @@
     padding: 0 14px;
 }
 .burger-menu-list {
-  margin: 183px auto;
+  margin: 247px auto;
   justify-content: center;
   align-items: center;
 }
