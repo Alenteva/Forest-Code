@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   //=============================================================================================================
   const books = loadFromLS(); // присвоємо змінній функцію для отримання книг з localStorage
+  console.log(books);
   const btnDeleteBook = document.querySelectorAll('.shoplist-btn-delete'); // знайшли всі кнопки видалення
   // Получение buy_links из Local Storage
   const buy_links = JSON.parse(localStorage.getItem('buy_links')) || [];
@@ -23,9 +24,9 @@ document.addEventListener('DOMContentLoaded', function () {
   async function deleteUpdateLs() {
     btnDeleteBook.forEach(btn => {
       btn.addEventListener('click', async event => {
-        const deleteLi = document.querySelector('li'); //знайдений li в DOM дереві
+        const deleteLi = btn.querySelector('li'); //знайдений li в DOM дереві
         selectColor(event);
-        deleteLi.remove(deleteLi); //видаляється  li на кнопку якої натиснуто
+        deleteLi.remove(); //видаляється  li на кнопку якої натиснуто
 
         const button = event.currentTarget; // Отримання поточної кнопки, на яку було натиснуто, з об'єкта події event.
         const bookIdToDelete = button.dataset.bookId; //Отримання id книги, пов'язаної з цією кнопкою, з атрибуту data-bookId.
@@ -59,6 +60,8 @@ document.addEventListener('DOMContentLoaded', function () {
   // ================= функція відображення трьох книжок на сторінці==================
   function renderBooks(books) {
     const limitedBooks = books.slice(0, 3);
+
+    const buy_links = JSON.parse(localStorage.getItem('buy_links')) || [];
 
     const amazonLink = buy_links.find(link => link.name === 'Amazon'); // помилка відсутньості buy_links на сервері
     // Проверяем, существует ли ссылка на Amazon в buy_links
