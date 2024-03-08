@@ -317,43 +317,6 @@ import {
   updateProfile,
 } from 'firebase/auth';
 
-const firebaseConfig = {
-  apiKey: 'AIzaSyD8UvisVnkCvMijmf6q4ZtLkQgC43vz2KM',
-  authDomain: 'dookshelf-357a4.firebaseapp.com',
-  projectId: 'dookshelf-357a4',
-  storageBucket: 'dookshelf-357a4.appspot.com',
-  messagingSenderId: '957443484270',
-  appId: '1:957443484270:web:de06245395594e6cf9947f',
-  measurementId: 'G-PGZE6HZC47',
-};
-initializeApp(firebaseConfig);
-const auth = getAuth();
-
-onAuthStateChanged(auth, async user => {
-  if (user) {
-    console.log('user', user);
-    formContainer.classList.remove('is-open');
-    headerNav.style.display = 'flex';
-    iziToast.show({
-      title: 'Hello',
-      message: `Welcome, ${user.displayName}!`,
-      color: 'blue',
-      position: 'topCenter',
-    });
-    headerSignUp.forEach(el => (el.textContent = user.displayName));
-    // document.querySelector('#signupHeader').textContent = user.displayName;
-    localStorage.setItem(
-      'user-data',
-      JSON.stringify({
-        name: user.displayName,
-        mail: user.email,
-      })
-    );
-  } else {
-    // Користувач вийшов з системи
-    // ...
-  }
-});
 const formContainer = document.querySelector('.Form-window');
 const closeFormBtn = document.querySelector('.Close-form-btn');
 const headerSignUp = document.querySelectorAll('.sign-up');
@@ -365,6 +328,45 @@ const signUpButton = document.querySelector('.quickstart-sign-up');
 const headerNav = document.querySelector('.header-nav');
 const passwordResetButton = document.querySelector('.reset-btn');
 const logOutBtn = document.querySelector('.log-out-btn');
+
+const firebaseConfig = {
+  apiKey: 'AIzaSyD8UvisVnkCvMijmf6q4ZtLkQgC43vz2KM',
+  authDomain: 'dookshelf-357a4.firebaseapp.com',
+  projectId: 'dookshelf-357a4',
+  storageBucket: 'dookshelf-357a4.appspot.com',
+  messagingSenderId: '957443484270',
+  appId: '1:957443484270:web:de06245395594e6cf9947f',
+  measurementId: 'G-PGZE6HZC47',
+};
+initializeApp(firebaseConfig);
+const auth = getAuth();
+window.onload = function () {
+  onAuthStateChanged(auth, async user => {
+    if (user) {
+      console.log('user', user);
+      formContainer.classList.remove('is-open');
+      headerNav.style.display = 'flex';
+      iziToast.show({
+        title: 'Hello',
+        message: `Welcome, ${user.displayName}!`,
+        color: 'blue',
+        position: 'topCenter',
+      });
+      headerSignUp.forEach(el => (el.textContent = user.displayName));
+      // document.querySelector('#signupHeader').textContent = user.displayName;
+      localStorage.setItem(
+        'user-data',
+        JSON.stringify({
+          name: user.displayName,
+          mail: user.email,
+        })
+      );
+    } else {
+      // Користувач вийшов з системи
+      // ...
+    }
+  });
+};
 // ========================================================================
 // const signupHeaderBtn = document.getElementById('signupHeader');
 // const signupBurgerBtn = document.getElementById('signupBurger');
@@ -463,7 +465,7 @@ function handleSignUp() {
       user.displayName = name;
       formContainer.classList.remove('is-open');
       headerNav.style.display = 'flex';
-      document.querySelector('#signupHeader').textContent = user.displayName;
+      headerSignUp.forEach(el => (el.textContent = user.displayName));
       await updateProfile(user, { displayName: user.displayName });
       iziToast.show({
         title: 'Ok',
