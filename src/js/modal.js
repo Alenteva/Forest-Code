@@ -56,6 +56,7 @@ async function renderBook(_id) {
               <div class="links-books">
                   <a class="" href="${book.buy_links[0].url}" rel="amazon ${book.title}" target="_blank""><img src="/images/myPhotos/amazon.png" alt="amazon" class="filter-img"></a>
                   <a class="" href="${book.buy_links[1].url}" rel="apple-book" target="_blank""><img src="/images/myPhotos/book.png" alt="amazon" class="filter-img"></a>
+
               </div>
           </div>
       </div>
