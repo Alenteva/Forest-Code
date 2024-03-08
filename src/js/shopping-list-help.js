@@ -1,15 +1,22 @@
 import axios from 'axios';
 const getId = JSON.parse(localStorage.getItem('arrayBooksShop'));
 const shopList = document.querySelector('.marcup');
+const arrayBooksShop = JSON.parse(localStorage.getItem('arrayBooksShop'));
 
-for (let numberBook in getId) {
-  for (let id in getId[numberBook]) {
-    const idBook = getId[numberBook][id];
-    console.log(idBook);
-    axios
-      .get(`https://books-backend.p.goit.global/books/${idBook}`)
-      .then(response => renderList(response.data, idBook)) // передаем id книги в функцию renderList
-      .catch(error => console.log(error.message));
+if (!arrayBooksShop || arrayBooksShop.length === 0) {
+  const bookListContainer = document.querySelector('.shoplist-title');
+
+  bookListContainer.innerHTML = renderListEmpty();
+} else {
+  for (let numberBook in getId) {
+    for (let id in getId[numberBook]) {
+      const idBook = getId[numberBook][id];
+      console.log(idBook);
+      axios
+        .get(`https://books-backend.p.goit.global/books/${idBook}`)
+        .then(response => renderList(response.data, idBook)) // передаем id книги в функцию renderList
+        .catch(error => console.log(error.message));
+    }
   }
 }
 
@@ -54,6 +61,30 @@ async function renderList(object, idBook) {
     getId.splice(getId.indexOf(idBook), 1);
   });
 }
+
+//=============== функція рендеру розмітки вікна, якщо немає книжок в LS ========
+
+function renderListEmpty() {
+  const img = 'books-tab-2x.png'; // назва файлу зображення
+  const imgPath = 'images/shopping-list/' + img;
+  return `
+     
+       <div class="shoplist-error">
+         <p class="shoplist-title-error">
+           Shopping
+           <span class="shoplist-title-span">List</span>
+         </p>
+         <div class="shoplist-error-content">
+           <p class="shoplist-error-text">This page is empty, add some books and proceed to order.</p>
+           <img src="${imgPath}" alt="books" class="shoplist-error-books">
+         </div>
+       </div>
+     </div>
+   `;
+}
+
+// document.addEventListener('DOMContentLoaded', function () {
+//   const bookListContainer = document.querySelector('.shoplist-title');
 
 // // ================= функція відображення трьох книжок на сторінці==================
 // function renderBooks(books) {

@@ -1,3 +1,6 @@
+.support-wrapper {
+  margin-top: 40px;
+}
 .shoplist-title {
   font-weight: 700;
   font-size: 32px;
@@ -13,6 +16,36 @@
 
 .shoplist-title-span {
   color: blue;
+}
+
+.shoplist-error {
+  margin: 0 auto;
+}
+.shoplist-title-error {
+  font-size: 32px;
+
+  line-height: 38px;
+  line-height: 1.1875;
+  letter-spacing: -0.04em;
+  color: black;
+}
+.shoplist-error-text {
+  width: 244px;
+  margin: 0 auto;
+  margin-top: 120px;
+  font-weight: 400;
+  font-size: 14px;
+
+  line-height: 18px;
+  line-height: 1.28571;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.shoplist-error-books {
+  width: 265px;
+  margin: 0 auto;
 }
 
 .shop-book {
@@ -180,6 +213,22 @@
   .apple-book {
     width: 28px;
   }
+
+  .shoplist-title-error {
+    font-size: 48px;
+    line-height: 52px;
+    line-height: 1.08;
+  }
+  .shoplist-error-text {
+    width: 349px;
+    font-size: 18px;
+    line-height: 24px;
+    line-height: 1.33;
+  }
+
+  .shoplist-error-books {
+    width: 322px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
@@ -210,6 +259,13 @@
   .shoplist-btn-delete {
     width: 34px;
     height: 34px;
+  }
+  .shoplist-error-content {
+    margin: 0 auto;
+  }
+
+  .shoplist-error-books {
+    margin: 0 auto;
   }
 
   .shoplist-btn-icon {
