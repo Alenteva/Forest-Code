@@ -80,7 +80,7 @@ async function showBooksInShoppingList(data) {
                       <p>${data.author}</p>
                       <div class="links-books">
                         <a href="${data.link_amazon}" rel="amazon ${data.title}" target="_blank""><img src="./images/myPhotos/amazon.png" alt="amazon" class="filter-img"></a>
-                        <a href="${data.link_goto}" rel="apple-book" target="_blank""><img src="./images/myPhotos/book.png" alt="amazon" class="filter-img"></a>
+                        <a href="${data.link_goto}" rel="apple-book" target="_blank""><img src="/images/myPhotos/book.png" alt="amazon" class="filter-img"></a>
                       </div>
                   </div>
               </div>
@@ -252,7 +252,7 @@ function isWidthDevice() {
 
   if (widthWindow <= 767) return 1;
   else return 2;
-} 
+}
 
 // local storeg //
 function getMapFromLocalStorage() {
