@@ -1,34 +1,31 @@
-// import iziToast from 'izitoast';
-// import 'izitoast/dist/css/iziToast.min.css';
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
 
-// import { initializeApp } from 'firebase/app';
-// import { getAnalytics } from 'firebase/analytics';
-// import {
-//   connectAuthEmulator,
-//   createUserWithEmailAndPassword,
-//   getAuth,
-//   onAuthStateChanged,
-//   sendEmailVerification,
-//   sendPasswordResetEmail,
-//   signInWithEmailAndPassword,
-//   signInWithCustomToken,
-//   signOut,
-// } from 'firebase/auth';
+import { initializeApp } from 'firebase/app';
+import { getAnalytics } from 'firebase/analytics';
+import {
+  connectAuthEmulator,
+  createUserWithEmailAndPassword,
+  getAuth,
+  onAuthStateChanged,
+  sendEmailVerification,
+  sendPasswordResetEmail,
+  signInWithEmailAndPassword,
+  signInWithCustomToken,
+  signOut,
+} from 'firebase/auth';
 
-// const firebaseConfig = {
-//   apiKey: 'AIzaSyD8UvisVnkCvMijmf6q4ZtLkQgC43vz2KM',
-//   authDomain: 'dookshelf-357a4.firebaseapp.com',
-//   projectId: 'dookshelf-357a4',
-//   storageBucket: 'dookshelf-357a4.appspot.com',
-//   messagingSenderId: '957443484270',
-//   appId: '1:957443484270:web:de06245395594e6cf9947f',
-//   measurementId: 'G-PGZE6HZC47',
-// };
-// initializeApp(firebaseConfig);
-// const auth = getAuth();
-
-
-
+const firebaseConfig = {
+  apiKey: 'AIzaSyD8UvisVnkCvMijmf6q4ZtLkQgC43vz2KM',
+  authDomain: 'dookshelf-357a4.firebaseapp.com',
+  projectId: 'dookshelf-357a4',
+  storageBucket: 'dookshelf-357a4.appspot.com',
+  messagingSenderId: '957443484270',
+  appId: '1:957443484270:web:de06245395594e6cf9947f',
+  measurementId: 'G-PGZE6HZC47',
+};
+initializeApp(firebaseConfig);
+const auth = getAuth();
 
 const formContainer = document.querySelector('.Form-window');
 const closeFormBtn = document.querySelector('.Close-form-btn');
@@ -65,16 +62,15 @@ function toggleSignIn() {
     const password = passwordInput.value;
     const name = usernamelInput.value;
 
-
     if (email.length < 4) {
-       alert('Please enter an email address');
-       return;
-     }
+      alert('Please enter an email address');
+      return;
+    }
 
-     if (password.length < 4) {
-       alert('Please enter a password with at least 4 characters');
-       return;
-     }
+    if (password.length < 4) {
+      alert('Please enter a password with at least 4 characters');
+      return;
+    }
     signInWithEmailAndPassword(auth, email, password)
       .then(userCredential => {
         const user = userCredential.user;
@@ -248,22 +244,16 @@ signUpButton.addEventListener('click', function (event) {
   handleSignUp();
 });
 
+signInButton.addEventListener('click', function (event) {
+  event.preventDefault();
+  toggleSignIn();
+});
 
-// signInButton.addEventListener('click', function (event) {
-//   event.preventDefault();
-//   toggleSignIn();
-// });
+passwordResetButton.addEventListener('click', function (event) {
+  event.preventDefault();
+  resetPassword();
+});
 
-// passwordResetButton.addEventListener('click', function (event) {
-//   event.preventDefault();
-//   resetPassword();
-// });
-
-
-
-
-// // ======================================================================
-=======
 logOutBtn.addEventListener('click', function (event) {
   event.preventDefault();
   handleSignOut();
@@ -273,4 +263,3 @@ headerLogOut.addEventListener('click', function (event) {
   handleSignOut();
 });
 // ======================================================================
-
