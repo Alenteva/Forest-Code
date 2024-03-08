@@ -9,13 +9,17 @@
   </div>
 
   <nav class="header-nav">
-    <a class="home" href="./index.html">HOME</a>
-    <a class="shop-list header-shop-nav" href="./shopping-list.html"
-      >SHOPPING LIST
-      <svg class="shop-list-svg-basket" width="20" height="20">
-        <use href="./images/icon.svg#icon-shopping-bag"></use>
-      </svg>
-    </a>
+    <ul class="header-Link">
+      <li><a class="home" href="./index.html">HOME</a></li>
+      <li>
+        <a class="shop-list header-shop-nav" href="./shopping-list.html"
+          >SHOPPING LIST
+          <svg class="shop-list-svg-basket" width="20" height="20">
+            <use href="./images/icon.svg#icon-shopping-bag"></use>
+          </svg>
+        </a>
+      </li>
+    </ul>
   </nav>
 
   <div class="header-seting">
@@ -23,14 +27,21 @@
       <input type="checkbox" class="header-switch" />
       <i></i>
     </label>
+    <div class="dropdown">
+      <button class="header-user sign-up">
+        Sign up
+        <svg class="singl-up-svg-icon" width="20" height="20">
+          <use href="./images/icon.svg#icon-right-singl-up"></use>
+        </svg>
+      </button>
 
-    <button class="header-user sign-up">
-      Sign up
-      <svg class="singl-up-svg-icon" width="20" height="20">
-        <use href="./images/icon.svg#icon-right-singl-up"></use>
-      </svg>
-    </button>
-
+      <button class="Log-out-btn">
+        Log out
+        <svg class="singl-up-svg-icon" width="20" height="20">
+          <use href="./images/icon.svg#icon-right-singl-up"></use>
+        </svg>
+      </button>
+    </div>
     <span class="header-menu" id="burgerToggle"
       ><svg class="menu-svg-icon" width="28" height="28">
         <use href="./images/icon.svg#icon-menu-burg"></use>

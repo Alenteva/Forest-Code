@@ -40,6 +40,7 @@ const headerNav = document.querySelector('.header-nav');
 const burgMenu = document.querySelector('.burger-menu-list');
 const passwordResetButton = document.querySelector('.reset-btn');
 const logOutBtn = document.querySelector('.log-out-btn');
+const headerLogOut = document.querySelector('.Log-out-btn');
 // ========================================================================
 headerSignUp.forEach(el => {
   el.addEventListener('click', function () {
@@ -194,6 +195,7 @@ function updateUI(user) {
     formContainer.classList.remove('is-open');
     headerNav.style.display = 'flex';
     burgMenu.style.display = 'block';
+    headerLogOut.style.display = 'inline-block';
     headerSignUp.textContent = user.displayName;
     burgSignUp.textContent = user.displayName;
   } else {
@@ -201,6 +203,7 @@ function updateUI(user) {
     headerNav.style.display = 'none';
     burgMenu.style.display = 'none';
     formContainer.classList.remove('is-open');
+    headerLogOut.style.display = 'none';
   }
 }
 // ========================================================================
@@ -256,5 +259,8 @@ logOutBtn.addEventListener('click', function (event) {
   event.preventDefault();
   handleSignOut();
 });
-
+headerLogOut.addEventListener('click', function (event) {
+  event.preventDefault();
+  handleSignOut();
+});
 // ======================================================================
