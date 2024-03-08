@@ -5,6 +5,10 @@ import icon_2 from '../images/book.png';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
+
+import sprite1 from '../images/myPhotos/book.png';
+import sprite2 from '../images/myPhotos/amazon.png';
+
 const listOne = document.querySelector('.list-one');
 let arrayBooksShop = getMapFromLocalStorage();
 updateLocalStorage();
@@ -15,14 +19,12 @@ listOne.addEventListener('click', async e => {
   if (e.target.classList.contains('box-quick-view')) {
     const id = e.target.parentNode.parentNode.dataset.category;
     renderBook(id);
-    
   } else if (e.target.classList.contains('animation-paragraf')) {
     const id = e.target.parentNode.parentNode.parentNode.dataset.category;
     renderBook(id);
-    
   } else if (e.target.classList.contains('img-example')) {
-      const id = e.target.dataset.category;
-      renderBook(id);
+    const id = e.target.dataset.category;
+    renderBook(id);
   }
 });
 async function renderBook(_id) {
@@ -57,7 +59,7 @@ async function renderBook(_id) {
               <p class="book-author">${book.author}</p>
               <p class="modal-book-description">${book.description}</p>
               <div class="links-books">
-                  <a class="" href="${book.buy_links[0].url}" rel="amazon ${book.title}" target="_blank""><img src="${icon}" alt="amazon" class="filter-img"></a>
+                 <a class="" href="${book.buy_links[0].url}" rel="amazon ${book.title}" target="_blank""><img src="${icon}" alt="amazon" class="filter-img"></a>
                   <a class="" href="${book.buy_links[1].url}" rel="apple-book" target="_blank""><img src="${icon_2}" alt="amazon" class="filter-img"></a>
               </div>
           </div>
@@ -65,10 +67,10 @@ async function renderBook(_id) {
       `;
   if (arrayBooksShop.has(book.title)) {
     shopBook += `<button class="card-books-category-button margin-add" type="button" data-id="${book._id}" data-title="${book.title}">Remove from the shopping list</button>
-            <p id="congratulations">Сongratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.</p>`;
+            <p id="congratulations">Congratulations! You have added the book to the shopping list. To delete, press the button "Remove from the shopping list".</p>`;
   } else {
     shopBook += `<button class="card-books-category-button margin-add" type="button" data-id="${book._id}" data-title="${book.title}">Add to shopping list</button>
-              <p id="congratulations" hidden>Сongratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.</p>`;
+              <p id="congratulations" hidden>Congratulations! You have added the book to the shopping list. To delete, press the button "Remove from the shopping list".</p>`;
   }
   document.querySelector('.modal-content').innerHTML = shopBook;
   document.querySelector('.modal-window-shop').style.display = 'block';
