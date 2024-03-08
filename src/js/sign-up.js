@@ -27,7 +27,7 @@ const signUpButton = document.querySelector('.quickstart-sign-up');
 const headerNav = document.querySelector('.header-nav');
 const passwordResetButton = document.querySelector('.reset-btn');
 const logOutBtn = document.querySelector('.log-out-btn');
-
+const burgMenu = document.querySelector('.burger-menu-list');
 const firebaseConfig = {
   apiKey: 'AIzaSyD8UvisVnkCvMijmf6q4ZtLkQgC43vz2KM',
   authDomain: 'dookshelf-357a4.firebaseapp.com',
@@ -45,6 +45,7 @@ window.onload = function () {
       console.log('user', user);
       formContainer.classList.remove('is-open');
       headerNav.style.display = 'flex';
+      burgMenu.style.display = 'block';
       // iziToast.show({
       //   title: 'Hello',
       //   message: `Welcome, ${user.displayName}!`,
@@ -70,7 +71,7 @@ window.onload = function () {
 headerSignUp.forEach(el => {
   el.addEventListener('click', function () {
     formContainer.classList.add('is-open');
-    //   document.body.style.overflow = 'hidden';
+    //
   });
 });
 
@@ -105,9 +106,8 @@ function toggleSignIn() {
         user.displayName = name;
         formContainer.classList.remove('is-open');
         headerNav.style.display = 'flex';
-        burgMenu.style.display = 'block';
-        headerSignUp.textContent = user.displayName;
-        burgSignUp.textContent = user.displayName;
+        // burgMenu.style.display = 'block';
+        headerSignUp.forEach(el => (el.textContent = user.displayName));
         iziToast.show({
           title: 'Hello',
           message: `Welcome, ${user.displayName}!`,
@@ -158,7 +158,7 @@ function handleSignUp() {
       user.displayName = name;
       formContainer.classList.remove('is-open');
       headerNav.style.display = 'flex';
-      burgMenu.style.display = 'block';
+      // burgMenu.style.display = 'block';
       headerSignUp.forEach(el => (el.textContent = user.displayName));
       await updateProfile(user, { displayName: user.displayName });
       iziToast.show({
@@ -196,11 +196,12 @@ function updateUI(user) {
     // Відображення UI для автентифікованого користувача
     formContainer.classList.remove('is-open');
     headerNav.style.display = 'flex';
+    // burgMenu.style.display = 'block';
     headerSignUp.forEach(el => (el.textContent = user.displayName));
   } else {
     // Відображення UI для неавтентифікованого користувача
     headerNav.style.display = 'none';
-    burgMenu.style.display = 'none';
+    // burgMenu.style.display = 'none';
     formContainer.classList.remove('is-open');
   }
 }
