@@ -209,10 +209,6 @@
   font-weight: 700;
 }
 
-.support-wrapper {
-  flex: 1;
-}
-
 /*/////////////tablet//////////////*/
 @media (min-width: 768px) {
   .list_categories {
@@ -268,7 +264,11 @@
     width: 218px;
     height: 366px;
   }
+  .support-wrapper {
+    flex: 1;
+  }
 }
+
 /*//////////////tablet//////////////*/
 
 /*/////////////desktop/////////////*/
@@ -288,6 +288,9 @@
     min-width: 100%;
     padding: 24px 0;
     height: 474px;
+  }
+  .support-wrapper {
+    flex: none;
   }
   .swiper-wraper {
     height: 292px;
