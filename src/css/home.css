@@ -19,6 +19,7 @@
   overflow-x: hidden;
   height: 228px;
 }
+
 /*support*/
 .container-for-support {
   display: flex;
@@ -31,50 +32,35 @@
 
 .list_categories::-webkit-scrollbar {
   width: 8px;
-  height: 167px;
 }
 
 .list_categories::-webkit-scrollbar-track {
-  background-color: #f1f1f1;
+  background-color: #f6f6f6;
 }
 
 .list_categories::-webkit-scrollbar-thumb {
-  background-color: #888;
+  background-color: #dadada;
   border-radius: 12px;
 }
 
 /*styles for scroll*/
 
 .categoria:hover {
-  color: var(--color-cal);
-}
-.categoria:focus {
-  text-transform: uppercase;
-  font-family: 'DM Sans', sans-serif;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 133%;
-  letter-spacing: -0.02em;
-  color: var(--color-cal);
+  color: #4f2ee8;
 }
 .categoria {
   cursor: pointer;
-  gap: 15px;
-  max-width: 100%;
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--myFont);
   font-weight: 400;
-  font-size: 18px;
-  line-height: 133%;
-  letter-spacing: -0.02em;
-  color: var(--text-color);
-  transition: color 350ms;
+  font-size: 16px;
+  color: rgba(17, 17, 17, 0.6);
 }
 .section-home {
   padding: 40px 0;
 }
 .top {
   text-transform: capitalize;
-  color: blue;
+  color: #4f2ee8;
 }
 .list-one {
   display: flex;
@@ -86,6 +72,8 @@
 .img-example {
   border-radius: 8px;
   width: 100%;
+  height: 485px;
+  object-fit: cover;
 }
 .main-title {
   font-family: 'DM Sans', sans-serif;
@@ -156,17 +144,14 @@
   font-weight: 700;
   font-size: 16px;
   line-height: 112%;
-  letter-spacing: -0.04em;
   text-transform: uppercase;
-  color: var(--text-color);
 }
 .author-book {
   font-family: 'DM Sans', sans-serif;
   font-style: italic;
-  font-weight: 400;
+  font-weight: 200;
   font-size: 12px;
   line-height: 117%;
-  letter-spacing: -0.04em;
   color: #b4afaf;
   white-space: nowrap;
   overflow: hidden;
@@ -175,6 +160,7 @@
 .books_list {
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
 }
 .images_books {
   display: flex;
@@ -187,24 +173,15 @@
   height: 535px;
 }
 .button-see-more {
-  border: 2px solid #4f2ee8;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  border: 3px solid #4f2ee8;
   border-radius: 40px;
-  width: 124px;
-  height: 46px;
   font-family: 'DM Sans', sans-serif;
   font-weight: 700;
   font-size: 14px;
-  left: 211px;
   line-height: 129%;
-  letter-spacing: -0.01em;
   text-transform: uppercase;
   transition: background-color 350ms;
-  color: var(--text-color);
-  background-color: var(--bg-color);
+  padding: 14px 28px;
 }
 .button-see-more:hover {
   background-color: #4f2ee8;
@@ -217,13 +194,14 @@
 }
 .name_category {
   font-family: 'DM Sans', sans-serif;
-  font-weight: 400;
+  font-weight: 100;
   font-size: 14px;
   line-height: 129%;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: #b4afaf;
   margin-bottom: 18px;
+  width: 100%;
 }
 .selected-categories {
   text-transform: uppercase;
@@ -231,11 +209,20 @@
   font-weight: 700;
 }
 
+.support-wrapper {
+  flex: 1;
+}
+
 /*/////////////tablet//////////////*/
 @media (min-width: 768px) {
   .list_categories {
     width: 337px;
     height: 100%;
+    gap: 32px;
+  }
+  .list_categories li {
+    font-size: 18px;
+    line-height: 133%;
   }
   .container-for-support {
     flex-direction: row;
@@ -346,6 +333,9 @@
     letter-spacing: -0.04em;
     color: var(--black);
   }
+  .images_books {
+    margin-bottom: 37px;
+  }
   .list-one {
     column-gap: 24px;
     row-gap: 40px;
@@ -365,3 +355,6 @@
   }
 }
 /*/////////////desktop/////////////*/
+:root {
+  --myFont: 'DM Sans', sans-serif;
+}
