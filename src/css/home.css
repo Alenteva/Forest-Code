@@ -46,14 +46,14 @@
 /*styles for scroll*/
 
 .categoria:hover {
-  color: #4f2ee8;
+  color: var(--color-cal);
 }
 .categoria {
   cursor: pointer;
   font-family: var(--myFont);
   font-weight: 400;
   font-size: 16px;
-  color: rgba(17, 17, 17, 0.6);
+  color: var(--con-color);
 }
 .section-home {
   padding: 40px 0;
@@ -182,6 +182,8 @@
   text-transform: uppercase;
   transition: background-color 350ms;
   padding: 14px 28px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 .button-see-more:hover {
   background-color: #4f2ee8;
