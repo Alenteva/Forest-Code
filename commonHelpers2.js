@@ -1,4 +1,4 @@
-import"./assets/support-ukraine-0e3ed85d.js";import{i as y}from"./assets/vendor-7539751a.js";let o=b();f();const u=document.querySelector(".list-books-shopping"),g=document.querySelector(".container-loader"),c=document.querySelector(".ul-pagination");window.addEventListener("load",async e=>{e.preventDefault(),o.size===0?(document.querySelector(".empty-shop-list").style.display="flex",c.style.display="none"):(await p(0,3),m(),v()),L("Shopping List"),g.style.display="none"});async function m(){const e=o.size,i=e/3;let t=`
+import"./assets/support-ukraine-d76b0001.js";import{i as y}from"./assets/vendor-7539751a.js";let o=b();f();const u=document.querySelector(".list-books-shopping"),g=document.querySelector(".container-loader"),c=document.querySelector(".ul-pagination");window.addEventListener("load",async e=>{e.preventDefault(),o.size===0?(document.querySelector(".empty-shop-list").style.display="flex",c.style.display="none"):(await p(0,3),m(),v()),L("Shopping List"),g.style.display="none"});async function m(){const e=o.size,i=e/3;let t=`
       <div class="svg-li-pagination-container">
           <li class="svg-li-pagination-l" data-id="start"><<</li>
           <li class="svg-li-pagination-l" data-id="prev"><</li>
@@ -34,7 +34,7 @@ import"./assets/support-ukraine-0e3ed85d.js";import{i as y}from"./assets/vendor-
                       <p>${e.author}</p>
                       <div class="links-books">
                         <a href="${e.link_amazon}" rel="amazon ${e.title}" target="_blank""><img src="./images/myPhotos/amazon.png" alt="amazon" class="filter-img"></a>
-                        <a href="${e.link_goto}" rel="apple-book" target="_blank""><img src="./images/myPhotos/book.png" alt="amazon" class="filter-img"></a>
+                        <a href="${e.link_goto}" rel="apple-book" target="_blank""><img src="/images/myPhotos/book.png" alt="amazon" class="filter-img"></a>
                       </div>
                   </div>
               </div>
