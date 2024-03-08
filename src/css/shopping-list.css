@@ -1,93 +1,110 @@
-.shoplist-title {
+h1 {
   font-weight: 700;
   font-size: 32px;
-
   line-height: 38px;
   line-height: 1.1875;
   letter-spacing: -0.04em;
   color: black;
-
-  margin-bottom: 40px;
-  margin-top: 40px;
 }
-
-.shoplist-title-span {
-  color: blue;
-}
-
-.shop-book {
-  display: flex;
-  border: 2px solid rgba(79, 46, 232, 0.4);
-  border-radius: 16px;
-  padding: 14px;
-  margin-bottom: 20px;
-  position: relative; /* Устанавливаем позицию элемента как относительную */
-}
-.img-shop {
-  width: 100px;
-  border-radius: 8px;
-  margin-right: 14px;
-}
-.info-about-book {
-  position: relative;
-}
-.shop-title-btn {
-  display: flex;
-}
-.shop-title {
+h2 {
   font-weight: 700;
   font-size: 16px;
   line-height: 18px;
-  line-height: 1.125;
+  line-height: 1.13;
   letter-spacing: -0.04em;
   text-transform: uppercase;
   color: black;
-  margin-bottom: 4px;
 }
-.shop-category {
-  font-weight: 400;
-  font-size: 12px;
-
-  line-height: 14px;
-  line-height: 1.16667;
-  letter-spacing: 0.03em;
-  color: #b4afaf;
+#shopping-list.active,
+#home.active {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 8px 16px 8px 16px;
+  border-radius: 36px;
+  background: rgb(234, 198, 69);
+  color: rgb(17, 17, 17);
+  font-weight: 700;
+}
+/* .container {
+  outline: 2px dashed #F44336;
+} */
+.shopping-list {
+  display: flex;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+.shoppinglist {
+  margin: 0 auto;
+}
+.shoplist {
+  /* margin-top: 40px; */
+}
+.shoplist-container {
+  display: flex;
+  padding: 14px;
+  /* border: 2px solid rgba(79, 46, 232, 0.4); */
+  border-radius: 16px;
+}
+.shoplist-error {
+  padding: 14px;
+  /* border: 2px solid rgba(79, 46, 232, 0.4); */
+  border-radius: 16px;
+}
+/* Сховати блок на мобільних пристроях */
+.desktop-only {
+  display: none;
+}
+/* .shoplist-item {
+  border: 2px solid rgba(79, 46, 232, 0.4);
+} */
+.shoplist-bookcover {
+  border-radius: 8px;
+  width: 100px;
+  margin-right: 14px;
+}
+.shoplist-tophalf {
+}
+.shoplist-title {
+  margin-bottom: 120px;
+}
+.shoplist-title-span {
+  color: blue;
+}
+.shoplist-rightbar {
+}
+.shoplist-title-btn {
+  display: flex;
+  justify-content: space-between;
+}
+.shoplist-title-text {
   margin-bottom: 8px;
 }
-.shop-description {
-  height: 68px;
-  overflow: hidden;
-
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 18px;
-  line-height: 1.28571;
-  letter-spacing: -0.04em;
-  color: black;
-  margin-bottom: 16px;
+.shoplist-title-book {
 }
-
-.shop-author-logo {
-  display: flex;
+.shoplist-error-books {
+  width: 265px;
+  margin: 0 auto;
 }
-.shop-author {
-  font-style: italic;
+.shoplist-category-book {
   font-weight: 400;
   font-size: 12px;
-
   line-height: 14px;
-  line-height: 1.16667;
-  letter-spacing: -0.04em;
+  line-height: 1.17;
+  letter-spacing: 0.03em;
   color: #b4afaf;
-
-  position: absolute;
-  bottom: 0;
 }
-
+.logo-book {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  position: relative; /* Устанавливаем позицию элемента как относительную */
+}
 .shoplist-btn-delete {
   position: absolute; /* Устанавливаем позицию элемента как абсолютную */
-  top: 14px; /* Располагаем кнопку в верхнем краю контейнера */
-  right: 14px; /* Располагаем кнопку в правом краю контейнера */
+  top: 0; /* Располагаем кнопку в верхнем краю контейнера */
+  right: 0; /* Располагаем кнопку в правом краю контейнера */
   width: 28px;
   height: 28px;
   background-color: #4f2ee8;
@@ -97,7 +114,6 @@
 .shoplist-btn-delete:hover:focus {
   background-color: #404bbf;
 }
-
 .shoplist-btn-icon {
   display: flex;
   align-items: center;
@@ -105,119 +121,424 @@
   width: 100%;
   height: 100%;
   fill: white;
-  width: 16px;
-  height: 16px;
 }
 .shoplist-links {
   display: flex;
-  gap: 8px;
   align-items: center;
-  position: absolute; /* Устанавливаем позицию элемента как абсолютную */
-  bottom: 14px; /* Располагаем кнопку в верхнем краю контейнера */
-  right: 14px; /* Располагаем кнопку в правом краю контейнера */
+  margin-top: 145px;
+  gap: 8px; /* Встановлюємо проміжок між елементами */
 }
-.amazon {
+.shoplist-item {
   width: 32px;
+  height: 11px;
 }
 .apple-book {
   width: 16px;
+  height: 16px;
 }
-
-.desktop-only {
-  display: none;
+.shoplist-description {
+  height: 68px;
+  margin-bottom: 46px;
+  overflow: hidden; /* Ця властивість приховує текст, що виходить за рамки */
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  line-height: 1.29;
+  letter-spacing: -0.04em;
+  color: black;
 }
-
+.shoplist-buttonhalf {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.shoplist-author {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  line-height: 1.17;
+  letter-spacing: -0.04em;
+  color: #b4afaf;
+}
+.shoplist-logo-box {
+  display: flex;
+  justify-content: space-between;
+  width: 56px;
+}
+.shoplist-logo-amazon img {
+  filter: grayscale(100%);
+}
+.shoplist-logo-amazon img:hover:focus {
+  filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
+}
+.shoplist-error-content {
+  justify-content: center; /* Розміщує контент по горизонталі по центру */
+  align-items: center; /* Розміщує контент по вертикалі по центру */
+  padding: 14px;
+}
+.shoplist-error-img {
+  margin: 0 auto; /* Збільшує відступи по обох боках для розміщення по центру */
+}
 @media screen and (min-width: 375px) {
+  /* .container {
+    /* max-width: 375px; */
+  /* padding: 0 20px;
+    margin: 0 auto;
+  } */
+  .shoplist-title-error {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 38px;
+    line-height: 1.1875;
+    letter-spacing: -0.04em;
+    color: black;
+    margin-bottom: 120px;
+  }
+  .shoplist-error-text {
+    font-weight: 400;
+    font-size: 14px;
+    margin: 0 auto;
+    line-height: 18px;
+    line-height: 1.29;
+    letter-spacing: -0.02em;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.6);
+    margin-bottom: 14px;
+  }
+  .shoplist-error.container {
+    width: 265px;
+  }
 }
-
 @media screen and (max-width: 768px) {
-  .shoplist-title {
+  .container {
+    padding: 0 32px;
+    max-width: 768px;
+    margin: 0 auto;
+  }
+  .shoplist-error-books {
+    width: 322px;
+  }
+  h1 {
     font-size: 48px;
     line-height: 52px;
+    line-height: 1.08;
   }
-
-  .shoplist-title-span {
-    color: blue;
-  }
-  .shop-book {
-    padding: 24px;
-  }
-  .img-shop {
+  .shoplist-bookcover {
     width: 116px;
     margin-right: 24px;
   }
-  .info-about-book {
-  }
-  .shop-title {
-  }
-  .shop-category {
-    margin-bottom: 14px;
-  }
-  .shop-description {
-    height: 53px;
-    margin-bottom: 48px;
-  }
-  .shop-author {
+  .shoplist-shotcontens {
+    margin-bottom: 38px;
   }
   .shoplist-btn-delete {
     width: 34px;
     height: 34px;
-    top: 24px;
-    right: 24px;
-  }
-  .shoplist-btn-icon {
-    width: 18px;
-    height: 18px;
   }
   .shoplist-links {
-    bottom: 24px;
-    right: 24px;
     gap: 16px;
   }
-  .amazon {
+  .shoplist-item {
     width: 48px;
+    height: 15px;
   }
   .apple-book {
     width: 28px;
+    height: 28px;
   }
-}
-
-@media screen and (min-width: 1440px) {
-  .shopping-list {
-    display: flex;
+  .shoplist-error-content {
     margin: 0 auto;
   }
-
-  .desktop-only {
-    display: block;
-    margin-right: 40px;
-  }
-
-  .shop-book {
-  }
-  .img-shop {
-  }
-  .info-about-book {
-  }
-  .shop-title {
-  }
-  .shop-category {
-  }
-  .shop-description {
-  }
-  .shop-author {
-  }
-  .shoplist-btn-delete {
-    width: 34px;
-    height: 34px;
-  }
-
-  .shoplist-btn-icon {
+  .shoplist-error-text {
+    font-size: 18px;
+    line-height: 24px;
+    line-height: 1.33;
+    margin-bottom: 20px;
   }
   .shoplist-links {
   }
-  .amazon {
+  .shoplist-logo-box {
+    width: 92px;
   }
-  .apple-book {
+  .shoplist-title-error {
+    font-size: 48px;
+    line-height: 52px;
+    line-height: 1.08;
+    letter-spacing: -0.04em;
+    margin-bottom: 140px;
   }
+}
+@media screen and (min-width: 1440px) {
+  .container {
+    padding: 0 24px;
+    /* max-width: 1440px; */
+    /* margin: 0 auto; */
+  }
+  .desktop-only {
+    display: block;
+  }
+  h1 {
+    font-size: 48px;
+    line-height: 52px;
+    line-height: 1.08;
+  }
+  .shoppinglist {
+    margin-left: 40px;
+  }
+  .shoppinglist-container {
+    /* max-width: 1440px; */
+    margin: 0 auto;
+  }
+  .shopping-list {
+    /* margin: 0 auto; */
+    display: flex;
+  }
+  .shoplist {
+    margin-left: 40px;
+    width: calc(
+      100% - 396px
+    ); /* 100% ширина контейнера мінус ширина .support-ukraine та відстань 40px */
+  }
+  .support-ukraine {
+    margin: 0 auto;
+    margin-right: 40px;
+  }
+  .shoplist-error-content {
+    width: 349px;
+    height: 309px;
+    margin: 0 auto;
+  }
+  .shoplist-error.container {
+    display: flex;
+    /* justify-content: space-between; */
+    margin-top: 40px;
+  }
+  .shoplist-error {
+    flex-grow: 1; /* Розтягує елемент, щоб заповнити доступний простір */
+  }
+  .shoplist-error-text {
+    font-size: 18px;
+    line-height: 24px;
+    line-height: 1.33;
+    margin-bottom: 20px;
+  }
+  .shoplist-logo-box {
+    width: 92px;
+  }
+}
+/* new styles 1*/
+.container-loader {
+  display: block;
+  padding-top: 60px;
+}
+.loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  left: calc(50% - 24px);
+  display: block;
+  position: relative;
+  animation: rotate 1s linear infinite;
+}
+.loader::before {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  inset: 0px;
+  border-radius: 50%;
+  border: 5px solid #db0000;
+  animation: prixClipFix 2s linear infinite;
+}
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes prixClipFix {
+  0% {
+    clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0);
+  }
+  25% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0);
+  }
+  50% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%);
+  }
+  75% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%);
+  }
+  100% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 0);
+  }
+}
+/* new styles 2*/
+.class-for-list-shop {
+  flex-direction: column;
+  row-gap: 20px;
+}
+.list-all-books-in-shoplist {
+  display: flex;
+  gap: 24px;
+  border: 3px solid rgba(79, 46, 232, 0.4);
+  border-radius: 16px;
+  padding: 30px 24px;
+}
+.image-example-shop-list {
+  border-radius: 8px;
+  width: 116px;
+  height: 165px;
+  object-fit: cover;
+}
+.main-content-shop-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.data-shop-list > p:nth-child(1) {
+  font-family: var(--myFont);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 112%;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: black;
+}
+.data-shop-list p:nth-child(2) {
+  font-family: var(--myFont);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 117%;
+  letter-spacing: 0.03em;
+  color: #b4afaf;
+  color: #b4afaf;
+}
+.content-shop-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+}
+.bottom-content-shop-list p {
+  font-family: var(--myFont);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 117%;
+  color: #b4afaf;
+}
+/*  */
+.svg-delete-shop-list {
+  border-radius: 50%;
+  background-color: #4f2ee8;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.top-content-shop-list {
+  display: flex;
+  justify-content: space-between;
+}
+.card-book-container.data-shop-list {
+  padding: 0;
+}
+.description-shop-list {
+  font-family: var(--myFont);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 129%;
+  color: black;
+  padding-top: 20px;
+  margin-right: 50px;
+  letter-spacing: -0.04em;
+}
+.bottom-content-shop-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.main-content-shopping-list {
+  width: 100%;
+  flex: 1;
+}
+.list-books-shopping {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding-top: 20px;
+}
+.empty-shop-list {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  align-items: center;
+  padding-top: 140px;
+}
+.class-empty-for-list-shop {
+  display: flex;
+  justify-content: center;
+  padding-top: 120px;
+}
+.ul-pagination {
+  display: none;
+  justify-content: center;
+  gap: 24px;
+  padding: 40px 0;
+}
+.ul-pagination li {
+  display: flex;
+  gap: 24px;
+}
+.li-pagination-container li,
+.svg-li-pagination-container li {
+  padding: 12px 14px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.li-pagination-container,
+.svg-li-pagination-container {
+  display: flex;
+  gap: 10px;
+}
+.svg-li-pagination-l {
+  background-color: black;
+  color: white;
+}
+.svg-li-pagination-r {
+  background-color: #eac645;
+  color: black;
+}
+.page-one {
+  color: white;
+  background-color: black;
+}
+/* hidden-li */
+.hidden-li {
+  display: none !important;
+}
+.ul-pagination .page-li-pagination-hidden-el-l,
+.ul-pagination .page-li-pagination-hidden-el-r {
+  display: none;
+}
+/*  */
+.shopping-list {
+  gap: 40px;
+  padding-top: 20px !important;
+  display: flex;
+}
+/* support ukraine */
+.desktop-only {
+  width: 356px;
+}
+.links-books {
+  align-items: center;
 }
