@@ -39,8 +39,9 @@ import"./assets/support-ukraine-77f38986.js";import{a as l,i as c}from"./assets/
               <p class="book-author">${t.author}</p>
               <p class="modal-book-description">${t.description}</p>
               <div class="links-books">
-                  <a class="" href="${t.buy_links[0].url}" rel="amazon ${t.title}" target="_blank""><img src="/images/myPhotos/amazon.png" alt="amazon" class="filter-img"></a>
-                  <a class="" href="${t.buy_links[1].url}" rel="apple-book" target="_blank""><img src="/images/myPhotos/book.png" alt="amazon" class="filter-img"></a>
+
+                  <a class="" href="${t.buy_links[0].url}" rel="amazon ${t.title}" target="_blank"><img src="./images/myPhotos/amazon.png" alt="amazon" class="filter-img"></a>
+                  <a class="" href="${t.buy_links[1].url}" rel="apple-book ${t.title}" target="_blank"><img src="./images/myPhotos/book.png" alt="apple-book" class="filter-img"></a>
 
               </div>
           </div>
