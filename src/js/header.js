@@ -31,11 +31,13 @@ switcher.addEventListener('click', () => {
   }
 });
 
-document.addEventListener('DOMContentLoaded', function () {
-  const currentLocation = window.location.href;
-  const homeLink = document.querySelector('.home');
-  const shopLink = document.querySelector('.shop-list');
+const currentLocation = window.location.href;
+const homeLink = document.querySelector('.home');
+const shopLink = document.querySelector('.shop-list');
 
+homeLink.classList.add('active-home');
+
+document.addEventListener('DOMContentLoaded', function () {
   if (currentLocation.includes('index.html')) {
     homeLink.classList.add('active-home');
     shopLink.classList.remove('active-shop');

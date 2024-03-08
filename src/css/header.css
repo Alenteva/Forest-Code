@@ -68,7 +68,6 @@ body {
 .shop-list {
   display: flex;
   align-items: center;
-  justify-content: center;
   flex-direction: row;
   gap: 4px;
   font-weight: 500;
@@ -95,7 +94,7 @@ body {
 .shop-list:hover {
   border-radius: 36px;
   padding: 8px 15px;
-  width: 185px;
+  width: 165px;
   background-color: #eac645;
 }
 
@@ -115,9 +114,8 @@ body {
   padding: 8px 15px;
   background-color: #eac645;
   color: #111111;
-  width: 156px;
   height: 34px;
-  /* width: 185px; */
+  width: 165px;
   font-weight: 700;
   transition: all 1s ease;
 }
