@@ -127,7 +127,7 @@
         .filter-img:hover{
           filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, .35));
           }
-7:54
+
 @media (min-width: 768px) {
   .book-author {
     font-size:14px;
