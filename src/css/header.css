@@ -267,7 +267,7 @@ body {
       rgb(255, 255, 255) 100%
     );
   }
-  .Log-out-btn {
+  /* .Log-out-btn {
     display: none;
     align-items: center;
     color: #111;
@@ -289,7 +289,7 @@ body {
   .dropdown:hover .Log-out-btn {
     display: flex;
     border-color: #eac645#4f2ee8;
-  }
+  } */
 }
 
 /*================ descktop ================ */
@@ -339,7 +339,7 @@ body {
       rgb(255, 255, 255) 100%
     );
   }
-  .Log-out-btn {
+  /* .Log-out-btn {
     display: none;
     align-items: center;
     color: #111;
@@ -361,5 +361,5 @@ body {
   .dropdown:hover .Log-out-btn {
     display: flex;
     border-color: #eac645#4f2ee8;
-  }
+  } */
 }
