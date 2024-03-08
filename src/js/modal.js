@@ -55,8 +55,13 @@ async function renderBook(_id) {
               <p class="modal-book-description">${book.description}</p>
               <div class="links-books">
 
+                
+                
+
+
                   <a class="" href="${book.buy_links[0].url}" rel="amazon ${book.title}" target="_blank"><img src="./images/myPhotos/amazon.png" alt="amazon" class="filter-img"></a>
                   <a class="" href="${book.buy_links[1].url}" rel="apple-book ${book.title}" target="_blank"><img src="./images/myPhotos/book.png" alt="apple-book" class="filter-img"></a>
+
 
               </div>
           </div>
@@ -64,10 +69,10 @@ async function renderBook(_id) {
       `;
   if (arrayBooksShop.has(book.title)) {
     shopBook += `<button class="card-books-category-button margin-add" type="button" data-id="${book._id}" data-title="${book.title}">Remove from the shopping list</button>
-            <p id="congratulations">Сongratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.</p>`;
+            <p id="congratulations">Congratulations! You have added the book to the shopping list. To delete, press the button "Remove from the shopping list".</p>`;
   } else {
     shopBook += `<button class="card-books-category-button margin-add" type="button" data-id="${book._id}" data-title="${book.title}">Add to shopping list</button>
-              <p id="congratulations" hidden>Сongratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.</p>`;
+              <p id="congratulations" hidden>Congratulations! You have added the book to the shopping list. To delete, press the button "Remove from the shopping list".</p>`;
   }
   document.querySelector('.modal-content').innerHTML = shopBook;
   document.querySelector('.modal-window-shop').style.display = 'block';
