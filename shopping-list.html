@@ -10,10 +10,11 @@
       href="https://cdn.jsdelivr.net/npm/modern-normalize@2.0.0/modern-normalize.min.css"
     />
     
-    <script type="module" crossorigin src="/Forest-Code/assets/vendor-41089998.js"></script>
-    <script type="module" crossorigin src="/Forest-Code/assets/support-ukraine-4d670532.js"></script>
+    <script type="module" crossorigin src="/Forest-Code/commonHelpers2.js"></script>
+    <link rel="modulepreload" crossorigin href="/Forest-Code/assets/vendor-41089998.js">
+    <link rel="modulepreload" crossorigin href="/Forest-Code/assets/support-ukraine-51626510.js">
     <link rel="stylesheet" href="/Forest-Code/assets/vendor-9473f0a0.css">
-    <link rel="stylesheet" href="/Forest-Code/assets/support-ukraine-bc6953ab.css">
+    <link rel="stylesheet" href="/Forest-Code/assets/support-ukraine-5f72d01b.css">
   </head>
   <body>
     <div id="shopping-list"></div>
@@ -71,14 +72,8 @@
 </div>
 
     </header>
-
     <main>
       <div class="shopping-list container">
-        <p class="shoplist-title">
-          Shopping
-          <span class="shoplist-title-span">List</span>
-        </p>
-
         <div class="support-wrapper desktop-only">
           <div class="support-title">
             <span class="support-paragraph">Support Ukraine</span>
@@ -101,9 +96,24 @@
             </svg>
           </button>
         </div>
-
-        <div class="shoppinglist">
-          <div class="marcup"></div>
+        <div class="main-content-shopping-list">
+          <div class="marcup">
+            <h1 class="name-category"></h1>
+            <div class="container-loader">
+              <span class="loader"></span>
+            </div>
+            <div class="empty-shop-list">
+              <p>This page is empty, add some books and proceed to order.</p>
+              <div class="">
+                <img
+                  src="/Forest-Code/assets/books-dt-2x-3401ae50.png"
+                  alt="isEmpty"
+                />
+              </div>
+            </div>
+            <ul class="list-books-shopping"></ul>
+            <ul class="ul-pagination"></ul>
+          </div>
         </div>
       </div>
     </main>
