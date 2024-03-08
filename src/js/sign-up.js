@@ -45,7 +45,6 @@ window.onload = function () {
       console.log('user', user);
       formContainer.classList.remove('is-open');
       headerNav.style.display = 'flex';
-      burgMenu.style.display = 'block';
       // iziToast.show({
       //   title: 'Hello',
       //   message: `Welcome, ${user.displayName}!`,
