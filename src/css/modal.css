@@ -87,6 +87,9 @@
   letter-spacing: -0.04em;
   color: #b4afaf;
 }
+.modal-image {
+  border-radius: 8px;
+}
 .modal-book-description {
   font-family: var(--myFont);
   font-weight: 400;
@@ -103,7 +106,7 @@
   background-color: var(--bg-color);
   border: 3px solid #4f2ee8;
   border-radius: 40px;
-  padding: 14px 23px;
+  padding: 14px 15px;
   margin-top: 40px;
   transition: background-color 0.4s ease;
   line-height: 1.29;
