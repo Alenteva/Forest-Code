@@ -58,8 +58,10 @@ async function renderBook(_id) {
               <p class="book-author">${book.author}</p>
               <p class="modal-book-description">${book.description}</p>
               <div class="links-books">
+
                   <a class="" href="${book.buy_links[0].url}" rel="amazon ${book.title}" target="_blank""><img src="${sprite1}" alt="amazon" class="filter-img"></a>  
-                  <a class="" href="${book.buy_links[1].url}" rel="apple-book" target="_blank""><img src="${sprite2}" alt="amazon" class="filter-img"></a>
+                  <a class="" href="${book.buy_links[1].url}" rel="apple-book" target="_blank""><img src="${sprite2}" alt="amazon" class="filter-img"></a
+
               </div>
           </div>
       </div>
