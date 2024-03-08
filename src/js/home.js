@@ -5,10 +5,10 @@ import SimpleLightbox from 'simplelightbox';
 const listOne = document.querySelector('.list-one');
 const listCategories = document.querySelector('.list_categories');
 const titleSelectedCategory = document.querySelector('.main-title');
+const loadingIndicator = document.querySelector(".container-loader");
 let bigImage;
 let selectedCategory;
 let number;
-
 
 function isWidthDevice() {
   let widthWindow = window.innerWidth;
@@ -16,7 +16,7 @@ function isWidthDevice() {
   if (widthWindow <= 767) return (number = 0);
   else if (widthWindow <= 1439) return (number = 2);
   else return (number = 4);
-}
+} 
 
 function changeColorTitle() {
   const arrayTitle = titleSelectedCategory.textContent.split(' ');
@@ -34,7 +34,6 @@ async function preview() {
 ////////list books on main page/////////
 
 async function renderBooksMainPage(boo) {
-  listOne.innerHTML = '';
   let stringOne = '';
   let stringTwo = '';
   const countBook = isWidthDevice();
@@ -62,12 +61,15 @@ async function renderBooksMainPage(boo) {
   }
   listOne.insertAdjacentHTML('beforeend', stringOne);
   preview();
+  loadingIndicator.style.display = 'none';
 }
 
 ///if click on button "See more"////
 
 listOne.addEventListener('click', async e => {
   if (e.target.classList.contains('button-see-more')) {
+    loadingIndicator.style.display = 'block';
+    listOne.innerHTML = '';
     const dataset = e.target.dataset.category;
 
     titleSelectedCategory.textContent = dataset;
@@ -114,6 +116,7 @@ listOne.addEventListener('click', async e => {
 
 async function updateBooksDisplay() {
   listOne.innerHTML = '';
+  loadingIndicator.style.display = 'block';
   if (titleSelectedCategory.textContent === 'Best Sellers Books') {
     await axios
       .get(`https://books-backend.p.goit.global/books/top-books`)
@@ -171,6 +174,9 @@ async function renderCategories(list) {
 
   optionList.forEach(select => {
     select.addEventListener('click', async e => {
+      
+    loadingIndicator.style.display = 'block';
+    listOne.innerHTML = '';
       e.preventDefault();
       document
         .querySelector('.selected-categories')
@@ -245,9 +251,9 @@ axios
 //////////////list categories//////////////
 
 async function renderBooks(books) {
+  console.log("ok");
   let booksCard = '';
-  listOne.innerHTML = '';
-  books.forEach(book => {
+  books.forEach( async book => {
     booksCard += `<li class="book" data-category="${book._id}">
                         <div class="div-animation">
                         <a class="link-img" href="${book.book_image}"><img class="img-example" alt="Book title" src="${book.book_image}"></img></a>
@@ -261,28 +267,5 @@ async function renderBooks(books) {
   });
   listOne.insertAdjacentHTML('beforeend', booksCard);
   preview();
+  loadingIndicator.style.display = 'none';
 }
-
-////for another//////
-
-export function darkHome() {
-  const titleBook = document.querySelectorAll('.title-book');
-  titleBook.forEach((title.style.color = 'white'));
-
-  if (listCategories.querySelector('.categoria')) {
-    optionList.forEach(option => {
-      option.addEventListener('mouseover', e => (e.style.color = '#eac645'));
-      option.style.color = 'rgba(255, 255, 255, 0.6)';
-    });
-  }
-}
-
-// export function getId(e) {
-//   const box = e.target.closest('.box-quick-view');
-//   if (e.target.closest('.box-quick-view')) {
-//     const LI = box.closest('.image_book') || box.closest('.book');
-//     const bookId = LI.dataset.category;
-//     return bookId;
-//   }
-// }
-////for another//////
