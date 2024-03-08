@@ -12,7 +12,7 @@
     
     <script type="module" crossorigin src="/Forest-Code/commonHelpers2.js"></script>
     <link rel="modulepreload" crossorigin href="/Forest-Code/assets/vendor-7539751a.js">
-    <link rel="modulepreload" crossorigin href="/Forest-Code/assets/support-ukraine-014fe22b.js">
+    <link rel="modulepreload" crossorigin href="/Forest-Code/assets/support-ukraine-d585b3bc.js">
     <link rel="stylesheet" href="/Forest-Code/assets/vendor-9473f0a0.css">
     <link rel="stylesheet" href="/Forest-Code/assets/support-ukraine-027cce2e.css">
   </head>
@@ -121,6 +121,98 @@
         </div>
       </div>
     </main>
+    <div class="Form-window">
+  <div class="auth__modal">
+    <button class="Close-form-btn">
+      <svg class="" width="18" height="18">
+        <use href="/Forest-Code/assets/icon-4664cafe.svg#icon-Vector-close"></use>
+      </svg>
+    </button>
+    <form class="form" autocomplete="on">
+      <div class="form__field">
+        <input
+          id="username"
+          aria-label="Username"
+          type="text"
+          class="form__input form__input-name"
+          name="name"
+          minlength="4"
+          pattern="^[A-Za-z][A-Za-z0-9_]{3,10}$"
+          required
+        />
+        <svg class="form__icon" width="32" height="32">
+          <use href="/Forest-Code/assets/icon-4664cafe.svg#icon-free-user"></use>
+        </svg>
+        <label for="username" class="form__label form__label-name">Name </label>
+      </div>
+
+      <div class="form__field">
+        <input
+          id="email"
+          aria-label="Email"
+          type="email"
+          class="form__input form__input-mail"
+          name="mail"
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+          required
+        />
+        <label for="email" class="form__label form__label-mail">Email</label>
+        <svg class="form__icon" width="32" height="32">
+          <use href="/Forest-Code/assets/icon-4664cafe.svg#icon-free-icon-email"></use>
+        </svg>
+      </div>
+      <div class="form__field">
+        <input
+          id="password"
+          aria-label="Password"
+          type="password"
+          class="form__input form__input-password"
+          name="password"
+          minlength="6"
+          required=""
+        />
+        <label for="password" class="form__label form__label-password"
+          >Password</label
+        >
+        <svg class="form__icon" width="32" height="32">
+          <use href="/Forest-Code/assets/icon-4664cafe.svg#icon-shopping-bag2"></use>
+        </svg>
+      </div>
+      <button
+        type="submit"
+        class="disabled form__btn quickstart-sign-up"
+        aria-label="Submit"
+      >
+        Sign up
+      </button>
+
+      <div class="form__btns">
+        <button
+          type="button"
+          class="active form__btn-in quickstart-sign-in"
+          aria-label="Sign up"
+        >
+          Sign in
+        </button>
+        <button
+          type="button"
+          class="form__btn-out log-out-btn"
+          aria-label="Sign in"
+        >
+          Log Out
+        </button>
+        <button
+          type="button"
+          class="form__btn-out reset-btn"
+          aria-label="Sign in"
+        >
+          Reset Password
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
     
   </body>
 </html>
