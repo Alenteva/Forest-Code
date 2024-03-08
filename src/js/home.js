@@ -9,6 +9,7 @@ let bigImage;
 let selectedCategory;
 let number;
 
+
 function isWidthDevice() {
   let widthWindow = window.innerWidth;
 
