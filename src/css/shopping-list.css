@@ -32,9 +32,9 @@ h2 {
   font-weight: 700;
 }
 
-.container {
+/* .container {
   outline: 2px dashed #f44336;
-}
+} */
 
 .shopping-list {
   display: flex;
@@ -376,39 +376,6 @@ h2 {
     width: 92px;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /* new styles 1*/

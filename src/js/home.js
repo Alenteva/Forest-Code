@@ -16,7 +16,7 @@ function isWidthDevice() {
   if (widthWindow <= 767) return (number = 0);
   else if (widthWindow <= 1439) return (number = 2);
   else return (number = 4);
-}
+} 
 
 function changeColorTitle() {
   const arrayTitle = titleSelectedCategory.textContent.split(' ');
