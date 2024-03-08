@@ -1,3 +1,5 @@
+import sprite from '../images/icon.svg';
+
 export function initBurgerMenu() {
   const burgerToggle = document.getElementById('burgerToggle');
   const burgerMenu = document.getElementById('burgerMenu');
@@ -7,16 +9,15 @@ export function initBurgerMenu() {
 
     if (burgerMenu.classList.contains('burger-menu-show')) {
       burgerToggle.innerHTML = `
-        <svg width="18" height="18" stroke="#000">
-          <use href="./images/icon.svg#icon-close"></use>
-        </svg>`;
+      <svg width="18" height="18" stroke="#000">
+        <use href="${sprite}#icon-close"></use>
+      </svg>`;
     } else {
       burgerToggle.innerHTML = `
-        <svg width="28" height="28">
-          <use href="./images/icon.svg#icon-menu"></use>
-        </svg>`;
+      <svg width="28" height="28">
+        <use href="${sprite}#icon-menu"></use>
+      </svg>`;
     }
-
   });
 }
 
@@ -38,5 +39,3 @@ const handleClick = event => {
     shoppingList.classList.add('active');
   }
 };
-
-

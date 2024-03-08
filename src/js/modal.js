@@ -6,7 +6,12 @@ import 'izitoast/dist/css/iziToast.min.css';
 const listOne = document.querySelector('.list-one');
 let arrayBooksShop = getMapFromLocalStorage();
 updateLocalStorage();
+
 const congratulations = document.querySelector('#congratulations');
+
+
+
+
 
 const modalWindow = document.querySelector('.modal-window-shop');
 listOne.addEventListener('click', async e => {
@@ -37,8 +42,9 @@ async function renderBook(_id) {
               <h2 class="">${book.title}</h2>
               <p class="book-author">${book.author}</p>
               <p class="modal-book-description">${book.description}</p>
-              <div class=" ">
-                  <a class=" " href="${book.amazon_product_url} rel="amazon ${book.title}" target="_blank"">amazon_product_url</a>
+              <div class="links-books">
+                  <a class="" href="${book.buy_links[0].url}" rel="amazon ${book.title}" target="_blank""><img src="./images/myPhotos/amazon.png" alt="amazon" class="filter-img"></a>
+                  <a class="" href="${book.buy_links[1].url}" rel="apple-book" target="_blank""><img src="./images/myPhotos/book.png" alt="amazon" class="filter-img"></a>
               </div>
           </div>
       </div>
@@ -53,7 +59,13 @@ async function renderBook(_id) {
     document.querySelector('.modal-window-shop').style.display = 'block';
   }
 }
+
 modalWindow.addEventListener('click', async e => {
+
+
+
+  
+
   if (e.target.classList.contains('close-window')) {
     document.querySelector('.modal-window-shop').style.display = 'none';
     // этот класс убирает сдвиг из-за того что пропадает справа полоса прокрутки
@@ -63,6 +75,7 @@ modalWindow.addEventListener('click', async e => {
     document.body.classList.remove('modal-open');
   } else if (e.target.classList.contains('card-books-category-button')) {
     bookSaveInShop(e.target);
+
   }
 });
 
@@ -81,6 +94,50 @@ async function bookSaveInShop(buttonShL) {
       buttonShL.textContent = 'Add to shopping list';
       const congratulations = document.querySelector('#congratulations');
       congratulations.setAttribute('hidden', '');
+  } 
+});
+ 
+
+
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    modalWindow.style.display = "none";
+    document.body.classList.remove('modal-open');
+  }
+  }
+)
+
+async function bookSaveInShop(buttonShL) {
+    try {
+        if (buttonShL.textContent === "Add to shopping list") {
+            if (arrayBooksShop.has(buttonShL.dataset.title)) {
+                throw new Error('This book has added');
+            }
+            arrayBooksShop.set(buttonShL.dataset.title, buttonShL.dataset.id);
+   
+          
+        
+          
+          buttonShL.textContent = "Remove from the shopping list";
+          const congratulations = document.querySelector("#congratulations");
+          congratulations.removeAttribute("hidden");
+        }
+        else {
+            arrayBooksShop.delete(bookTitle);
+          buttonShL.textContent = "Add to shopping list";
+           const congratulations = document.querySelector("#congratulations");
+           congratulations.setAttribute("hidden", "");
+        }
+    } catch (error) {
+        iziToast.error({
+            title: "Error",
+            message: error.message,
+        });
+    } finally {
+        updateLocalStorage();
+        updateArrayMap();
+
     }
   } catch (error) {
     iziToast.error({
@@ -95,6 +152,7 @@ async function bookSaveInShop(buttonShL) {
 
 function getMapFromLocalStorage() {
   const serializedData = localStorage.getItem('arrayBooksShop');
+
   if (serializedData) {
     const dataArray = JSON.parse(serializedData);
     return new Map(dataArray);
@@ -104,7 +162,52 @@ function getMapFromLocalStorage() {
 function updateLocalStorage() {
   const serializedData = JSON.stringify([...arrayBooksShop]);
   localStorage.setItem('arrayBooksShop', serializedData);
+
+    if (serializedData) {
+        const dataArray = JSON.parse(serializedData);
+        return new Map(dataArray);
+    }
+    return new Map();
+}
+function updateLocalStorage() {
+    const serializedData = JSON.stringify([...arrayBooksShop]);
+  localStorage.setItem('arrayBooksShop', serializedData);
+  return console.log(serializedData);
+
 }
 function updateArrayMap() {
   arrayBooksShop = getMapFromLocalStorage();
 }
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

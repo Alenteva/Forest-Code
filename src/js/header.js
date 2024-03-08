@@ -32,22 +32,15 @@ switcher.addEventListener('click', () => {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
+  const currentLocation = window.location.href;
   const homeLink = document.querySelector('.home');
   const shopLink = document.querySelector('.shop-list');
-  homeLink.addEventListener('click', function () {
+
+  if (currentLocation.includes('index.html')) {
     homeLink.classList.add('active-home');
-    shopLink.classList.remove('active-home');
-    localStorage.setItem('activeButton', 'home');
-  });
-  shopLink.addEventListener('click', function () {
+    shopLink.classList.remove('active-shop');
+  } else if (currentLocation.includes('shopping-list.html')) {
     shopLink.classList.add('active-shop');
-    homeLink.classList.remove('active-shop');
-    localStorage.setItem('activeButton', 'shop');
-  });
-  const activeButton = localStorage.getItem('activeButton'); // Перевірка localStorage при завантаженні сторінки
-  if (activeButton === 'home') {
-    homeLink.classList.add('active-home');
-  } else if (activeButton === 'shop') {
-    shopLink.classList.add('active-shop');
+    homeLink.classList.remove('active-home');
   }
 });
