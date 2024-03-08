@@ -129,6 +129,7 @@ p#congratulations {
 .filter-img:hover {
   filter: var(--amazon);
 }
+
 @media (min-width: 768px) {
   .book-author {
     font-size: 14px;
