@@ -5,4 +5,4 @@ import{b as P,g as I,o as T,s as h,c as k,i as m,d as D,u as F,e as L,S as Q}fro
                 <img class="support-funds-list-link-image" src="${s}"
                     alt="${n}"
             </a></div>`}).join("");ce.innerHTML=A}de();const l=new Q(".swiper",{direction:"vertical",loop:!1,effect:"slide",slidesPerView:6,slidesPerGroup:6});l.on("reachBeginning",function(){B.style.transform=""});l.on("reachEnd",function(){B.style.transform="rotate(180deg)"});function le(A){B.style.transform==""?l.slideNext(2e3):l.slidePrev(2e3)}
-//# sourceMappingURL=support-ukraine-1205dd54.js.map
+//# sourceMappingURL=support-ukraine-0e3ed85d.js.map
