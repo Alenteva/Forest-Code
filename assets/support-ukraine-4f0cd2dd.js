@@ -5,4 +5,4 @@ import{h as B}from"./vendor-41089998.js";(function(){const t=document.createElem
                 <img class="support-funds-list-link-image" src="${o}"
                     alt="${t}"
             </a></div>`}).join("");R.innerHTML=s}L();const c=new B(".swiper",{direction:"vertical",loop:!1,effect:"slide",slidesPerView:6,slidesPerGroup:6});c.on("reachBeginning",function(){g.style.transform=""});c.on("reachEnd",function(){g.style.transform="rotate(180deg)"});function j(s){g.style.transform==""?c.slideNext(2e3):c.slidePrev(2e3)}
-//# sourceMappingURL=support-ukraine-8ea9fdfd.js.map
+//# sourceMappingURL=support-ukraine-4f0cd2dd.js.map
