@@ -9,13 +9,13 @@ export function initBurgerMenu() {
 
     if (burgerMenu.classList.contains('burger-menu-show')) {
       burgerToggle.innerHTML = `
-      <svg width="18" height="18" stroke="#000">
+      <svg width="18" height="18" class="stroke-color-ber-menu">
         <use href="${sprite}#icon-close"></use>
       </svg>`;
     } else {
       burgerToggle.innerHTML = `
-      <svg width="28" height="28">
-        <use href="${sprite}#icon-menu"></use>
+      <svg width="28" height="28" class="fill-color-ber-menu">
+        <use href="${sprite}#icon-menu-burg"></use>
       </svg>`;
     }
   });
