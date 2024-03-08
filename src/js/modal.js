@@ -3,6 +3,10 @@ import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
+
+import sprite1 from '../images/myPhotos/book.png';
+import sprite2 from '../images/myPhotos/amazon.png';
+
 const listOne = document.querySelector('.list-one');
 let arrayBooksShop = getMapFromLocalStorage();
 updateLocalStorage();
@@ -54,8 +58,8 @@ async function renderBook(_id) {
               <p class="book-author">${book.author}</p>
               <p class="modal-book-description">${book.description}</p>
               <div class="links-books">
-                  <a class="" href="${book.buy_links[0].url}" rel="amazon ${book.title}" target="_blank""><img src="./images/amazon.png" alt="amazon" class="filter-img"></a>
-                  <a class="" href="${book.buy_links[1].url}" rel="apple-book" target="_blank""><img src="./images/myPhotos/book.png" alt="amazon" class="filter-img"></a>
+                  <a class="" href="${book.buy_links[0].url}" rel="amazon ${book.title}" target="_blank""><img src="${sprite1}" alt="amazon" class="filter-img"></a>  
+                  <a class="" href="${book.buy_links[1].url}" rel="apple-book" target="_blank""><img src="${sprite2}" alt="amazon" class="filter-img"></a>
               </div>
           </div>
       </div>
