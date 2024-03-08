@@ -27,7 +27,7 @@ const signUpButton = document.querySelector('.quickstart-sign-up');
 const headerNav = document.querySelector('.header-nav');
 const passwordResetButton = document.querySelector('.reset-btn');
 const logOutBtn = document.querySelector('.log-out-btn');
-const burgMenu = document.querySelector('.burger-menu-list');
+// const burgMenu = document.querySelector('.burger-menu-list');
 const firebaseConfig = {
   apiKey: 'AIzaSyD8UvisVnkCvMijmf6q4ZtLkQgC43vz2KM',
   authDomain: 'dookshelf-357a4.firebaseapp.com',
