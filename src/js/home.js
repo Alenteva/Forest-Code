@@ -276,12 +276,12 @@ export function darkHome() {
   }
 }
 
-export function getId(e) {
-  const box = e.target.closest('.box-quick-view');
-  if (e.target.closest('.box-quick-view')) {
-    const LI = box.closest('.image_book') || box.closest('.book');
-    const bookId = LI.dataset.category;
-    return bookId;
-  }
-}
+// export function getId(e) {
+//   const box = e.target.closest('.box-quick-view');
+//   if (e.target.closest('.box-quick-view')) {
+//     const LI = box.closest('.image_book') || box.closest('.book');
+//     const bookId = LI.dataset.category;
+//     return bookId;
+//   }
+// }
 ////for another//////

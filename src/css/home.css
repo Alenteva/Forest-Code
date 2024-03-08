@@ -179,7 +179,7 @@
 .images_books {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 40px;
   margin-bottom: 20px;
 }
 .image_book {
