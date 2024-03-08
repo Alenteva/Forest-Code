@@ -1,5 +1,7 @@
 import axios from 'axios';
 import SimpleLightbox from 'simplelightbox';
+import icon from '../images/amazon.png';
+import icon_2 from '../images/book.png';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
@@ -28,7 +30,6 @@ async function renderBook(_id) {
   if (isWidthWindow) {
     document.body.classList.add('modal-open');
   }
-  console.log('ok renderBook');
   const response = await axios.get(
     `https://books-backend.p.goit.global/books/${_id}`
   );
@@ -56,8 +57,8 @@ async function renderBook(_id) {
               <p class="book-author">${book.author}</p>
               <p class="modal-book-description">${book.description}</p>
               <div class="links-books">
-                  <a class="" href="${book.buy_links[0].url}" rel="amazon ${book.title}" target="_blank""><img src="./images/myPhotos/amazon.png" alt="amazon" class="filter-img"></a>
-                  <a class="" href="${book.buy_links[1].url}" rel="apple-book" target="_blank""><img src="./images/myPhotos/book.png" alt="amazon" class="filter-img"></a>
+                  <a class="" href="${book.buy_links[0].url}" rel="amazon ${book.title}" target="_blank""><img src="${icon}" alt="amazon" class="filter-img"></a>
+                  <a class="" href="${book.buy_links[1].url}" rel="apple-book" target="_blank""><img src="${icon_2}" alt="amazon" class="filter-img"></a>
               </div>
           </div>
       </div>
