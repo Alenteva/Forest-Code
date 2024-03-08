@@ -66,13 +66,13 @@
   /* background-color: #202024; */
   border: none;
   margin: 0;
-  padding: 0 0 0 24px;
+  padding: 0 0 0 10px;
   transition: border 0.25s cubic-bezier(0.17, 0.67, 0.91, 1.61);
   /* color: #f6f6f6; */
   color: #202024;
   outline: none;
   border-radius: 40px;
-  width: 240px;
+  width: 250px;
   height: 45px;
 }
 .form__field input:focus,
@@ -223,10 +223,7 @@ html.dark .form__btn-out:after {
   .form__label {
     transform: translateY(-55px);
   }
-  /* .form__input:focus + .form__label,
-  .form__input:hover + .form__label {
-    transform: translateY(-55px);
-  } */
+
   .form__btn {
     width: 499px;
     height: 64px;

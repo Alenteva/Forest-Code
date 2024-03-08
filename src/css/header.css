@@ -41,7 +41,6 @@ body {
   align-items: center;
   position: relative;
   margin: 0 auto;
-  z-index: 999;
 }
 
 .header-logo {
