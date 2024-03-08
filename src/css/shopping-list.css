@@ -4,7 +4,7 @@ h1 {
   line-height: 38px;
   line-height: 1.1875;
   letter-spacing: -0.04em;
-  color: black;
+  color: var(--text-color);
 }
 h2 {
   font-weight: 700;
@@ -378,6 +378,7 @@ h2 {
 }
 .list-all-books-in-shoplist {
   display: flex;
+  background-color: var(--bg-header-color);
   gap: 24px;
   border: 3px solid rgba(79, 46, 232, 0.4);
   border-radius: 16px;
@@ -401,7 +402,7 @@ h2 {
   line-height: 112%;
   letter-spacing: -0.04em;
   text-transform: uppercase;
-  color: black;
+  color: var(--text-color);
 }
 .data-shop-list p:nth-child(2) {
   font-family: var(--myFont);
@@ -449,7 +450,7 @@ h2 {
   font-weight: 400;
   font-size: 14px;
   line-height: 129%;
-  color: black;
+  color: var(--text-color);
   padding-top: 20px;
   margin-right: 50px;
   letter-spacing: -0.04em;

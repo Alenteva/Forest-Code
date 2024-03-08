@@ -17,10 +17,10 @@
   background-color: #00000080;
 }
 .modal-content {
-  background-color: #fff;
+  background-color: var(--bg-color);
   margin: auto;
   padding: 40px 25px;
-  border: 1px solid #111;
+  border: 1px solid var(--br-color);
   border-radius: 18px;
   width: 336px;
   position: absolute;
@@ -64,12 +64,14 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  stroke: var(--text-color);
 }
 .close-window:hover path {
   stroke: #4f2ee8;
 }
 .modal-main-content-text h2 {
   font-family: var(--myFont);
+  color: var(--text-color);
   font-weight: 700;
   font-size: 16px;
   line-height: 112%;
@@ -94,11 +96,11 @@
   padding: 18px 0;
 }
 .card-books-category-button {
-  color: black;
+  color: var(--text-color);
   text-transform: uppercase;
   font-size: 14px;
   font-family: var(--myFont);
-  background-color: white;
+  background-color: var(--bg-color);
   border: 3px solid #4f2ee8;
   border-radius: 40px;
   padding: 14px 23px;
@@ -113,7 +115,7 @@ p#congratulations {
   text-align: center;
   line-height: 120%;
   letter-spacing: -0.04em;
-  color: rgba(17, 17, 17, 0.5);
+  color: var(--con-color);
   width: 242px;
   margin: 0 auto;
   margin-top: 8px;
@@ -122,10 +124,10 @@ p#congratulations {
   display: flex;
   flex-direction: row;
   gap: 20px;
-  filter: grayscale(100%);
+  filter: var(--amazon-hover);
 }
 .filter-img:hover {
-  filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
+  filter: var(--amazon);
 }
 @media (min-width: 768px) {
   .book-author {
@@ -139,7 +141,7 @@ p#congratulations {
     font-size: 10px;
     line-height: 120%;
     letter-spacing: -0.04em;
-    color: rgba(17, 17, 17, 0.5);
+    color: var(--con-color);
     width: 324px;
     margin: 0 auto;
     margin-top: 8px;
@@ -189,11 +191,11 @@ p#congratulations {
     color: #b4afaf;
   }
   .card-books-category-button {
-    color: black;
+    color: var(--text-color);
     text-transform: uppercase;
     font-size: 14px;
     font-family: var(--myFont);
-    background-color: white;
+    background-color: var(--bg-color);
     border: 3px solid #4f2ee8;
     border-radius: 40px;
     padding: 14px 28px;
