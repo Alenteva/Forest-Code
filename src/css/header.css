@@ -85,6 +85,8 @@ body {
 .active-home {
   border-radius: 36px;
   padding: 8px 15px;
+  width: 72px;
+  height: 34px;
   background-color: #eac645;
   color: #111111;
   font-weight: 700;
@@ -96,7 +98,9 @@ body {
   padding: 8px 15px;
   background-color: #eac645;
   color: #111111;
-  width: 185px;
+  width: 156px;
+  height: 34px;
+  /* width: 185px; */
   font-weight: 700;
   transition: all 1s ease;
 }
@@ -178,6 +182,9 @@ body {
 .form-switch input:checked + i::after {
   transform: translate3d(22px, 2px, 0);
 }
+.Log-out-btn {
+  display: none;
+}
 /* === end switch styles === */
 
 /*================ tablet ================ */
@@ -187,7 +194,7 @@ body {
   }
 
   .header {
-    height: 72px;
+    /* height: 72px; */
     margin: 0 auto;
   }
 
@@ -198,13 +205,50 @@ body {
   .header-nav {
     display: flex;
     align-items: center;
-    gap: 30px;
-    padding-left: 40px;
+    margin-left: 20px;
+    margin-right: 70px;
     /* display: none; */
+  }
+  .header-Link {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+  }
+  .home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 4px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    line-height: 1.28571;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    color: #111;
+  }
+  .shop-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 4px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    line-height: 1.28571;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    color: #111;
   }
 
   .shop-list-svg-basket {
     margin-left: 8px;
+    width: 20px;
+    height: 20px;
+    justify-content: center;
   }
 
   .header-seting {
@@ -224,7 +268,7 @@ body {
     background-color: #4f2ee8;
     border-radius: 18px;
     width: 184px;
-    height: 48px;
+    height: 45px;
     gap: 76px;
     transition: background-color 0.9s ease-in-out;
   }
@@ -234,6 +278,29 @@ body {
       rgb(79, 46, 232) 20%,
       rgb(255, 255, 255) 100%
     );
+  }
+  .Log-out-btn {
+    display: none;
+    align-items: center;
+    color: #111;
+    padding-left: 18px;
+    border: 2px solid #111111;
+    background: #fff;
+    border-radius: 18px;
+    width: 118px;
+    height: 48px;
+    gap: 10px;
+    transition: background-color 0.9s ease-in-out;
+    position: absolute;
+  }
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+  }
+  .dropdown:hover .Log-out-btn {
+    display: flex;
+    border-color: #eac645#4f2ee8;
   }
 }
 
@@ -264,5 +331,48 @@ body {
     gap: 24px;
     position: absolute;
     right: 24px;
+  }
+  .header-user {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    padding-left: 18px;
+    border: 1.5px solid #111111;
+    background-color: #4f2ee8;
+    border-radius: 18px;
+    width: 184px;
+    height: 48px;
+    gap: 76px;
+    transition: background-color 0.9s ease-in-out;
+  }
+  .header-user:hover {
+    background: radial-gradient(
+      189.32% 190.93% at 59.76% -23.42%,
+      rgb(79, 46, 232) 20%,
+      rgb(255, 255, 255) 100%
+    );
+  }
+  .Log-out-btn {
+    display: none;
+    align-items: center;
+    color: #111;
+    padding-left: 18px;
+    border: 2px solid #111111;
+    background: #fff;
+    border-radius: 18px;
+    width: 118px;
+    height: 48px;
+    gap: 10px;
+    transition: background-color 0.9s ease-in-out;
+    position: absolute;
+  }
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+  }
+  .dropdown:hover .Log-out-btn {
+    display: flex;
+    border-color: #eac645#4f2ee8;
   }
 }

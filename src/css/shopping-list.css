@@ -1,24 +1,20 @@
 h1 {
   font-weight: 700;
   font-size: 32px;
-
   line-height: 38px;
   line-height: 1.1875;
   letter-spacing: -0.04em;
   color: black;
 }
-
 h2 {
   font-weight: 700;
   font-size: 16px;
-
   line-height: 18px;
   line-height: 1.13;
   letter-spacing: -0.04em;
   text-transform: uppercase;
   color: black;
 }
-
 #shopping-list.active,
 #home.active {
   display: flex;
@@ -31,11 +27,9 @@ h2 {
   color: rgb(17, 17, 17);
   font-weight: 700;
 }
-
 /* .container {
-  outline: 2px dashed #f44336;
+  outline: 2px dashed #F44336;
 } */
-
 .shopping-list {
   display: flex;
   margin-top: 40px;
@@ -53,18 +47,15 @@ h2 {
   /* border: 2px solid rgba(79, 46, 232, 0.4); */
   border-radius: 16px;
 }
-
 .shoplist-error {
   padding: 14px;
   /* border: 2px solid rgba(79, 46, 232, 0.4); */
   border-radius: 16px;
 }
-
 /* Сховати блок на мобільних пристроях */
 .desktop-only {
   display: none;
 }
-
 /* .shoplist-item {
   border: 2px solid rgba(79, 46, 232, 0.4);
 } */
@@ -87,13 +78,11 @@ h2 {
   display: flex;
   justify-content: space-between;
 }
-
 .shoplist-title-text {
   margin-bottom: 8px;
 }
 .shoplist-title-book {
 }
-
 .shoplist-error-books {
   width: 265px;
   margin: 0 auto;
@@ -106,14 +95,12 @@ h2 {
   letter-spacing: 0.03em;
   color: #b4afaf;
 }
-
 .logo-book {
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
   position: relative; /* Устанавливаем позицию элемента как относительную */
 }
-
 .shoplist-btn-delete {
   position: absolute; /* Устанавливаем позицию элемента как абсолютную */
   top: 0; /* Располагаем кнопку в верхнем краю контейнера */
@@ -124,11 +111,9 @@ h2 {
   border-radius: 50%;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
 .shoplist-btn-delete:hover:focus {
   background-color: #404bbf;
 }
-
 .shoplist-btn-icon {
   display: flex;
   align-items: center;
@@ -137,15 +122,12 @@ h2 {
   height: 100%;
   fill: white;
 }
-
 .shoplist-links {
   display: flex;
   align-items: center;
-
   margin-top: 145px;
   gap: 8px; /* Встановлюємо проміжок між елементами */
 }
-
 .shoplist-item {
   width: 32px;
   height: 11px;
@@ -154,7 +136,6 @@ h2 {
   width: 16px;
   height: 16px;
 }
-
 .shoplist-description {
   height: 68px;
   margin-bottom: 46px;
@@ -166,7 +147,6 @@ h2 {
   letter-spacing: -0.04em;
   color: black;
 }
-
 .shoplist-buttonhalf {
   display: flex;
   justify-content: space-between;
@@ -181,31 +161,25 @@ h2 {
   letter-spacing: -0.04em;
   color: #b4afaf;
 }
-
 .shoplist-logo-box {
   display: flex;
   justify-content: space-between;
   width: 56px;
 }
-
 .shoplist-logo-amazon img {
   filter: grayscale(100%);
 }
-
 .shoplist-logo-amazon img:hover:focus {
   filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
 }
-
 .shoplist-error-content {
   justify-content: center; /* Розміщує контент по горизонталі по центру */
   align-items: center; /* Розміщує контент по вертикалі по центру */
   padding: 14px;
 }
-
 .shoplist-error-img {
   margin: 0 auto; /* Збільшує відступи по обох боках для розміщення по центру */
 }
-
 @media screen and (min-width: 375px) {
   /* .container {
     /* max-width: 375px; */
@@ -215,7 +189,6 @@ h2 {
   .shoplist-title-error {
     font-weight: 700;
     font-size: 32px;
-
     line-height: 38px;
     line-height: 1.1875;
     letter-spacing: -0.04em;
@@ -237,18 +210,15 @@ h2 {
     width: 265px;
   }
 }
-
 @media screen and (max-width: 768px) {
   .container {
     padding: 0 32px;
     max-width: 768px;
     margin: 0 auto;
   }
-
   .shoplist-error-books {
     width: 322px;
   }
-
   h1 {
     font-size: 48px;
     line-height: 52px;
@@ -258,7 +228,6 @@ h2 {
     width: 116px;
     margin-right: 24px;
   }
-
   .shoplist-shotcontens {
     margin-bottom: 38px;
   }
@@ -266,7 +235,6 @@ h2 {
     width: 34px;
     height: 34px;
   }
-
   .shoplist-links {
     gap: 16px;
   }
@@ -274,39 +242,32 @@ h2 {
     width: 48px;
     height: 15px;
   }
-
   .apple-book {
     width: 28px;
     height: 28px;
   }
-
   .shoplist-error-content {
     margin: 0 auto;
   }
-
   .shoplist-error-text {
     font-size: 18px;
     line-height: 24px;
     line-height: 1.33;
     margin-bottom: 20px;
   }
-
   .shoplist-links {
   }
   .shoplist-logo-box {
     width: 92px;
   }
-
   .shoplist-title-error {
     font-size: 48px;
-
     line-height: 52px;
     line-height: 1.08;
     letter-spacing: -0.04em;
     margin-bottom: 140px;
   }
 }
-
 @media screen and (min-width: 1440px) {
   .container {
     padding: 0 24px;
@@ -316,68 +277,55 @@ h2 {
   .desktop-only {
     display: block;
   }
-
   h1 {
     font-size: 48px;
     line-height: 52px;
     line-height: 1.08;
   }
-
   .shoppinglist {
     margin-left: 40px;
   }
-
   .shoppinglist-container {
     /* max-width: 1440px; */
     margin: 0 auto;
   }
-
   .shopping-list {
     /* margin: 0 auto; */
     display: flex;
   }
-
   .shoplist {
     margin-left: 40px;
     width: calc(
       100% - 396px
     ); /* 100% ширина контейнера мінус ширина .support-ukraine та відстань 40px */
   }
-
   .support-ukraine {
     margin: 0 auto;
     margin-right: 40px;
   }
-
   .shoplist-error-content {
     width: 349px;
     height: 309px;
     margin: 0 auto;
   }
-
   .shoplist-error.container {
     display: flex;
     /* justify-content: space-between; */
     margin-top: 40px;
   }
-
   .shoplist-error {
     flex-grow: 1; /* Розтягує елемент, щоб заповнити доступний простір */
   }
-
   .shoplist-error-text {
     font-size: 18px;
     line-height: 24px;
     line-height: 1.33;
     margin-bottom: 20px;
   }
-
   .shoplist-logo-box {
     width: 92px;
   }
 }
-
-
 /* new styles 1*/
 .container-loader {
   display: block;
@@ -390,10 +338,10 @@ h2 {
   left: calc(50% - 24px);
   display: block;
   position: relative;
-  animation: rotate 1s linear infinite
+  animation: rotate 1s linear infinite;
 }
 .loader::before {
-  content: "";
+  content: '';
   box-sizing: border-box;
   position: absolute;
   inset: 0px;
@@ -401,25 +349,33 @@ h2 {
   border: 5px solid #db0000;
   animation: prixClipFix 2s linear infinite;
 }
-
 @keyframes rotate {
-  100%   {transform: rotate(360deg)}
+  100% {
+    transform: rotate(360deg);
+  }
 }
-
 @keyframes prixClipFix {
-    0%   {clip-path:polygon(50% 50%,0 0,0 0,0 0,0 0,0 0)}
-    25%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 0,100% 0,100% 0)}
-    50%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,100% 100%,100% 100%)}
-    75%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 100%)}
-    100% {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 0)}
+  0% {
+    clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0);
+  }
+  25% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0);
+  }
+  50% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%);
+  }
+  75% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%);
+  }
+  100% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 0);
+  }
 }
 /* new styles 2*/
-
 .class-for-list-shop {
   flex-direction: column;
   row-gap: 20px;
 }
-
 .list-all-books-in-shoplist {
   display: flex;
   gap: 24px;
@@ -462,7 +418,7 @@ h2 {
   justify-content: space-between;
   flex: 1;
 }
-.bottom-content-shop-list p{
+.bottom-content-shop-list p {
   font-family: var(--myFont);
   font-style: italic;
   font-weight: 400;
@@ -470,11 +426,10 @@ h2 {
   line-height: 117%;
   color: #b4afaf;
 }
-
 /*  */
 .svg-delete-shop-list {
   border-radius: 50%;
-  background-color: #4F2EE8;
+  background-color: #4f2ee8;
   width: 34px;
   height: 34px;
   display: flex;
@@ -499,14 +454,11 @@ h2 {
   margin-right: 50px;
   letter-spacing: -0.04em;
 }
-
 .bottom-content-shop-list {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
 }
-
-
 .main-content-shopping-list {
   width: 100%;
   flex: 1;
@@ -530,9 +482,8 @@ h2 {
   justify-content: center;
   padding-top: 120px;
 }
-
 .ul-pagination {
-  display: none; 
+  display: none;
   justify-content: center;
   gap: 24px;
   padding: 40px 0;
@@ -541,9 +492,8 @@ h2 {
   display: flex;
   gap: 24px;
 }
-
 .li-pagination-container li,
-.svg-li-pagination-container li{
+.svg-li-pagination-container li {
   padding: 12px 14px;
   width: 44px;
   height: 44px;
@@ -552,14 +502,13 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer; 
+  cursor: pointer;
 }
 .li-pagination-container,
 .svg-li-pagination-container {
   display: flex;
   gap: 10px;
 }
-
 .svg-li-pagination-l {
   background-color: black;
   color: white;
@@ -568,7 +517,6 @@ h2 {
   background-color: #eac645;
   color: black;
 }
-
 .page-one {
   color: white;
   background-color: black;
@@ -577,23 +525,20 @@ h2 {
 .hidden-li {
   display: none !important;
 }
-.ul-pagination .page-li-pagination-hidden-el-l, 
+.ul-pagination .page-li-pagination-hidden-el-l,
 .ul-pagination .page-li-pagination-hidden-el-r {
   display: none;
 }
-
 /*  */
 .shopping-list {
   gap: 40px;
   padding-top: 20px !important;
   display: flex;
 }
-
 /* support ukraine */
 .desktop-only {
   width: 356px;
 }
-
 .links-books {
   align-items: center;
 }
