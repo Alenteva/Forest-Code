@@ -58,15 +58,15 @@ async function showBooksInShoppingList(data) {
   try {
     let booksCard = `
           <li class="list-all-books-in-shoplist">
-              <div>
+              <div style="min-width: 116px;">
                   <img class="image-example-shop-list" src="${data.book_image}" alt="${data.title}">
               </div>
               <div class="content-shop-list">
                   <div class="main-content-shop-list">
                       <div class="top-content-shop-list">
                           <div class="card-book-container data-shop-list">
-                              <p>${data.title}</p>
-                              <p>${data.category}</p>
+                              <p class="p-title">${data.title}</p>
+                              <p class="p-category">${data.category}</p>
                           </div>
                           <div data-title="${data.title}" class="svg-delete-shop-list svg-delete">
                               <svg data-title="${data.title}" class="svg-delete" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -110,13 +110,18 @@ mainContentUl.addEventListener('click', async e => {
     loadingIndicator.style.display = 'block';
     arrayBooksShop.delete(e.target.dataset.title);
     await createSubArray(0, 3);
-    await showPagination();
+    if (arrayBooksShop.size !== 0) {
+      await showPagination();
+    } else {
+      ulPagination.style.display = 'none';
+      document.querySelector('.empty-shop-list').style.display = 'flex';
+    }
     loadingIndicator.style.display = 'none';
     updateLocalStorage();
   }
 });
 async function hiddenLiPagination(startElement) {
-  const distance = 2;
+  const distance = isWidthDevice();
   document.querySelectorAll('.page-li-pagination').forEach((element, index) => {
     if (index < startElement - distance || index > startElement + distance) {
       element.style.display = 'none';
@@ -241,6 +246,14 @@ async function addColorLastWord(word) {
     lastSpaceIndex + 1
   )}</span>`;
 }
+
+function isWidthDevice() {
+  let widthWindow = window.innerWidth;
+
+  if (widthWindow <= 767) return 1;
+  else return 2;
+} 
+
 // local storeg //
 function getMapFromLocalStorage() {
   const serializedData = localStorage.getItem('arrayBooksShop');
