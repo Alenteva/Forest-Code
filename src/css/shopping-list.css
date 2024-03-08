@@ -30,7 +30,6 @@ h2 {
 /* .container {
   outline: 2px dashed #F44336;
 } */
-
 .name-category {
   font-weight: 700;
   font-size: 32px;
@@ -378,10 +377,14 @@ h2 {
   flex-direction: column;
   row-gap: 20px;
 }
+.links-books img {
+  filter: grayscale(100%) brightness(100%);
+}
+
 .list-all-books-in-shoplist {
   display: flex;
   background-color: var(--bg-header-color);
-  gap: 24px;
+  gap: 14px;
   border: 3px solid rgba(79, 46, 232, 0.4);
   border-radius: 16px;
   padding: 14px !important;
@@ -397,16 +400,21 @@ h2 {
   flex-direction: column;
   width: 100%;
 }
-.data-shop-list > p:nth-child(1) {
+.name-category {
+  font-size: 32px;
+}
+.p-title {
   font-family: var(--myFont);
   font-weight: 700;
   font-size: 16px;
   line-height: 112%;
   letter-spacing: -0.04em;
   text-transform: uppercase;
-  color: var(--text-color);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-.data-shop-list p:nth-child(2) {
+.p-category {
   font-family: var(--myFont);
   font-weight: 400;
   font-size: 12px;
@@ -414,12 +422,16 @@ h2 {
   letter-spacing: 0.03em;
   color: #b4afaf;
   color: #b4afaf;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .content-shop-list {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   flex: 1;
+  min-width: 20px;
 }
 .bottom-content-shop-list p {
   font-family: var(--myFont);
@@ -428,6 +440,9 @@ h2 {
   font-size: 12px;
   line-height: 117%;
   color: #b4afaf;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 /*  */
 .svg-delete-shop-list {
@@ -439,6 +454,14 @@ h2 {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+}
+.description-shop-list {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  max-height: 3 * 1.2em;
 }
 .top-content-shop-list {
   display: flex;
@@ -452,7 +475,6 @@ h2 {
   font-weight: 400;
   font-size: 14px;
   line-height: 129%;
-  color: var(--text-color);
   padding-top: 20px;
   margin-right: 50px;
   letter-spacing: -0.04em;
@@ -488,7 +510,7 @@ h2 {
 .ul-pagination {
   display: none;
   justify-content: center;
-  gap: 24px;
+  gap: 14px;
   padding: 40px 0;
 }
 .ul-pagination li {
@@ -548,7 +570,6 @@ h2 {
   width: 56px;
 }
 
-//========================================================================
 .support-wrapper {
   /* margin-top: 40px; */
 }
@@ -597,14 +618,6 @@ h2 {
   margin: 0 auto;
 }
 
-/* .shop-book {
-  display: flex;
-  border: 2px solid rgba(79, 46, 232, 0.4);
-  border-radius: 16px;
-  padding: 14px !important;
-  margin-bottom: 20px;
-  position: relative; /* Устанавливаем позицию элемента как относительную */
-/* } */
 .img-shop {
   width: 100px;
   border-radius: 8px;
@@ -690,14 +703,7 @@ h2 {
   width: 16px;
   height: 16px;
 }
-/* .shoplist-links {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  position: absolute; /* Устанавливаем позицию элемента как абсолютную */
-/* bottom: 14px; /* Располагаем кнопку в верхнем краю контейнера */
-/* right: 14px; Располагаем кнопку в правом краю контейнера */
-/* }  */
+
 .amazon {
   width: 32px;
 }
@@ -708,11 +714,13 @@ h2 {
 .desktop-only {
   display: none;
 }
-
-@media screen and (min-width: 375px) {
+.card-book-container.data-shop-list {
+  max-width: 75%;
+}
+@media (min-width: 375px) and (max-width: 768px) {
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) {
   .shoplist-title {
     font-size: 48px;
     line-height: 52px;
@@ -720,6 +728,7 @@ h2 {
 
   .list-all-books-in-shoplist {
     padding: 24px;
+    gap: 24px;
   }
   .shoplist-title-span {
     color: blue;
@@ -781,9 +790,15 @@ h2 {
     line-height: 24px;
     line-height: 1.33;
   }
-
+  .links-books {
+    width: 92px;
+    height: 27px;
+  }
   .shoplist-error-books {
     width: 322px;
+  }
+  .ul-pagination {
+    gap: 24px;
   }
 }
 
@@ -792,12 +807,17 @@ h2 {
     display: flex;
     margin: 0 auto;
   }
-
+  .name-category {
+    font-size: 48px !important;
+  }
   .desktop-only {
     display: block;
     margin-right: 40px;
   }
-
+  .links-books {
+    width: 92px;
+    height: 27px;
+  }
   .shop-book {
   }
   .img-shop {
@@ -827,13 +847,7 @@ h2 {
     }
     /* margin: 0 auto; */
   }
-
-  .shoplist-btn-icon {
-  }
-  .shoplist-links {
-  }
-  .amazon {
-  }
-  .apple-book {
+  .ul-pagination {
+    gap: 24px;
   }
 }
