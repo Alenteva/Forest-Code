@@ -61,12 +61,12 @@
         } 
         
         .card-books-category-button:hover {
-      color: white;
+      color: #fff;
       background-color: #4F2EE8;
     }
   
     .card-books-category-button:focus {
-      color: white;
+      color: #fff;
       background-color: #4F2EE8;
     }
 
