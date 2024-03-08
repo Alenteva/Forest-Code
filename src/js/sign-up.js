@@ -44,7 +44,7 @@ window.onload = function () {
     if (user) {
       console.log('user', user);
       formContainer.classList.remove('is-open');
-      headerNav.style.display = 'flex';
+      // headerNav.style.display = 'flex';
       // iziToast.show({
       //   title: 'Hello',
       //   message: `Welcome, ${user.displayName}!`,
