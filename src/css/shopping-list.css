@@ -36,7 +36,7 @@ h2 {
   line-height: 38px;
   line-height: 1.1875;
   letter-spacing: -0.04em;
-  color: black;
+  color: var(--text-color);
   /* margin-bottom: 120px; */
 }
 .shopping-list {
