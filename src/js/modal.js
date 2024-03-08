@@ -13,11 +13,14 @@ listOne.addEventListener('click', async e => {
   if (e.target.classList.contains('box-quick-view')) {
     const id = e.target.parentNode.parentNode.dataset.category;
     renderBook(id);
-    console.log('ok box');
+    
   } else if (e.target.classList.contains('animation-paragraf')) {
     const id = e.target.parentNode.parentNode.parentNode.dataset.category;
     renderBook(id);
-    console.log('ok paragraf');
+    
+  } else if (e.target.classList.contains('img-example')) {
+      const id = e.target.dataset.category;
+      renderBook(id);
   }
 });
 async function renderBook(_id) {
