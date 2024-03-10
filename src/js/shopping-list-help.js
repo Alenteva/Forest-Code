@@ -2,6 +2,9 @@ import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 // import icon from '../images/amazon.png';
 // import icon_2 from '../images/book.png';
+import sprite1 from '../images/myPhotos/book.png';
+import sprite2 from '../images/myPhotos/amazon.png';
+
 let arrayBooksShop = getMapFromLocalStorage();
 updateLocalStorage();
 const mainContentUl = document.querySelector('.list-books-shopping');
@@ -82,8 +85,8 @@ async function showBooksInShoppingList(data) {
                   <div class="bottom-content-shop-list">
                       <p>${data.author}</p>
                       <div class="links-books">                    
-                        <a href="${data.link_amazon}" rel="amazon ${data.title}" target="_blank""><img src="./images/myPhotos/amazon.png" alt="amazon" class="filter-img"></a>
-                        <a href="${data.link_goto}" rel="apple-book" target="_blank""><img src="/images/myPhotos/book.png" alt="amazon" class="filter-img"></a>
+                        <a href="${data.link_amazon}" rel="amazon ${data.title}" target="_blank""><img src="${sprite2}" alt="amazon" class="filter-img"></a>
+                        <a href="${data.link_goto}" rel="apple-book" target="_blank""><img src="${sprite1}" alt="amazon" class="filter-img"></a>
 
                       </div>
                   </div>
