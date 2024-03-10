@@ -27,7 +27,10 @@ const signUpButton = document.querySelector('.quickstart-sign-up');
 const headerNav = document.querySelector('.header-nav');
 const passwordResetButton = document.querySelector('.reset-btn');
 const logOutBtn = document.querySelector('.log-out-btn');
-// const burgMenu = document.querySelector('.burger-menu-list');
+const headerOutBtn = document.querySelector('.header-out-btn');
+const burgMenu = document.querySelector('.burger-menu-list');
+const mobNav = document.querySelector('.mob-header-nav');
+
 const firebaseConfig = {
   apiKey: 'AIzaSyD8UvisVnkCvMijmf6q4ZtLkQgC43vz2KM',
   authDomain: 'dookshelf-357a4.firebaseapp.com',
@@ -42,15 +45,9 @@ const auth = getAuth();
 window.onload = function () {
   onAuthStateChanged(auth, async user => {
     if (user) {
-      console.log('user', user);
       formContainer.classList.remove('is-open');
       // headerNav.style.display = 'flex';
-      // iziToast.show({
-      //   title: 'Hello',
-      //   message: `Welcome, ${user.displayName}!`,
-      //   color: 'blue',
-      //   position: 'topCenter',
-      // });
+      // burgMenu.style.display = 'block';
       headerSignUp.forEach(el => (el.textContent = user.displayName));
       localStorage.setItem(
         'user-data',
@@ -62,6 +59,8 @@ window.onload = function () {
     } else {
       headerNav.style.display = 'none';
       formContainer.classList.remove('is-open');
+      headerOutBtn.style.display = 'none';
+      burgMenu.style.display = 'none';
     }
   });
 };
@@ -105,7 +104,7 @@ function toggleSignIn() {
         user.displayName = name;
         formContainer.classList.remove('is-open');
         headerNav.style.display = 'flex';
-        // burgMenu.style.display = 'block';
+        burgMenu.style.display = 'block';
         headerSignUp.forEach(el => (el.textContent = user.displayName));
         iziToast.show({
           title: 'Hello',
@@ -157,7 +156,7 @@ function handleSignUp() {
       user.displayName = name;
       formContainer.classList.remove('is-open');
       headerNav.style.display = 'flex';
-      // burgMenu.style.display = 'block';
+      burgMenu.style.display = 'block';
       headerSignUp.forEach(el => (el.textContent = user.displayName));
       await updateProfile(user, { displayName: user.displayName });
       iziToast.show({
@@ -194,13 +193,14 @@ function updateUI(user) {
   if (user) {
     // Відображення UI для автентифікованого користувача
     formContainer.classList.remove('is-open');
-    headerNav.style.display = 'flex';
+    // headerNav.style.display = 'flex';
     // burgMenu.style.display = 'block';
     headerSignUp.forEach(el => (el.textContent = user.displayName));
   } else {
     // Відображення UI для неавтентифікованого користувача
     headerNav.style.display = 'none';
-    // burgMenu.style.display = 'none';
+    headerOutBtn.style.display = 'none';
+    burgMenu.style.display = 'none';
     formContainer.classList.remove('is-open');
   }
 }
@@ -233,6 +233,8 @@ function handleSignOut() {
     signOut(auth).then(() => {
       localStorage.removeItem('user-data'); // Очищення кешованих даних користувача
       localStorage.removeItem('userToken'); // Видалення токена після виходу
+      headerOutBtn.style.display = 'none';
+      // burgMenu.style.display = 'none';
       updateUI(); // Оновлення UI після виходу
     });
   }
@@ -255,6 +257,10 @@ passwordResetButton.addEventListener('click', function (event) {
 });
 
 logOutBtn.addEventListener('click', function (event) {
+  event.preventDefault();
+  handleSignOut();
+});
+headerOutBtn.addEventListener('click', function (event) {
   event.preventDefault();
   handleSignOut();
 });

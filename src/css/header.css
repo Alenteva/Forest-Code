@@ -198,9 +198,9 @@ body {
 .form-switch input:checked + i::after {
   transform: translate3d(22px, 2px, 0);
 }
-/* .Log-out-btn {
+.header-out-btn {
   display: none;
-} */
+}
 /* === end switch styles === */
 
 /*================ tablet ================ */
@@ -266,7 +266,7 @@ body {
       rgb(255, 255, 255) 100%
     );
   }
-  /* .Log-out-btn {
+  .header-out-btn {
     display: none;
     align-items: center;
     color: #111;
@@ -285,10 +285,10 @@ body {
     display: inline-block;
     z-index: 1;
   }
-  .dropdown:hover .Log-out-btn {
+  .dropdown:hover .header-out-btn {
     display: flex;
     border-color: #eac645#4f2ee8;
-  } */
+  }
 }
 
 /*================ descktop ================ */
@@ -338,7 +338,7 @@ body {
       rgb(255, 255, 255) 100%
     );
   }
-  /* .Log-out-btn {
+  .header-out-btn {
     display: none;
     align-items: center;
     color: #111;
@@ -357,8 +357,8 @@ body {
     display: inline-block;
     z-index: 1;
   }
-  .dropdown:hover .Log-out-btn {
+  .dropdown:hover .header-out-btn {
     display: flex;
     border-color: #eac645#4f2ee8;
-  } */
+  }
 }
