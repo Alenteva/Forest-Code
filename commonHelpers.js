@@ -1,4 +1,4 @@
-import{s as E,a as x}from"./assets/amazon-b28ca8cb.js";import{a as l,i as c}from"./assets/vendor-7539751a.js";const f="/Forest-Code/assets/icon-4664cafe.svg";function T(){const e=document.getElementById("burgerToggle"),o=document.getElementById("burgerMenu");e.addEventListener("click",function(){o.classList.toggle("burger-menu-show"),o.classList.contains("burger-menu-show")?e.innerHTML=`
+import{s as E,a as x}from"./assets/amazon-cc4b8648.js";import{a as l,i as c}from"./assets/vendor-7539751a.js";const f="/Forest-Code/assets/icon-4664cafe.svg";function T(){const e=document.getElementById("burgerToggle"),o=document.getElementById("burgerMenu");e.addEventListener("click",function(){o.classList.toggle("burger-menu-show"),o.classList.contains("burger-menu-show")?e.innerHTML=`
       <svg width="18" height="18" class="stroke-color-ber-menu">
         <use href="${f}#icon-close"></use>
       </svg>`:e.innerHTML=`
