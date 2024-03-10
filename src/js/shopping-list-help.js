@@ -1,7 +1,7 @@
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
-import icon from '../images/amazon.png';
-import icon_2 from '../images/book.png';
+// import icon from '../images/amazon.png';
+// import icon_2 from '../images/book.png';
 let arrayBooksShop = getMapFromLocalStorage();
 updateLocalStorage();
 const mainContentUl = document.querySelector('.list-books-shopping');
@@ -56,6 +56,7 @@ async function showPagination() {
   hiddenLiPagination(0);
   ulPagination.style.display = 'flex';
 }
+
 async function showBooksInShoppingList(data) {
   try {
     let booksCard = `
@@ -72,7 +73,7 @@ async function showBooksInShoppingList(data) {
                           </div>
                           <div data-title="${data.title}" class="svg-delete-shop-list svg-delete">
                               <svg data-title="${data.title}" class="svg-delete" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <path data-title="${data.title}" class="svg-delete" d="M8.25 2.75H13.75M2.75 5.5H19.25M17.4167 5.5L16.7738 15.1427C16.6774 16.5894 16.6291 17.3128 16.3167 17.8613C16.0416 18.3441 15.6266 18.7323 15.1265 18.9747C14.5585 19.25 13.8335 19.25 12.3836 19.25H9.61643C8.1665 19.25 7.44153 19.25 6.87348 18.9747C6.37336 18.7323 5.95841 18.3441 5.68332 17.8613C5.37085 17.3128 5.32263 16.5894 5.22618 15.1427L4.58333 5.5M9.16667 9.625V14.2083M12.8333 9.625V14.2083" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                  <path data-title="${data.title}"class="svg-delete" d="M8.25 2.75H13.75M2.75 5.5H19.25M17.4167 5.5L16.7738 15.1427C16.6774 16.5894 16.6291 17.3128 16.3167 17.8613C16.0416 18.3441 15.6266 18.7323 15.1265 18.9747C14.5585 19.25 13.8335 19.25 12.3836 19.25H9.61643C8.1665 19.25 7.44153 19.25 6.87348 18.9747C6.37336 18.7323 5.95841 18.3441 5.68332 17.8613C5.37085 17.3128 5.32263 16.5894 5.22618 15.1427L4.58333 5.5M9.16667 9.625V14.2083M12.8333 9.625V14.2083" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                               </svg>
                           </div>
                       </div>
@@ -80,10 +81,7 @@ async function showBooksInShoppingList(data) {
                   </div>
                   <div class="bottom-content-shop-list">
                       <p>${data.author}</p>
-                      <div class="links-books">
-
-                     
-
+                      <div class="links-books">                    
                         <a href="${data.link_amazon}" rel="amazon ${data.title}" target="_blank""><img src="./images/myPhotos/amazon.png" alt="amazon" class="filter-img"></a>
                         <a href="${data.link_goto}" rel="apple-book" target="_blank""><img src="/images/myPhotos/book.png" alt="amazon" class="filter-img"></a>
 
@@ -99,12 +97,13 @@ async function showBooksInShoppingList(data) {
     });
   }
 }
+
 async function createSubArray(startIndex, endIndex) {
   const arraySubset = Array.from(arrayBooksShop.values()).slice(
     startIndex,
     endIndex
   );
-  console.log(Object.values(arraySubset));
+  // console.log(Object.values(arraySubset));
   let booksCard = ``;
   for (let object_book of arraySubset) {
     booksCard += await showBooksInShoppingList(object_book);
@@ -126,6 +125,7 @@ mainContentUl.addEventListener('click', async e => {
     updateLocalStorage();
   }
 });
+
 async function hiddenLiPagination(startElement) {
   const distance = isWidthDevice();
   document.querySelectorAll('.page-li-pagination').forEach((element, index) => {

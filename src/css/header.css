@@ -29,7 +29,7 @@ body {
   background-color: var(--bg-color);
 }
 
-.header-nav,
+.mob-header-nav,
 .header-user {
   display: none;
 }
@@ -198,9 +198,9 @@ body {
 .form-switch input:checked + i::after {
   transform: translate3d(22px, 2px, 0);
 }
-.Log-out-btn {
+/* .Log-out-btn {
   display: none;
-}
+} */
 /* === end switch styles === */
 
 /*================ tablet ================ */
